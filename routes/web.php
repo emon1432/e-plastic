@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,5 +19,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/user/password/edit', function () {
         return view('backend.pages.user.profile.password');
-    })->name('password.edit');   
+    })->name('password.edit');
+
+    //Admin Routes
+    Route::resource('admin', AdminController::class);
 });

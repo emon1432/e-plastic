@@ -24,6 +24,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         $user->email = $input['email'];
         $user->phone = $input['phone'];
         $user->address = $input['address'];
+        $user->gender = $input['gender'];
 
         if (isset($input['photo'])) {
             if ($user->image) {
