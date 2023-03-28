@@ -31,6 +31,7 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+        $this->app->singleton(LoginResponseContract::class, LoginResponse::class);
 
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
