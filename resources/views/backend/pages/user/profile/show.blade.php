@@ -10,8 +10,8 @@
             <div class="intro-y box mt-5">
                 <div class="relative flex items-center p-5">
                     <div class="w-12 h-12 image-fit">
-                        <img alt="Icewall Tailwind HTML Admin Template" class="rounded-full"
-                            src="{{ asset('backend') }}/images/profile-9.jpg">
+                        <img alt="eplastic" class="rounded-full"
+                            src="{{ asset('backend') }}/images/profile/{{ auth()->user()->image ?? 'avatar.png' }}">
                     </div>
                     <div class="ml-4 mr-auto">
                         <div class="font-medium text-base">{{ auth()->user()->name }}</div>
@@ -21,7 +21,7 @@
                 <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
                     <a class="flex items-center text-primary font-medium" href="{{ route('profile.show') }}"> <i
                             data-feather="activity" class="w-4 h-4 mr-2"></i> Personal Information </a>
-                    <a class="flex items-center mt-5" href=""> <i data-feather="lock" class="w-4 h-4 mr-2"></i>
+                    <a class="flex items-center mt-5" href="{{ route('password.edit') }}"> <i data-feather="lock" class="w-4 h-4 mr-2"></i>
                         Change Password </a>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                                 class="border-2 border-dashed shadow-sm border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
                                 <div class="h-40 relative image-fit cursor-pointer zoom-in mx-auto">
                                     <img class="rounded-md" alt="Icewall Tailwind HTML Admin Template"
-                                        src="{{ asset('backend') }}/images/{{ auth()->user()->photo ?? 'profile-9.jpg' }}">
+                                        src="{{ asset('backend') }}/images/profile/{{ auth()->user()->image ?? 'avatar.png' }}">
                                     <div title="Remove this profile photo?"
                                         class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2">
                                         <i data-feather="x" class="w-4 h-4"></i>

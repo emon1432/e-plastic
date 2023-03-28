@@ -1,21 +1,17 @@
 <div
     class="top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] -mt-7 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-12">
     <div class="h-full flex items-center">
-        <!-- BEGIN: Logo -->
         <a href="{{ route('dashboard') }}" class="-intro-x hidden md:flex">
             <img alt="eplastic" class="w-6" src="{{ asset('backend') }}/images/eplastic-logo.png">
             <span class="text-white text-lg ml-3"> e<span class="font-medium">Plastic</span> </span>
         </a>
-        <!-- END: Logo -->
-        <!-- BEGIN: Breadcrumb -->
         <nav aria-label="breadcrumb" class="-intro-x h-full mr-auto">
         </nav>
-        <!-- END: Breadcrumb -->
-        <!-- BEGIN: Account Menu -->
         <div class="intro-x dropdown w-8 h-8">
             <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in scale-110"
                 role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                <img alt="eplastic" src="{{ asset('backend') }}/images/{{ auth()->user()->photo ?? 'profile-4.jpg' }}
+                <img alt="eplastic"
+                    src="{{ asset('backend') }}/images/profile/{{ auth()->user()->image ?? 'avatar.png' }}">
             </div>
             <div class="dropdown-menu w-56">
                 <ul
@@ -32,8 +28,8 @@
                                 data-feather="user" class="w-4 h-4 mr-2"></i> Profile </a>
                     </li>
                     <li>
-                        <a href="" class="dropdown-item hover:bg-white/5"> <i data-feather="lock"
-                                class="w-4 h-4 mr-2"></i> Reset Password </a>
+                        <a href="{{ route('password.edit') }}" class="dropdown-item hover:bg-white/5"> <i
+                                data-feather="lock" class="w-4 h-4 mr-2"></i> Change Password </a>
                     </li>
                     <li>
                         <a href="" class="dropdown-item hover:bg-white/5"> <i data-feather="help-circle"
@@ -55,6 +51,5 @@
                 </ul>
             </div>
         </div>
-        <!-- END: Account Menu -->
     </div>
 </div>

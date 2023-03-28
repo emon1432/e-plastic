@@ -24,14 +24,21 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         $user->email = $input['email'];
         $user->phone = $input['phone'];
         $user->address = $input['address'];
-        $user->save();
 
         if (isset($input['photo'])) {
-            $image = $input->file('photo');
+            if ($user->image) {
+                $image_path = public_path('backend/images/profile/' . $user->image);
+                if (file_exists($image_path)) {
+                    @unlink($image_path);
+                }
+            }
+            $image = $input['photo'];
             $name = time() . '_' . rand(0, 9999999) . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('backend/images/brand');
+            $destinationPath = public_path('backend/images/profile');
             $image->move($destinationPath, $name);
+            $user->image = $name;
         }
+        $user->save();
     }
 
 
