@@ -26,6 +26,7 @@ class BuyersTableSeeder extends Seeder
                 'password' => '$2y$10$4iUunWc8tVsgR0LKON7STOVntMSPYJHupxp9MJ0D4znm2/chVY7kK',
                 'address' => 'Aftabnagar, Dhaka',
                 'image' => NULL,
+                'gender' => 'Male',
                 'created_at' => '2023-03-28 08:21:21',
                 'updated_at' => '2023-03-28 08:21:21',
             ),

@@ -10,11 +10,7 @@ use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
-    /**
-     * Validate and update the given user's profile information.
-     *
-     * @param  array<string, string>  $input
-     */
+
     public function update(User $user, array $input): void
     {
         Validator::make($input, [
@@ -23,26 +19,22 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
         ])->validateWithBag('updateProfileInformation');
 
-        if (isset($input['photo'])) {
-            $user->updateProfilePhoto($input['photo']);
-        }
+        $user = User::find($user->id);
+        $user->name = $input['name'];
+        $user->email = $input['email'];
+        $user->phone = $input['phone'];
+        $user->address = $input['address'];
+        $user->save();
 
-        if ($input['email'] !== $user->email &&
-            $user instanceof MustVerifyEmail) {
-            $this->updateVerifiedUser($user, $input);
-        } else {
-            $user->forceFill([
-                'name' => $input['name'],
-                'email' => $input['email'],
-            ])->save();
+        if (isset($input['photo'])) {
+            $image = $input->file('photo');
+            $name = time() . '_' . rand(0, 9999999) . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('backend/images/brand');
+            $image->move($destinationPath, $name);
         }
     }
 
-    /**
-     * Update the given verified user's profile information.
-     *
-     * @param  array<string, string>  $input
-     */
+
     protected function updateVerifiedUser(User $user, array $input): void
     {
         $user->forceFill([

@@ -26,6 +26,7 @@ class AdminsTableSeeder extends Seeder
                 'password' => '$2y$10$4UQiBwuUQH6pYpmLVKgXoOofXRnVzalgBnpuZNxV3zswScN07cm/6',
                 'address' => 'Aftabnagar, Dhaka',
                 'image' => NULL,
+                'gender' => 'Male',
                 'created_at' => '2023-03-28 07:49:21',
                 'updated_at' => '2023-03-28 07:49:21',
             ),

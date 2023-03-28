@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('address')->nullable();
             $table->string('image')->nullable();
+            $table->string('gender')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->timestamps();

@@ -14,6 +14,7 @@
     <title>Dashboard - Icewall - Tailwind HTML Admin Template</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="{{ asset('backend') }}/css/app.css" />
+    <link rel="stylesheet" href="{{ asset('backend') }}/auth/css/app.css" />
     <!-- END: CSS Assets-->
 </head>
 
@@ -30,7 +31,8 @@
     </div>
 
 
-    <script src="{{ asset('backend') }}/js/app.js"></script>
+    {{-- <script src="{{ asset('backend') }}/js/app.js"></script> --}}
+    <script src="{{ asset('backend') }}/auth/js/app.js"></script>
 
 </body>
 
