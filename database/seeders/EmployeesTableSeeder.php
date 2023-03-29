@@ -22,12 +22,12 @@ class EmployeesTableSeeder extends Seeder
             0 =>
             array(
                 'id' => 1,
+                'user_id' => 2,
                 'name' => 'Emon Employee',
                 'email' => 'employee@gmail.com',
                 'phone' => '01638849305',
                 'password' => '$2y$10$Pbuc2qFWryx0SlDPFh43FulvmWCPq1Z0BUmMyWTy3tdWNTlhA.y5q',
                 'address' => 'Aftabnagar, Dhaka',
-                'image' => NULL,
                 'gender' => 'Male',
                 'created_at' => '2023-03-28 08:00:53',
                 'updated_at' => '2023-03-28 08:00:53',

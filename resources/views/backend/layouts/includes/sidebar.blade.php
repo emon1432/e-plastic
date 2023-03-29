@@ -11,35 +11,15 @@
                 </div>
             </a>
         </li>
-        <li>
-            <a href="javascript:;" class="side-menu">
-                <div class="side-menu__icon"> <i data-feather="user"></i> </div>
-                <div class="side-menu__title">
-                    Profile
-                    <i data-feather="chevron-down" class="side-menu__sub-icon"></i>
-                </div>
-            </a>
-            <ul class="">
-                <li>
-                    <a href="{{ route('profile.show') }}"
-                        class="side-menu {{ $route == 'profile.show' ? 'side-menu--active' : '' }}">
-                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                        <div class="side-menu__title">
-                            Personal Information
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('password.edit') }}"
-                        class="side-menu {{ $route == 'password.edit' ? 'side-menu--active' : '' }}">
-                        <div class="side-menu__icon"> <i data-feather="lock"></i> </div>
-                        <div class="side-menu__title">
-                            Change Password
-                        </div>
-                    </a>
-                </li>
-            </ul>
-
-        </li>
+        @if (auth()->user()->role_id == 1)
+            <li>
+                <a href="{{ route('admin.index') }}" class="side-menu {{ $route == 'admin.index' ? 'side-menu--active' : '' }}">
+                    <div class="side-menu__icon"> <i data-feather="users"></i> </div>
+                    <div class="side-menu__title">
+                        Admin Management
+                    </div>
+                </a>
+            </li>
+        @endif
     </ul>
 </nav>

@@ -20,12 +20,12 @@ class CustomersTableSeeder extends Seeder
             0 =>
             array(
                 'id' => 1,
+                'user_id' => 3,
                 'name' => 'Emon Customer',
                 'email' => 'customer@gmail.com',
                 'phone' => '01638849305',
                 'password' => '$2y$10$cio2mRG3mUkRkJbmpmn3wONQ85.SsxIi.zrhF.MfhSBsaraZ1QsRO',
                 'address' => 'Aftabnagar, Dhaka',
-                'image' => NULL,
                 'gender' => 'Male',
                 'created_at' => '2023-03-28 08:20:06',
                 'updated_at' => '2023-03-28 08:20:06',

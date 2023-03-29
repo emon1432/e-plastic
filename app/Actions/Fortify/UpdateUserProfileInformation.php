@@ -2,6 +2,10 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\Admin;
+use App\Models\Buyer;
+use App\Models\Customer;
+use App\Models\Employee;
 use App\Models\User;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Validator;
@@ -40,6 +44,44 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->image = $name;
         }
         $user->save();
+
+        if ($user->role_id == 1) {
+            //update admin
+            $admin = Admin::where('user_id', $user->id)->first();
+            $admin->name = $input['name'];
+            $admin->email = $input['email'];
+            $admin->phone = $input['phone'];
+            $admin->address = $input['address'];
+            $admin->gender = $input['gender'];
+            $admin->save();
+        } elseif ($user->role_id == 2) {
+            //update employee
+            $employee = Employee::where('user_id', $user->id)->first();
+            $employee->name = $input['name'];
+            $employee->email = $input['email'];
+            $employee->phone = $input['phone'];
+            $employee->address = $input['address'];
+            $employee->gender = $input['gender'];
+            $employee->save();
+        } elseif ($user->role_id == 3) {
+            //update customer
+            $customer = Customer::where('user_id', $user->id)->first();
+            $customer->name = $input['name'];
+            $customer->email = $input['email'];
+            $customer->phone = $input['phone'];
+            $customer->address = $input['address'];
+            $customer->gender = $input['gender'];
+            $customer->save();
+        } elseif ($user->role_id = 4) {
+            //update buyer
+            $buyer = Buyer::where('user_id', $user->id)->first();
+            $buyer->name = $input['name'];
+            $buyer->email = $input['email'];
+            $buyer->phone = $input['phone'];
+            $buyer->address = $input['address'];
+            $buyer->gender = $input['gender'];
+            $buyer->save();
+        }
     }
 
 

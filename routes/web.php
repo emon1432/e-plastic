@@ -14,11 +14,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     })->name('dashboard');
 
     Route::get('/user/profile', function () {
-        return view('backend.pages.user.profile.show');
+        return view('backend.pages.profile.show');
     })->name('profile.show');
 
     Route::get('/user/password/edit', function () {
-        return view('backend.pages.user.profile.password');
+        return view('backend.pages.profile.password');
     })->name('password.edit');
 
     //Admin Routes
