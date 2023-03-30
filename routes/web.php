@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,4 +24,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     //Admin Routes
     Route::resource('admin', AdminController::class);
+
+    //Employee Routes
+    Route::resource('employee', EmployeeController::class);
 });

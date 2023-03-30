@@ -20,6 +20,15 @@
                     </div>
                 </a>
             </li>
+
+            <li>
+                <a href="{{ route('employee.index') }}" class="side-menu {{ $route == 'employee.index' ? 'side-menu--active' : '' }}">
+                    <div class="side-menu__icon"> <i data-feather="users"></i> </div>
+                    <div class="side-menu__title">
+                        Employee Management
+                    </div>
+                </a>
+            </li>
         @endif
     </ul>
 </nav>

@@ -1,10 +1,10 @@
 @extends('backend.layouts.master')
 @section('content')
-    <h2 class="intro-y text-lg font-medium mt-10">Admin List </h2>
+    <h2 class="intro-y text-lg font-medium mt-10">Employee List</h2>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-            <button data-tw-toggle="modal" data-tw-target="#create-admin-modal" class="btn btn-primary shadow-md mr-2"
-                type="button">Add New Admin</button>
+            <button data-tw-toggle="modal" data-tw-target="#create-employee-modal" class="btn btn-primary shadow-md mr-2"
+                type="button">Add New Employee</button>
         </div>
         <div id="listContainer" class="intro-y col-span-12 ">
             <div class="intro-y col-span-12 ">
@@ -20,64 +20,65 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($admins as $admin)
+                        @foreach ($employees as $employee)
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
                                 <td class="flex items-center justify-center">
                                     <div class="w-10 h-10 image-fit zoom-in">
-                                        <img alt="{{ $admin->name }}" class="rounded-full"
-                                            src="{{ asset('backend/images/profile') }}/{{ $admin->image ?? 'avatar.png' }}">
+                                        <img alt="{{ $employee->name }}" class="rounded-full"
+                                            src="{{ asset('backend/images/employees') }}/{{ $employee->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                <td>{{ $admin->name }}</td>
-                                <td>{{ $admin->email }}</td>
-                                <td>{{ $admin->phone }}</td>
-                                <td>{{ $admin->address }}</td>
+                                <td>{{ $employee->name }}</td>
+                                <td>{{ $employee->email }}</td>
+                                <td>{{ $employee->phone }}</td>
+                                <td>{{ $employee->address }}</td>
                                 <td class="table-report__action w-56">
                                     <div class="flex  items-center">
                                         <button class="flex items-center mr-3" data-tw-toggle="modal"
-                                            data-tw-target="#edit-admin-modal-{{ $admin->id }}">
+                                            data-tw-target="#edit-employee-modal-{{ $employee->id }}">
                                             <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit
                                         </button>
-                                        @if ($admin->id != auth()->user()->id)
+                                        @if ($employee->id != auth()->user()->id)
                                             <button class="flex items-center text-danger" data-tw-toggle="modal"
-                                                data-tw-target="#delete-admin-modal-{{ $admin->id }}">
+                                                data-tw-target="#delete-employee-modal-{{ $employee->id }}">
                                                 <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete
                                             </button>
                                         @endif
                                     </div>
                                 </td>
                             </tr>
-                            <!-- Edit Admin Modal -->
-                            <div id="edit-admin-modal-{{ $admin->id }}" class="modal" tabindex="-1" aria-hidden="true">
+                            <!-- Edit employee Modal -->
+                            <div id="edit-employee-modal-{{ $employee->id }}" class="modal" tabindex="-1"
+                                aria-hidden="true">
                                 <div class="modal-dialog modal-xl p-2">
                                     <div class="modal-content p-8">
                                         <div
                                             class="intro-y text-primary text-2xl font-bold text-left pt-4 pb-2 mb-2 border-b-2 ">
-                                            Edit Admin
+                                            Edit employee
                                         </div>
-                                        <form class="text-lg" action="{{ route('admin.update', $admin->id) }}"
+                                        <form class="text-lg" action="{{ route('employee.update', $employee->id) }}"
                                             method="POST" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
                                             <div class="grid grid-cols-12 gap-2 mt-3">
                                                 <div class="col-span-6">
                                                     <label class="flex flex-col sm:flex-row">Full Name</label>
-                                                    <input type="text" name="name" value="{{ $admin->name }}"
+                                                    <input type="text" name="name" value="{{ $employee->name }}"
                                                         class="input w-full border mt-2">
                                                 </div>
                                                 <div class="col-span-6">
                                                     <label class="flex flex-col sm:flex-row">Email</label>
-                                                    <input type="email" name="email" value="{{ $admin->email }}"
+                                                    <input type="email" name="email" value="{{ $employee->email }}"
                                                         class="input w-full border mt-2">
                                                 </div>
                                                 <div class="col-span-6">
                                                     <label class="flex flex-col sm:flex-row">Phone</label>
-                                                    <input type="text" name="phone" value="{{ $admin->phone }}"
+                                                    <input type="text" name="phone" value="{{ $employee->phone }}"
                                                         class="input w-full border mt-2">
                                                 </div>
                                                 <div class="col-span-6">
                                                     <label class="flex flex-col sm:flex-row">Address</label>
-                                                    <input type="text" name="address" value="{{ $admin->address }}"
+                                                    <input type="text" name="address" value="{{ $employee->address }}"
                                                         class="input w-full border mt-2">
                                                 </div>
                                                 <div class="col-span-6">
@@ -88,10 +89,10 @@
                                                     <label class="flex flex-col sm:flex-row">Gender</label>
                                                     <select name="gender" class="input w-full border mt-2">
                                                         <option value="Male"
-                                                            {{ $admin->gender == 'Male' ? 'selected' : '' }}>
+                                                            {{ $employee->gender == 'Male' ? 'selected' : '' }}>
                                                             Male</option>
                                                         <option value="Female"
-                                                            {{ $admin->gender == 'Female' ? 'selected' : '' }}>
+                                                            {{ $employee->gender == 'Female' ? 'selected' : '' }}>
                                                             Female</option>
                                                     </select>
                                                 </div>
@@ -99,7 +100,7 @@
 
                                             <div class="flex flex-row-reverse mt-2">
                                                 <button type="submit" class="btn btn-primary w-full shadow-md mr-2 ">
-                                                    Update Admin
+                                                    Update Employee
                                                 </button>
                                             </div>
                                         </form>
@@ -107,8 +108,8 @@
                                 </div>
                             </div>
 
-                            <!-- Delete Admin Modal -->
-                            <div id="delete-admin-modal-{{ $admin->id }}" class="modal" tabindex="-1"
+                            <!-- Delete employee Modal -->
+                            <div id="delete-employee-modal-{{ $employee->id }}" class="modal" tabindex="-1"
                                 aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -124,7 +125,8 @@
                                             </div>
                                             <div class="px-5 pb-8 text-center">
 
-                                                <form action="{{ route('admin.destroy', $admin->id) }}" method="POST">
+                                                <form action="{{ route('employee.destroy', $employee->id) }}"
+                                                    method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="button" data-tw-dismiss="modal"
@@ -143,14 +145,15 @@
         </div>
     </div>
 
-    <!-- Create Admin Modal -->
-    <div id="create-admin-modal" class="modal" tabindex="-1" aria-hidden="true">
+    <!-- Create employee Modal -->
+    <div id="create-employee-modal" class="modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl p-2">
             <div class="modal-content p-8">
                 <div class="intro-y text-primary text-2xl font-bold text-left pt-4 pb-2 mb-2 border-b-2 ">
-                    Create New Admin
+                    Create New employee
                 </div>
-                <form class="text-lg" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="text-lg" action="{{ route('employee.store') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="grid grid-cols-12 gap-2 mt-3">
                         <div class="col-span-6">
@@ -198,7 +201,7 @@
                     </div>
                     <div class="flex flex-row-reverse mt-2">
                         <button type="submit" class="btn btn-primary w-full shadow-md mr-2 ">
-                            Create Admin
+                            Create employee
                         </button>
                     </div>
                 </form>
