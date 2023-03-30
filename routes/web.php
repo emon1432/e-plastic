@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\BuyerController;
 use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\SellerController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,4 +29,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     //Employee Routes
     Route::resource('employee', EmployeeController::class);
+
+    //Seller Routes
+    Route::resource('seller', SellerController::class);
+
+    //Buyer Routes
+    Route::resource('buyer', BuyerController::class);
 });

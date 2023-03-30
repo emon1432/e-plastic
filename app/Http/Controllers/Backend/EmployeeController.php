@@ -11,7 +11,7 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        //get all admins from users table       
+        //get all employees from users table       
         $employees = User::where('role_id', 2)->get();
         return view('backend.pages.employee.index', compact('employees'));
     }
@@ -43,7 +43,7 @@ class EmployeeController extends Controller
 
         $user->save();
 
-        //save to admin table
+        //save to employees table
         $employee = new Employee();
         $employee->user_id = $user->id;
         $employee->name = $request->name;
@@ -86,7 +86,7 @@ class EmployeeController extends Controller
 
         $user->save();
 
-        //save to admin table
+        //save to employees table
         $employee = Employee::where('user_id', $id)->first();
         $employee->user_id = $user->id;
         $employee->name = $request->name;
@@ -108,7 +108,7 @@ class EmployeeController extends Controller
         }
         $user->delete();
 
-        //delete from admin table
+        //delete from employees table
         $employee = Employee::where('user_id', $id)->first();
         $employee->delete();
 
