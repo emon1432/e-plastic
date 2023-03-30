@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Buyer;
 use App\Models\Customer;
 use App\Models\Employee;
+use App\Models\Seller;
 use App\Models\User;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Validator;
@@ -65,13 +66,13 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $employee->save();
         } elseif ($user->role_id == 3) {
             //update customer
-            $customer = Customer::where('user_id', $user->id)->first();
-            $customer->name = $input['name'];
-            $customer->email = $input['email'];
-            $customer->phone = $input['phone'];
-            $customer->address = $input['address'];
-            $customer->gender = $input['gender'];
-            $customer->save();
+            $seller = Seller::where('user_id', $user->id)->first();
+            $seller->name = $input['name'];
+            $seller->email = $input['email'];
+            $seller->phone = $input['phone'];
+            $seller->address = $input['address'];
+            $seller->gender = $input['gender'];
+            $seller->save();
         } elseif ($user->role_id = 4) {
             //update buyer
             $buyer = Buyer::where('user_id', $user->id)->first();

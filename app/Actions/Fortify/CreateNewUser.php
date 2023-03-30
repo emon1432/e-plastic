@@ -28,32 +28,37 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
+        //save to user table
+        $user = new User();
+        $user->name = $input['name'];
+        $user->email = $input['email'];
+        $user->phone = $input['phone'];
+        $user->address = $input['address'];
+        $user->role_id = $input['role_id'];
+        $user->password = Hash::make($input['password']);
+        $user->save();
+
         if ($input['role_id'] == 3) {
-            //save to customer table
-            $customer = new Seller();
-            $customer->name = $input['name'];
-            $customer->email = $input['email'];
-            $customer->phone = $input['phone'];
-            $customer->address = $input['address'];
-            $customer->password = Hash::make($input['password']);
-            $customer->save();
+            //save to seller table
+            $seller = new Seller();
+            $seller->name = $input['name'];
+            $seller->user_id = $user->id;
+            $seller->email = $input['email'];
+            $seller->phone = $input['phone'];
+            $seller->address = $input['address'];
+            $seller->password = Hash::make($input['password']);
+            $seller->save();
         } elseif ($input['role_id'] == 4) {
             //save to buyer table
-            $customer = new Buyer();
-            $customer->name = $input['name'];
-            $customer->email = $input['email'];
-            $customer->phone = $input['phone'];
-            $customer->address = $input['address'];
-            $customer->password = Hash::make($input['password']);
-            $customer->save();
+            $buyer = new Buyer();
+            $buyer->user_id = $user->id;
+            $buyer->name = $input['name'];
+            $buyer->email = $input['email'];
+            $buyer->phone = $input['phone'];
+            $buyer->address = $input['address'];
+            $buyer->password = Hash::make($input['password']);
+            $buyer->save();
         }
-        return User::create([
-            'role_id' => $input['role_id'],
-            'name' => $input['name'],
-            'email' => $input['email'],
-            'phone' => $input['phone'],
-            'address' => $input['address'],
-            'password' => Hash::make($input['password']),
-        ]);
+        return User::find($user->id);
     }
 }
