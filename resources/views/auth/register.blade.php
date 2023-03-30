@@ -52,7 +52,7 @@
                             <div class="intro-x mt-4">
                                 <select name="role_id" class="form-select block w-full" required>
                                     <option value="">Account Type</option>
-                                    <option value="3">Customer</option>
+                                    <option value="3">Seller</option>
                                     <option value="4">Buyer</option>
                                 </select>
                             </div>

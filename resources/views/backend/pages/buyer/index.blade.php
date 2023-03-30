@@ -1,10 +1,10 @@
 @extends('backend.layouts.master')
 @section('content')
-    <h2 class="intro-y text-lg font-medium mt-10">Seller List</h2>
+    <h2 class="intro-y text-lg font-medium mt-10">buyer List</h2>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-            <button data-tw-toggle="modal" data-tw-target="#create-seller-modal" class="btn btn-primary shadow-md mr-2"
-                type="button">Add New Seller</button>
+            <button data-tw-toggle="modal" data-tw-target="#create-buyer-modal" class="btn btn-primary shadow-md mr-2"
+                type="button">Add New Buyer</button>
         </div>
         <div id="listContainer" class="intro-y col-span-12 ">
             <div class="intro-y col-span-12 ">
@@ -16,69 +16,69 @@
                             <th>EMAIL</th>
                             <th>PHONE</th>
                             <th>ADDRESS</th>
-                            <th>ACTION</th>
+                            <th>ACTION</th> 
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($sellers as $seller)
+                        @foreach ($buyers as $buyer)
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
-                                <td class="flex items-center justify-center">
+                                <td class="flex items-center justify-center"> 
                                     <div class="w-10 h-10 image-fit zoom-in">
-                                        <img alt="{{ $seller->name }}" class="rounded-full"
-                                            src="{{ asset('backend/images/sellers') }}/{{ $seller->image ?? 'avatar.png' }}">
+                                        <img alt="{{ $buyer->name }}" class="rounded-full"
+                                            src="{{ asset('backend/images/buyers') }}/{{ $buyer->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                <td>{{ $seller->name }}</td>
-                                <td>{{ $seller->email }}</td>
-                                <td>{{ $seller->phone }}</td>
-                                <td>{{ $seller->address }}</td>
+                                <td>{{ $buyer->name }}</td>
+                                <td>{{ $buyer->email }}</td>
+                                <td>{{ $buyer->phone }}</td>
+                                <td>{{ $buyer->address }}</td>
                                 <td class="table-report__action w-56">
                                     <div class="flex  items-center">
                                         <button class="flex items-center mr-3" data-tw-toggle="modal"
-                                            data-tw-target="#edit-seller-modal-{{ $seller->id }}">
+                                            data-tw-target="#edit-buyer-modal-{{ $buyer->id }}">
                                             <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit
                                         </button>
-                                        @if ($seller->id != auth()->user()->id)
+                                        @if ($buyer->id != auth()->user()->id)
                                             <button class="flex items-center text-danger" data-tw-toggle="modal"
-                                                data-tw-target="#delete-seller-modal-{{ $seller->id }}">
+                                                data-tw-target="#delete-buyer-modal-{{ $buyer->id }}">
                                                 <i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Delete
                                             </button>
                                         @endif
                                     </div>
                                 </td>
                             </tr>
-                            <!-- Edit seller Modal -->
-                            <div id="edit-seller-modal-{{ $seller->id }}" class="modal" tabindex="-1"
+                            <!-- Edit buyer Modal -->
+                            <div id="edit-buyer-modal-{{ $buyer->id }}" class="modal" tabindex="-1"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-xl p-2">
                                     <div class="modal-content p-8">
                                         <div
                                             class="intro-y text-primary text-2xl font-bold text-left pt-4 pb-2 mb-2 border-b-2 ">
-                                            Edit seller
+                                            Edit Buyer
                                         </div>
-                                        <form class="text-lg" action="{{ route('seller.update', $seller->id) }}"
+                                        <form class="text-lg" action="{{ route('buyer.update', $buyer->id) }}"
                                             method="POST" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
                                             <div class="grid grid-cols-12 gap-2 mt-3">
                                                 <div class="col-span-6">
                                                     <label class="flex flex-col sm:flex-row">Full Name</label>
-                                                    <input type="text" name="name" value="{{ $seller->name }}"
+                                                    <input type="text" name="name" value="{{ $buyer->name }}"
                                                         class="input w-full border mt-2">
                                                 </div>
                                                 <div class="col-span-6">
                                                     <label class="flex flex-col sm:flex-row">Email</label>
-                                                    <input type="email" name="email" value="{{ $seller->email }}"
+                                                    <input type="email" name="email" value="{{ $buyer->email }}"
                                                         class="input w-full border mt-2">
                                                 </div>
                                                 <div class="col-span-6">
                                                     <label class="flex flex-col sm:flex-row">Phone</label>
-                                                    <input type="text" name="phone" value="{{ $seller->phone }}"
+                                                    <input type="text" name="phone" value="{{ $buyer->phone }}"
                                                         class="input w-full border mt-2">
                                                 </div>
                                                 <div class="col-span-6">
                                                     <label class="flex flex-col sm:flex-row">Address</label>
-                                                    <input type="text" name="address" value="{{ $seller->address }}"
+                                                    <input type="text" name="address" value="{{ $buyer->address }}"
                                                         class="input w-full border mt-2">
                                                 </div>
                                                 <div class="col-span-6">
@@ -89,10 +89,10 @@
                                                     <label class="flex flex-col sm:flex-row">Gender</label>
                                                     <select name="gender" class="input w-full border mt-2">
                                                         <option value="Male"
-                                                            {{ $seller->gender == 'Male' ? 'selected' : '' }}>
+                                                            {{ $buyer->gender == 'Male' ? 'selected' : '' }}>
                                                             Male</option>
                                                         <option value="Female"
-                                                            {{ $seller->gender == 'Female' ? 'selected' : '' }}>
+                                                            {{ $buyer->gender == 'Female' ? 'selected' : '' }}>
                                                             Female</option>
                                                     </select>
                                                 </div>
@@ -100,7 +100,7 @@
 
                                             <div class="flex flex-row-reverse mt-2">
                                                 <button type="submit" class="btn btn-primary w-full shadow-md mr-2 ">
-                                                    Update Seller
+                                                    Update Buyer
                                                 </button>
                                             </div>
                                         </form>
@@ -108,8 +108,8 @@
                                 </div>
                             </div>
 
-                            <!-- Delete seller Modal -->
-                            <div id="delete-seller-modal-{{ $seller->id }}" class="modal" tabindex="-1"
+                            <!-- Delete buyer Modal -->
+                            <div id="delete-buyer-modal-{{ $buyer->id }}" class="modal" tabindex="-1"
                                 aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -125,7 +125,7 @@
                                             </div>
                                             <div class="px-5 pb-8 text-center">
 
-                                                <form action="{{ route('seller.destroy', $seller->id) }}"
+                                                <form action="{{ route('buyer.destroy', $buyer->id) }}"
                                                     method="POST">
                                                     @csrf
                                                     @method('DELETE')
@@ -145,14 +145,14 @@
         </div>
     </div>
 
-    <!-- Create Seller Modal -->
-    <div id="create-seller-modal" class="modal" tabindex="-1" aria-hidden="true">
+    <!-- Create buyer Modal -->
+    <div id="create-buyer-modal" class="modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl p-2">
             <div class="modal-content p-8">
                 <div class="intro-y text-primary text-2xl font-bold text-left pt-4 pb-2 mb-2 border-b-2 ">
-                    Create New seller
+                    Create New buyer
                 </div>
-                <form class="text-lg" action="{{ route('seller.store') }}" method="POST"
+                <form class="text-lg" action="{{ route('buyer.store') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="grid grid-cols-12 gap-2 mt-3">
@@ -201,7 +201,7 @@
                     </div>
                     <div class="flex flex-row-reverse mt-2">
                         <button type="submit" class="btn btn-primary w-full shadow-md mr-2 ">
-                            Create Seller
+                            Create buyer
                         </button>
                     </div>
                 </form>

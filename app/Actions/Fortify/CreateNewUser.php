@@ -3,7 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\Buyer;
-use App\Models\Customer;
+use App\Models\Seller;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -30,7 +30,7 @@ class CreateNewUser implements CreatesNewUsers
 
         if ($input['role_id'] == 3) {
             //save to customer table
-            $customer = new Customer();
+            $customer = new Seller();
             $customer->name = $input['name'];
             $customer->email = $input['email'];
             $customer->phone = $input['phone'];

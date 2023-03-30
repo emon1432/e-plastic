@@ -95,7 +95,6 @@ class SellerController extends Controller
         $seller->address = $request->address;
         $seller->gender = $request->gender;
         $seller->save();
-
         return redirect()->back()->with('success', 'Seller updated successfully');
     }
     public function destroy(string $id)
