@@ -17,14 +17,8 @@ class AdminController extends Controller
         return view('backend.pages.admin.index', compact('admins'));
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
-        //
         // dd($request->all());
         $request->validate([
             'name' => 'required',
@@ -62,16 +56,6 @@ class AdminController extends Controller
         $admin->save();
 
         return redirect()->route('admin.index')->with('success', 'Admin created successfully');
-    }
-
-    public function show(string $id)
-    {
-        //
-    }
-
-    public function edit(string $id)
-    {
-        //
     }
 
     public function update(Request $request, string $id)
@@ -115,7 +99,6 @@ class AdminController extends Controller
 
         return redirect()->route('admin.index')->with('success', 'Admin updated successfully');
     }
-
     public function destroy(string $id)
     {
         //
