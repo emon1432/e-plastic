@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class EmployeesTableSeeder extends Seeder
 {
@@ -15,23 +14,26 @@ class EmployeesTableSeeder extends Seeder
      */
     public function run()
     {
+        
 
-
-        DB::table('employees')->delete();
-        DB::table('employees')->insert(array(
-            0 =>
-            array(
+        \DB::table('employees')->delete();
+        
+        \DB::table('employees')->insert(array (
+            0 => 
+            array (
                 'id' => 1,
                 'user_id' => 2,
-                'name' => 'Emon Employee',
+                'name' => 'Tarin Ahmed Shara',
                 'email' => 'employee@gmail.com',
-                'phone' => '01638849305',
+                'phone' => '01717608607',
                 'password' => '$2y$10$Pbuc2qFWryx0SlDPFh43FulvmWCPq1Z0BUmMyWTy3tdWNTlhA.y5q',
-                'address' => 'Aftabnagar, Dhaka',
-                'gender' => 'Male',
+                'address' => 'Shongkor, Dhanmondi',
+                'gender' => 'Female',
                 'created_at' => '2023-03-28 08:00:53',
-                'updated_at' => '2023-03-28 08:00:53',
+                'updated_at' => '2023-03-31 18:19:43',
             ),
         ));
+        
+        
     }
 }

@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class BuyersTableSeeder extends Seeder
 {
@@ -15,21 +14,26 @@ class BuyersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('buyers')->delete();
-        DB::table('buyers')->insert(array(
-            0 =>
-            array(
-                'id' => 1,
-                'user_id' => 4,
-                'name' => 'Emon buyer',
+        
+
+        \DB::table('buyers')->delete();
+        
+        \DB::table('buyers')->insert(array (
+            0 => 
+            array (
+                'id' => 2,
+                'user_id' => 7,
+                'name' => 'Bishal Choudhuri',
                 'email' => 'buyer@gmail.com',
-                'phone' => '01638849305',
-                'password' => '$2y$10$4iUunWc8tVsgR0LKON7STOVntMSPYJHupxp9MJ0D4znm2/chVY7kK',
-                'address' => 'Aftabnagar, Dhaka',
+                'phone' => '01756554564',
+                'password' => '$2y$10$x6JXA01jU6182CBwrBELd.qTvJdL2N8.fW.ZUcj1ZIuI5McoYHN9u',
+                'address' => 'Maymonshing,Dhaka',
                 'gender' => 'Male',
-                'created_at' => '2023-03-28 08:21:21',
-                'updated_at' => '2023-03-28 08:21:21',
+                'created_at' => '2023-03-31 18:33:09',
+                'updated_at' => '2023-03-31 18:33:09',
             ),
         ));
+        
+        
     }
 }
