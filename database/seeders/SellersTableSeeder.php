@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SellersTableSeeder extends Seeder
 {
@@ -14,13 +15,10 @@ class SellersTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
-        \DB::table('sellers')->delete();
-        
-        \DB::table('sellers')->insert(array (
-            0 => 
-            array (
+        DB::table('sellers')->delete();
+        DB::table('sellers')->insert(array(
+            0 =>
+            array(
                 'id' => 2,
                 'user_id' => 6,
                 'name' => 'Aishorjo Biswas',
@@ -33,7 +31,5 @@ class SellersTableSeeder extends Seeder
                 'updated_at' => '2023-03-31 18:21:09',
             ),
         ));
-        
-        
     }
 }
