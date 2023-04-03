@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>4uhost</title>
+    <title>ePlastic</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -37,6 +37,7 @@
     <script src="{{ asset('frontend/') }}/js/bootstrap.bundle.min.js"></script>
     <!-- sidebar -->
     <script src="{{ asset('frontend/') }}/js/custom.js"></script>
+    @stack('js')
 </body>
 
 </html>

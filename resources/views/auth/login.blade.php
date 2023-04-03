@@ -18,14 +18,13 @@
         <div class="block xl:grid grid-cols-2 gap-4">
             <!-- BEGIN: Login Info -->
             <div class="hidden xl:flex flex-col min-h-screen">
-                <a href="" class="-intro-x flex items-center pt-5">
+                <a href="{{ route('home') }}" class="-intro-x flex items-center pt-5">
                     <img alt="e-plastic" class="w-6" src="{{ asset('backend') }}/images/eplastic-logo.png">
                     <span class="text-white text-lg ml-3"> E - Plastic</span>
                 </a>
                 <div class="my-auto">
                     <img alt="e-plastic" class="-intro-x w-1/2 -mt-16"
                         src="{{ asset('backend') }}/images/plasticBag.png">
-
                 </div>
             </div>
             <!-- END: Login Info -->

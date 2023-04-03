@@ -6,7 +6,13 @@
                     <div class="full">
                         <div class="center-desk">
                             <div class="logo">
-                                <a href="index.html"><img src="{{ asset('frontend/') }}/images/logo.png" alt="#" /></a>
+                                <a href="{{ route('home') }}" class="d-flex">
+                                    <img alt="eplastic" class="w-6"
+                                        src="{{ asset('backend') }}/images/eplastic-logo.png" height="30"
+                                        width="35">
+                                    <h2 class="ml-2 text-white">ePlastic</h2>
+
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -24,15 +30,8 @@
                                     <a class="nav-link" href="index.html">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about.html">About</a>
+                                    <a class="nav-link" href="about.html">About Us</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="hosting.html">Hosting</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="domain.html">Domain</a>
-                                </li>
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Contact Us</a>
                                 </li>
@@ -42,7 +41,7 @@
                 </div>
                 <div class="col-md-2  d_none">
                     <ul class="email text_align_right">
-                        <li><a href="{{url('/login')}}">Login/Register
+                        <li><a href="{{ url('/login') }}">Login/Register
                             </a>
                         </li>
                     </ul>
@@ -80,7 +79,8 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="dream_img">
-                                                    <figure><img src="{{ asset('frontend/') }}/images/dream_img.png" alt="#" /></figure>
+                                                    <figure><img src="{{ asset('frontend/') }}/images/dream_img.png"
+                                                            alt="#" /></figure>
                                                 </div>
                                             </div>
                                         </div>
@@ -101,7 +101,8 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="dream_img">
-                                                    <figure><img src="{{ asset('frontend/') }}/images/dream_img.png" alt="#" /></figure>
+                                                    <figure><img src="{{ asset('frontend/') }}/images/dream_img.png"
+                                                            alt="#" /></figure>
                                                 </div>
                                             </div>
                                         </div>
@@ -122,7 +123,8 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="dream_img">
-                                                    <figure><img src="{{ asset('frontend/') }}/images/dream_img.png" alt="#" /></figure>
+                                                    <figure><img src="{{ asset('frontend/') }}/images/dream_img.png"
+                                                            alt="#" /></figure>
                                                 </div>
                                             </div>
                                         </div>
@@ -145,3 +147,20 @@
         </div>
     </div>
     <!-- end banner -->
+
+    @push('js')
+        <script>
+            $(document).ready(function() {
+                $('#banner1').carousel({
+                    interval: 3000
+                });
+                $('#banner2').carousel({
+                    interval: 3000
+                });
+                $('#banner3').carousel({
+                    interval: 3000
+                });
+
+            });
+        </script>
+    @endpush
