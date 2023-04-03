@@ -51,6 +51,37 @@
                     </div>
                 </a>
             </li>
+
+            <li>
+                <a href="javascript:;" class="side-menu">
+                    <div class="side-menu__icon"> <i data-feather="shopping-cart"></i> </div>
+                    <div class="side-menu__title">
+                        Orders
+                        <div class="side-menu__sub-icon transform rotate-180"> <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                </a>
+                <ul class="">
+                    <li>
+                        <a href="index.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__title"> Pending Orders </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="side-menu-light-dashboard-overview-2.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__title"> Completed Orders </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="side-menu-light-dashboard-overview-3.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__title"> Cancelled Orders </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         @endif
     </ul>
 </nav>

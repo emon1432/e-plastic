@@ -12,7 +12,7 @@ class LoginResponse implements LoginResponseContract
     public function toResponse($request)
     {
         $user = User::find(Auth::user()->id);
-        if ($user->role_id == 1 || $user->role_id == 2 || $user->role_id == 3) {
+        if ($user->role_id == 1 || $user->role_id == 2) {
             return redirect()->route('dashboard');
         } else {
             return redirect()->route('home');
