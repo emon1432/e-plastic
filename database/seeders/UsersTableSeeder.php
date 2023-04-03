@@ -99,6 +99,26 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-31 18:33:09',
                 'updated_at' => '2023-03-31 18:33:09',
             ),
+            4 => 
+            array (
+                'id' => 8,
+                'role_id' => 1,
+                'name' => 'Jihadul Rahman',
+                'email' => 'jihadkaka28@gmail.com',
+                'phone' => '01743864532',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$X0wfqJ/5eQENpZPUBZKhf.WCaH.2Lo9TcJN0p/LvHH3o4oMCLymPe',
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'two_factor_confirmed_at' => NULL,
+                'address' => 'panthopoth',
+                'image' => '1680324129-Gionis.jpg',
+                'gender' => 'Male',
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'created_at' => '2023-04-01 04:42:09',
+                'updated_at' => '2023-04-01 04:42:09',
+            ),
         ));
         
         
