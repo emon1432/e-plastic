@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UsersTableSeeder extends Seeder
 {
@@ -14,13 +15,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
-        \DB::table('users')->delete();
-        
-        \DB::table('users')->insert(array (
-            0 => 
-            array (
+        DB::table('users')->delete();
+        DB::table('users')->insert(array(
+            0 =>
+            array(
                 'id' => 1,
                 'role_id' => 1,
                 'name' => 'Tanny',
@@ -39,8 +37,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-28 07:49:21',
                 'updated_at' => '2023-03-31 18:18:39',
             ),
-            1 => 
-            array (
+            1 =>
+            array(
                 'id' => 2,
                 'role_id' => 2,
                 'name' => 'Tarin Ahmed Shara',
@@ -59,8 +57,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-28 08:00:53',
                 'updated_at' => '2023-03-31 18:19:43',
             ),
-            2 => 
-            array (
+            2 =>
+            array(
                 'id' => 6,
                 'role_id' => 3,
                 'name' => 'Aishorjo Biswas',
@@ -79,8 +77,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-31 18:21:09',
                 'updated_at' => '2023-03-31 18:21:09',
             ),
-            3 => 
-            array (
+            3 =>
+            array(
                 'id' => 7,
                 'role_id' => 4,
                 'name' => 'Bishal Choudhuri',
@@ -120,7 +118,5 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2023-04-01 04:42:09',
             ),
         ));
-        
-        
     }
 }
