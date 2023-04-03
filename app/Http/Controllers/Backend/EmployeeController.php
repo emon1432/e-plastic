@@ -11,7 +11,7 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        //get all employees from users table       
+        //get all employees from users table
         $employees = User::where('role_id', 2)->get();
         return view('backend.pages.employee.index', compact('employees'));
     }
@@ -26,7 +26,7 @@ class EmployeeController extends Controller
         ]);
 
         $user = new User();
-        $user->role_id = 1;
+        $user->role_id =2;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
