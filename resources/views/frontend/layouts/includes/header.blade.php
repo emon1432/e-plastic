@@ -39,9 +39,9 @@
                         </div>
                     </nav>
                 </div>
-                <div class="col-md-2  d_none">
+                <div class="col-md-2 d_visible">
                     <ul class="email text_align_right">
-                        <li><a href="{{ url('/login') }}">Login/Register
+                        <li><a class="logedIn" href="{{ url('/login') }}">Login/Register
                             </a>
                         </li>
                     </ul>
@@ -162,5 +162,11 @@
                 });
 
             });
+
+            @if (Auth::check())
+                $('.d_visible').html('<a href="{{ route('dashboard') }}" class="btn btn-outline-primary text-white">Dashboard</a>');
+            @else
+                $('.d_visible').html('<a class="text-white" href="{{ route('login') }}">Login/Register</a>');
+            @endif
         </script>
     @endpush
