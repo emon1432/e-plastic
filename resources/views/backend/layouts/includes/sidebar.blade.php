@@ -3,17 +3,16 @@
         $route = Route::currentRouteName();
     @endphp
     <ul>
+        <li>
+            <a href="{{ route('home') }}" class="side-menu {{ $route == 'dashboard' ? 'side-menu--active' : '' }}">
+                <div class="side-menu__icon"> <i data-feather="home"></i> </div>
+                <div class="side-menu__title">
+                    Go to Website
+                </div>
+            </a>
+        </li>
 
         @if (auth()->user()->role_id == 1)
-            <li>
-                <a href="{{ route('dashboard') }}"
-                    class="side-menu {{ $route == 'dashboard' ? 'side-menu--active' : '' }}">
-                    <div class="side-menu__icon"> <i data-feather="home"></i> </div>
-                    <div class="side-menu__title">
-                        Dashboard
-                    </div>
-                </a>
-            </li>
             <li>
                 <a href="{{ route('admin.index') }}"
                     class="side-menu {{ $route == 'admin.index' ? 'side-menu--active' : '' }}">
@@ -119,6 +118,16 @@
                 </ul>
             </li>
             <!--end of dropdown menu-->
+
+            <li>
+                <a href="{{ route('admin.index') }}"
+                    class="side-menu {{ $route == 'admin.index' ? 'side-menu--active' : '' }}">
+                    <div class="side-menu__icon"> <i data-feather="users"></i> </div>
+                    <div class="side-menu__title">
+                        Product Category
+                    </div>
+                </a>
+            </li>
         @endif
 
         <!--Employyers menu-->
@@ -146,23 +155,15 @@
 
         <!--Sellers menu-->
         @if (auth()->user()->role_id == 3)
-        <li>
-            <a href="{{ route('home') }}" class="side-menu {{ $route == 'dashboard' ? 'side-menu--active' : '' }}">
-                <div class="side-menu__icon"> <i data-feather="home"></i> </div>
-                <div class="side-menu__title">
-                    Go to Website
-                </div>
-            </a>
-        </li>
             <li>
-                <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}">
+                <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}"
+                    data-tw-toggle="modal" data-tw-target="#sell-request-modal">
                     <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                     <div class="side-menu__title">
                         Sell a Product
                     </div>
                 </a>
             </li>
-
             <li>
                 <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}">
                     <div class="side-menu__icon"> <i data-feather="users"></i> </div>
@@ -199,19 +200,10 @@
                 </a>
             </li>
         @endif
-
         <!--End of sellers menu-->
 
         <!--Buyers menu-->
         @if (auth()->user()->role_id == 4)
-        <li>
-            <a href="{{ route('home') }}" class="side-menu {{ $route == 'dashboard' ? 'side-menu--active' : '' }}">
-                <div class="side-menu__icon"> <i data-feather="home"></i> </div>
-                <div class="side-menu__title">
-                    Go to Website
-                </div>
-            </a>
-        </li>
             <li>
                 <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}">
                     <div class="side-menu__icon"> <i data-feather="users"></i> </div>
@@ -242,3 +234,5 @@
         <!--End of buyers menu-->
     </ul>
 </nav>
+
+@include('backend.pages.seller.sell-product')

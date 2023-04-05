@@ -160,11 +160,11 @@
                 $('#banner3').carousel({
                     interval: 3000
                 });
-
             });
 
             @if (Auth::check())
-                $('.d_visible').html('<a href="{{ route('dashboard') }}" class="btn btn-outline-primary text-white">Dashboard</a>');
+                $('.d_visible').html(
+                    '<a href="{{ route('dashboard') }}" class="btn btn-outline-primary text-white">Dashboard</a>');
             @else
                 $('.d_visible').html('<a class="text-white" href="{{ route('login') }}">Login/Register</a>');
             @endif

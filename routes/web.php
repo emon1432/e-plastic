@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BuyerController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\SellerController;
+use App\Http\Controllers\Backend\SellRequestController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -35,4 +36,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     //Buyer Routes
     Route::resource('buyer', BuyerController::class);
+
+    //Sell Request Routes
+    Route::resource('sell-request', SellRequestController::class);
+    //price
+    Route::get('sell-request/price/{id}', [SellRequestController::class, 'price'])->name('sell-request.price');
 });

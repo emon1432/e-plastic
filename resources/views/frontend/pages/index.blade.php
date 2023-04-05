@@ -1,5 +1,4 @@
 @extends('frontend.layouts.master')
 @section('content')
-
-    hi
+hi
 @endsection
