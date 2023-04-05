@@ -14,7 +14,7 @@
                 <div class="grid grid-cols-12 gap-2 mt-3">
                     <div class="col-span-6">
                         <label class="flex flex-col sm:flex-row">Select Category</label>
-                        <select name="category w-100"  class="flex flex-col sm:flex-row category">
+                        <select name="category" class="flex flex-col sm:flex-row category w-full">
                             <option value="">Select Category</option>
                             @foreach ($productCategories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>>
@@ -23,19 +23,19 @@
                     </div>
                     <div class="col-span-6">
                         <label class="flex flex-col sm:flex-row">Enter Weight</label>
-                        <input class="weight" type="text" name="weight" placeholder="Weight In KG" required>
+                        <input class="weight w-full" type="text" name="weight" placeholder="Weight In KG" required>
                     </div>
                     <div class="col-span-6">
                         <label class="flex flex-col sm:flex-row">Product Price</label>
-                        <input class="price" type="text" name="price" value="" readonly>
+                        <input class="price w-full" type="text" name="price" value="" readonly>
                     </div>
                     <div class="col-span-6">
-                        <label class="flex flex-col sm:flex-row">Final Price</label>
-                        <input class="finalPrice" type="text" name="finalPrice" placeholder="Price In Taka" readonly>
+                        <label class="flex flex-col sm:flex-row">Total Price</label>
+                        <input class="finalPrice w-full" type="text" name="totalPrice" placeholder="Price In Taka" readonly>
                     </div>
-                    <div class="col-span-6">
+                    <div class="col-span-12">
                         <label class="flex flex-col sm:flex-row">Enter Pickup Address</label>
-                        <input type="text" name="addrress" placeholder="Enter Location" readonly>
+                        <textarea name="address" class="w-full" cols="15" rows="4"></textarea>
                     </div>
                     <div class="col-span-6">
                         <label class="flex flex-col sm:flex-row">Image</label>
@@ -55,13 +55,12 @@
 
 @push('js')
     <script>
-
         //on change category put value in product price input
         $('.category').on('change', function() {
             var category = $(this).val();
-            
+
             $.ajax({
-                url: "{{ url('sell-request/price')}}/" + category,
+                url: "{{ url('sell-request/price') }}/" + category,
                 type: "GET",
                 data: {
                     category: category,
@@ -80,6 +79,5 @@
             var finalPrice = weight * price;
             $('.finalPrice').val(finalPrice);
         });
-            
     </script>
 @endpush

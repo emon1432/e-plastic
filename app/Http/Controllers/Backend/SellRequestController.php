@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\ProductCategory;
+use App\Models\SellRequest;
 use Illuminate\Http\Request;
 
 class SellRequestController extends Controller
@@ -33,7 +34,28 @@ class SellRequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //store to SellRequest table
+        $sellRequest = new SellRequest();
+        $sellRequest->name = auth()->user()->name;
+        $sellRequest->phone = auth()->user()->phone;
+        $sellRequest->email = auth()->user()->email;
+        $sellRequest->address = $request->address;
+        $sellRequest->product_category_id = $request->category;
+        $sellRequest->product_weight = $request->weight;
+        $sellRequest->product_price = $request->price;
+        $sellRequest->total_price = $request->totalPrice;
+        
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('backend/images/sell-request'), $imageName);
+            $sellRequest->image = $imageName;
+        }
+
+        $sellRequest->save();
+
+        return redirect()->back()->with('success', 'Sell Request Send Successfully');
+
     }
 
     //price 
