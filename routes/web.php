@@ -47,6 +47,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('sell-request/pending', [SellRequestController::class, 'pending'])->name('sell-request.pending');
     //accepted
     Route::get('sell-request/accepted', [SellRequestController::class, 'accepted'])->name('sell-request.accepted');
+    //completed
+    Route::get('sell-request/completed', [SellRequestController::class, 'completed'])->name('sell-request.completed');
     //rejected
     Route::get('sell-request/rejected', [SellRequestController::class, 'rejected'])->name('sell-request.rejected');
 });

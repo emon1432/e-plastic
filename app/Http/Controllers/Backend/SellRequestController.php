@@ -82,15 +82,19 @@ class SellRequestController extends Controller
 
     public function accepted()
     {
-        $productCategories = ProductCategory::get();
-        $acceptedRequests = SellRequest::where('status', '=', 'pending')->get();
-        return view('backend.pages.seller.accepeted-request', compact('acceptedRequests', 'productCategories'));
+        $acceptedRequests = SellRequest::where('status', '=', 'accepted')->get();
+        return view('backend.pages.seller.accepeted-request', compact('acceptedRequests'));
+    }
+
+    public function completed()
+    {
+        $completedRequests = SellRequest::where('status', '=', 'completed')->get();
+        return view('backend.pages.seller.completed-request', compact('completedRequests'));
     }
 
     public function rejected()
     {
-        $productCategories = ProductCategory::get();
-        $rejectedRequests = SellRequest::where('status', '=', 'pending')->get();
-        return view('backend.pages.seller.rejected-request', compact('rejectedRequests', 'productCategories'));
+        $rejectedRequests = SellRequest::where('status', '=', 'rejected')->get();
+        return view('backend.pages.seller.rejected-request', compact('rejectedRequests'));
     }
 }

@@ -65,7 +65,8 @@
                 </a>
                 <ul class="">
                     <li>
-                        <a href="index.html" class="side-menu">
+                        <a href="{{ route('sell-request.pending') }}"
+                            class="side-menu {{ $route == 'admin.index' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                             <div class="side-menu__title"> Pending Requests </div>
                         </a>
@@ -175,7 +176,8 @@
             </li>
 
             <li>
-                <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}">
+                <a href="{{ route('sell-request.accepted') }}"
+                    class="side-menu {{ $route == 'sell-request.accepted' ? 'side-menu--active' : '' }}">
                     <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                     <div class="side-menu__title">
                         Accepted Sell Request
@@ -184,7 +186,8 @@
             </li>
 
             <li>
-                <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}">
+                <a href="{{ route('sell-request.completed') }}"
+                    class="side-menu {{ $route == 'sell-request.completed' ? 'side-menu--active' : '' }}">
                     <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                     <div class="side-menu__title">
                         Completed Sell Request
@@ -193,7 +196,8 @@
             </li>
 
             <li>
-                <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}">
+                <a href="{{ route('sell-request.rejected') }}"
+                    class="side-menu {{ $route == 'sell-request.rejected' ? 'side-menu--active' : '' }}">
                     <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                     <div class="side-menu__title">
                         Rejected Sell Request
