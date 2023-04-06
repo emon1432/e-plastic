@@ -9,29 +9,6 @@ use Illuminate\Http\Request;
 
 class SellRequestController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(Request $request)
-    {
-        //get price from product category
-        $price = ProductCategory::where('id', $request->category)->select('product_categories.*', 'price_per_unit as price')->get();
-        return response()->json([
-            'price' => $price
-        ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         //store to SellRequest table
@@ -44,7 +21,7 @@ class SellRequestController extends Controller
         $sellRequest->product_weight = $request->weight;
         $sellRequest->product_price = $request->price;
         $sellRequest->total_price = $request->totalPrice;
-        
+
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
@@ -54,8 +31,38 @@ class SellRequestController extends Controller
 
         $sellRequest->save();
 
-        return redirect()->back()->with('success', 'Sell Request Send Successfully');
+        return route('backend.pages.seller.pending-request');
+    }
 
+    //sell request update
+    public function update(Request $request, $id)
+    {
+        //update to SellRequest table
+        $pendingRequest = SellRequest::find($id);
+        $pendingRequest->name = auth()->user()->name;
+        $pendingRequest->phone = auth()->user()->phone;
+        $pendingRequest->email = auth()->user()->email;
+        $pendingRequest->address = $request->address;
+        $pendingRequest->product_category_id = $request->category;
+        $pendingRequest->product_weight = $request->weight;
+        $pendingRequest->product_price = $request->price;
+        $pendingRequest->total_price = $request->totalPrice;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('backend/images/sell-request'), $imageName);
+            $pendingRequest->image = $imageName;
+        }
+        //unlink old image
+        $oldImage = public_path('backend/images/sell-request/' . $pendingRequest->image);
+        if (file_exists($oldImage)) {
+            @unlink($oldImage);
+        }
+
+        $pendingRequest->save();
+
+        return redirect()->back()->with('success', 'Sell Request Updated Successfully');
     }
 
     //price 
@@ -66,5 +73,24 @@ class SellRequestController extends Controller
             ->first();
         return response()->json($price);
     }
+    public function pending()
+    {
+        $productCategories = ProductCategory::get();
+        $pendingRequests = SellRequest::where('status', '=', 'pending')->get();
+        return view('backend.pages.seller.pending-request', compact('pendingRequests', 'productCategories'));
+    }
 
+    public function accepted()
+    {
+        $productCategories = ProductCategory::get();
+        $acceptedRequests = SellRequest::where('status', '=', 'pending')->get();
+        return view('backend.pages.seller.accepeted-request', compact('acceptedRequests', 'productCategories'));
+    }
+
+    public function rejected()
+    {
+        $productCategories = ProductCategory::get();
+        $rejectedRequests = SellRequest::where('status', '=', 'pending')->get();
+        return view('backend.pages.seller.rejected-request', compact('rejectedRequests', 'productCategories'));
+    }
 }

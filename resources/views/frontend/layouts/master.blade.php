@@ -20,6 +20,7 @@
     <link rel="icon" href="{{ asset('frontend') }}/images/fevicon.png" type="image/gif" />
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/font-awesome.css">
+    
 </head>
 <!-- body -->
 

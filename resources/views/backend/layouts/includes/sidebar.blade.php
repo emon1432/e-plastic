@@ -165,7 +165,8 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}">
+                <a href="{{ route('sell-request.pending') }}"
+                    class="side-menu {{ $route == 'sell-request.pending' ? 'side-menu--active' : '' }}">
                     <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                     <div class="side-menu__title">
                         Pending Sell Request

@@ -17,7 +17,7 @@
                         <select name="category" class="flex flex-col sm:flex-row category w-full">
                             <option value="">Select Category</option>
                             @foreach ($productCategories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>>
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
