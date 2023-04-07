@@ -11,7 +11,7 @@
     <meta name="keywords"
         content="admin template, Icewall Admin Template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="LEFT4CODE">
-    <title>Dashboard - Icewall - Tailwind HTML Admin Template</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="{{ asset('backend') }}/css/app.css" />
     <link rel="stylesheet" href="{{ asset('backend') }}/auth/css/app.css" />
 
@@ -27,25 +27,26 @@
             <div class="content">
                 @yield('content')
             </div>
+            @include('sweetalert::alert')
         </div>
     </div>
-
-    <script src="{{ asset('backend') }}/bootstrap/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="{{ asset('backend') }}/bootstrap/vendor/datatable/js/jquery.dataTables.min.js"></script>
-    <script src="{{ asset('backend') }}/bootstrap/vendor/datatable/js/dataTables.bootstrap5.min.js"></script>
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('backend') }}/js/app.js"></script>
-    <script src="{{ asset('backend') }}/bootsrap/js/main.js"></script>
-    <script src="{{ asset('backend') }}/bootsrap/js/custom.js"></script>
     <script>
         const activeLink = document.querySelector('.side-menu--active');
         const parentUl = activeLink.parentElement.parentElement;
         parentUl.classList.add('side-menu__sub-open');
         parentUl.previousElementSibling.classList.add('side-menu--active');
     </script>
+    <!--ajax request-->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+    @stack('js')
 </body>
 
 </html>

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Seller;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class SellerController extends Controller
 {
@@ -54,7 +56,8 @@ class SellerController extends Controller
         $seller->password = bcrypt($request->password);
         $seller->save();
 
-        return redirect()->back()->with('success', 'Seller created successfully');
+        Alert::success('Success', 'Seller added successfully');
+        return redirect()->back();
     }
 
     public function update(Request $request, string $id)
@@ -95,7 +98,9 @@ class SellerController extends Controller
         $seller->address = $request->address;
         $seller->gender = $request->gender;
         $seller->save();
-        return redirect()->back()->with('success', 'Seller updated successfully');
+        
+        Alert::success('Success', 'Seller updated successfully');
+        return redirect()->back();
     }
     public function destroy(string $id)
     {
@@ -111,6 +116,7 @@ class SellerController extends Controller
         $seller = Seller::where('user_id', $id)->first();
         $seller->delete();
 
-        return redirect()->back()->with('success', 'Seller deleted successfully');
+        Alert::success('Success', 'Seller deleted successfully');
+        return redirect()->back();
     }
 }
