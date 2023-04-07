@@ -32,7 +32,7 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $acceptedRequest->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                <td class="bg-dark">accepted</td>
+                                <td class="text-success">accepted</td>
                             </tr>
                         @endforeach
                     </tbody>

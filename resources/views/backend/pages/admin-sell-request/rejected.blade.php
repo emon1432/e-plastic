@@ -15,7 +15,7 @@
                             <th>PRICE</th>
                             <th>IMAGES</th>
                             <th>STATUS</th>
-                            <th>Reject Reason</th> 
+                            <th>Reject Reason</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,7 +33,7 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $rejectedRequest->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                <td class="bg-dark">{{$rejectedRequest->status}}</td>
+                                <td class="text-danger">{{ $rejectedRequest->status }}</td>
                                 <td>{{ $rejectedRequest->reject_reason }}</td>
                             </tr>
                         @endforeach

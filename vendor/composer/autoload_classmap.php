@@ -236,6 +236,7 @@ return array(
     'Database\\Seeders\\BuyersTableSeeder' => $baseDir . '/database/seeders/BuyersTableSeeder.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
     'Database\\Seeders\\EmployeesTableSeeder' => $baseDir . '/database/seeders/EmployeesTableSeeder.php',
+    'Database\\Seeders\\ProductCategoriesTableSeeder' => $baseDir . '/database/seeders/ProductCategoriesTableSeeder.php',
     'Database\\Seeders\\RolesTableSeeder' => $baseDir . '/database/seeders/RolesTableSeeder.php',
     'Database\\Seeders\\SellRequestsTableSeeder' => $baseDir . '/database/seeders/SellRequestsTableSeeder.php',
     'Database\\Seeders\\SellersTableSeeder' => $baseDir . '/database/seeders/SellersTableSeeder.php',

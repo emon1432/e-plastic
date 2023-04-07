@@ -15,6 +15,7 @@
                             <th>PRICE</th>
                             <th>IMAGES</th>
                             <th>STATUS</th>
+                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,6 +34,12 @@
                                     </div>
                                 </td>
                                 <td class="text-success">{{$acceptedRequest->status}}</td>
+                                <td>
+                                    <button>
+                                        <a href="#"
+                                            class="btn btn-primary">Assign Driver</a>
+                                    </button>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

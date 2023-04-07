@@ -37,7 +37,7 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $pendingRequest->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                <td class="bg-dark">pending</td>
+                                <td class="text-warning">pending</td>
                                 <td class="table-report__action w-56">
                                     <div class="flex  items-center">
                                         <button class="flex items-center mr-3" data-tw-toggle="modal"

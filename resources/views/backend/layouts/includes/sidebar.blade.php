@@ -4,10 +4,10 @@
     @endphp
     <ul>
         <li>
-            <a href="{{ route('home') }}" class="side-menu {{ $route == 'dashboard' ? 'side-menu--active' : '' }}">
+            <a href="{{ route('dashboard') }}" class="side-menu {{ $route == 'dashboard' ? 'side-menu--active' : '' }}">
                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                 <div class="side-menu__title">
-                    Go to Website
+                    Dashboard
                 </div>
             </a>
         </li>
@@ -42,7 +42,6 @@
                     </div>
                 </a>
             </li>
-
             <li>
                 <a href="{{ route('buyer.index') }}"
                     class="side-menu {{ $route == 'buyer.index' ? 'side-menu--active' : '' }}">
@@ -52,6 +51,76 @@
                     </div>
                 </a>
             </li>
+
+            <!--Driver Request Dropdown-->
+            @if (auth()->user()->role_id == 2)
+                <li>
+                    <a href="javascript:;" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="shopping-cart"></i> </div>
+                        <div class="side-menu__title">
+                            Assigned Request
+                            <div class="side-menu__sub-icon transform rotate-180"> <i data-feather="chevron-down"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <ul class="">
+                        <li>
+                            <a href="#" class="side-menu">
+                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                <div class="side-menu__title"> Assigned Requests </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="side-menu">
+                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                <div class="side-menu__title"> Accepted Requests</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="side-menu">
+                                <div class="side-menu__icon">
+                                    <i data-feather="activity"></i>
+                                </div>
+                                <div class="side-menu__title">Completed Requests</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:;" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="shopping-cart"></i> </div>
+                        <div class="side-menu__title">
+                            Assigned Orders
+                            <div class="side-menu__sub-icon transform rotate-180"> <i data-feather="chevron-down"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <ul class="">
+                        <li>
+                            <a href="#" class="side-menu">
+                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                <div class="side-menu__title"> Assigned Orders </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="side-menu">
+                                <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                <div class="side-menu__title"> Accepted Orders</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="side-menu">
+                                <div class="side-menu__icon">
+                                    <i data-feather="activity"></i>
+                                </div>
+                                <div class="side-menu__title">Completed Orders</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+            <!--End of seller dropdown -->
 
             <!--Seller Request Dropdown-->
             <li>
@@ -73,7 +142,7 @@
                     </li>
                     <li>
                         <a href="{{ route('seller-sell-request.accepted') }}"
-                            class="side-menu {{ $route == 'seller-sell-request.pending' ? 'side-menu--active' : '' }}">
+                            class="side-menu {{ $route == 'seller-sell-request.accepted' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                             <div class="side-menu__title"> Accepted Requests</div>
                         </a>
@@ -241,6 +310,14 @@
             </li>
         @endif
         <!--End of buyers menu-->
+        <li>
+            <a href="{{ route('home') }}" class="side-menu">
+                <div class="side-menu__icon"> <i data-feather="home"></i> </div>
+                <div class="side-menu__title">
+                    Go to Website
+                </div>
+            </a>
+        </li>
     </ul>
 </nav>
 

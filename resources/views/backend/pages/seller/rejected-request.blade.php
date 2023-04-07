@@ -33,8 +33,8 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $rejectedRequest->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                <td class="bg-dark">rejected</td>
-                                <td>{{ $rejectedRequest->reject_reason }}</td>
+                                <td class="text-danger">rejected</td>
+                                <td>{{ Str::limit($rejectedRequest->reject_reason,20) }}</td>
                             </tr>
                         @endforeach
                     </tbody>

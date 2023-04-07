@@ -33,7 +33,7 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $pendingRequest->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                <td class="bg-dark">{{ $pendingRequest->status }}</td>
+                                <td class="text-warning">{{ $pendingRequest->status }}</td>
                                 <td class="table-report__action w-56">
                                     <div class="flex  items-center">
                                         <button class="flex items-center mr-3" data-tw-toggle="modal"
@@ -94,8 +94,13 @@
                                             <div class="px-5 pb-8 text-center">
                                                 <form
                                                     action="{{ route('seller-sell-request.reject', $pendingRequest->id) }}"
-                                                    method="GET">
+                                                    method="POST">
                                                     @csrf
+                                                    <div class="col-span-4 mb-5">
+                                                        <label class="flex flex-col sm:flex-row">Reject Reason</label>
+                                                        <input type="text" name="reject_reason" class="input w-full border mt-1"
+                                                            placeholder="Enter Reject Reason" required>
+                                                    </div>
                                                     <button type="button" data-tw-dismiss="modal"
                                                         class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
                                                     <button type="submit" class="btn btn-danger w-24">Reject</button>

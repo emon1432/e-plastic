@@ -11,7 +11,6 @@
                                         src="{{ asset('backend') }}/images/eplastic-logo.png" height="30"
                                         width="35">
                                     <h2 class="ml-2 text-white">ePlastic</h2>
-
                                 </a>
                             </div>
                         </div>
@@ -41,7 +40,7 @@
                 </div>
                 <div class="col-md-2 d_visible">
                     <ul class="email text_align_right">
-                        <li><a class="logedIn" href="{{ url('/login') }}">Login/Register
+                        <li><a class="logedIn text-xl" href="{{ url('/login') }}">Login/Register
                             </a>
                         </li>
                     </ul>
@@ -71,16 +70,16 @@
                                             <div class="col-md-6">
                                                 <div class="dream">
                                                     <h1>
-                                                        PowerFul <br>HOSTING <br>Your dream <br>website
+                                                        Eplastic <br>is <br>Your dream <br>website
                                                     </h1>
-                                                    <a class="read_more" href="Javascript:void(0)">Get Stared</a>
-                                                    <a class="read_more" href="Javascript:void(0)">Contact Us</a>
+                                                    <a class="read_more" href="Javascript:void(0)">Sell Now</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="dream_img">
-                                                    <figure><img src="{{ asset('frontend/') }}/images/dream_img.png"
-                                                            alt="#" /></figure>
+                                                    <figure><img src="{{ asset('frontend/') }}/images/banner.jpg"
+                                                            alt="#" style="border-radius:50%;" />
+                                                    </figure>
                                                 </div>
                                             </div>
                                         </div>
@@ -93,16 +92,15 @@
                                             <div class="col-md-6">
                                                 <div class="dream">
                                                     <h1>
-                                                        PowerFul <br>HOSTING <br>Your dream <br>website
+                                                        Eplastic <br>is <br>Your dream <br>website
                                                     </h1>
-                                                    <a class="read_more" href="Javascript:void(0)">Get Stared</a>
-                                                    <a class="read_more" href="Javascript:void(0)">Contact Us</a>
+                                                    <a class="read_more" href="Javascript:void(0)">Sell Now</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="dream_img">
-                                                    <figure><img src="{{ asset('frontend/') }}/images/dream_img.png"
-                                                            alt="#" /></figure>
+                                                    <figure><img src="{{ asset('frontend/') }}/images/banner.jpg"
+                                                            alt="#" style="border-radius:50%;" /></figure>
                                                 </div>
                                             </div>
                                         </div>
@@ -115,16 +113,15 @@
                                             <div class="col-md-6">
                                                 <div class="dream">
                                                     <h1>
-                                                        PowerFul <br>HOSTING <br>Your dream <br>website
+                                                        Eplastic <br>is <br>Your dream <br>website
                                                     </h1>
-                                                    <a class="read_more" href="Javascript:void(0)">Get Stared</a>
-                                                    <a class="read_more" href="Javascript:void(0)">Contact Us</a>
+                                                    <a class="read_more" href="Javascript:void(0)">Sell Now</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="dream_img">
-                                                    <figure><img src="{{ asset('frontend/') }}/images/dream_img.png"
-                                                            alt="#" /></figure>
+                                                    <figure><img src="{{ asset('frontend/') }}/images/banner.jpg"
+                                                            alt="#" style="border-radius:50%;" /></figure>
                                                 </div>
                                             </div>
                                         </div>

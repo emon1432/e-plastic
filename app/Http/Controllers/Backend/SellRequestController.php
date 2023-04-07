@@ -33,7 +33,7 @@ class SellRequestController extends Controller
         $sellRequest->save();
 
         Alert::success('Success', 'Sell Request Sent Successfully');
-        return redirect()->back();
+        return route('backend.pages.seller.pending-request');
     }
 
     //sell request update

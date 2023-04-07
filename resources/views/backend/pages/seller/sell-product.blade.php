@@ -22,11 +22,11 @@
                         </select>
                     </div>
                     <div class="col-span-6">
-                        <label class="flex flex-col sm:flex-row">Enter Weight</label>
+                        <label class="flex flex-col sm:flex-row">Enter Weight(KG)</label>
                         <input class="weight w-full" type="text" name="weight" placeholder="Weight In KG" required>
                     </div>
                     <div class="col-span-6">
-                        <label class="flex flex-col sm:flex-row">Product Price</label>
+                        <label class="flex flex-col sm:flex-row">Product Price(Taka)</label>
                         <input class="price w-full" type="text" name="price" value="" readonly>
                     </div>
                     <div class="col-span-6">
