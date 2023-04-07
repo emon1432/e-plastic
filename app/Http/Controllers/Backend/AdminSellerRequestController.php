@@ -37,4 +37,15 @@ class AdminSellerRequestController extends Controller
         Alert::success('Success', 'Request Accepted');
         return redirect()->back();
     }
+
+    //reject
+    public function reject($id)
+    {
+        $rejectRequest = SellRequest::find($id);
+        $rejectRequest->status = 'rejected';
+        $rejectRequest->save();
+        Alert::success('Success', 'Request Rejected');
+        return redirect()->back();
+    }
+
 }

@@ -61,6 +61,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('seller-sell-request/rejected', 'rejected')->name('seller-sell-request.rejected');
         //route accept status
         Route::get('seller-sell-request/accept/{id}', 'accept')->name('seller-sell-request.accept');
+        //route reject status
+        Route::get('seller-sell-request/reject/{id}', 'reject')->name('seller-sell-request.reject');
     });
 
 });

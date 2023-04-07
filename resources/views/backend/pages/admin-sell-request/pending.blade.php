@@ -63,11 +63,42 @@
                                             </div>
                                             <div class="px-5 pb-8 text-center">
 
-                                                <form action="{{ route('seller-sell-request.accept', $pendingRequest->id) }}" method="GET">
+                                                <form
+                                                    action="{{ route('seller-sell-request.accept', $pendingRequest->id) }}"
+                                                    method="GET">
                                                     @csrf
                                                     <button type="button" data-tw-dismiss="modal"
                                                         class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
                                                     <button type="submit" class="btn btn-success w-24">Accept</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Reject Request Modal -->
+                            <div id="reject-request-modal-{{ $pendingRequest->id }}" class="modal" tabindex="-1"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body p-0">
+                                            <div class="p-5 text-center">
+                                                <i data-feather="x-circle" class="w-16 h-16 text-danger mx-auto mt-3"></i>
+                                                <div class="text-3xl mt-5">Are you sure?</div>
+                                                <div class="text-xl mt-2">
+                                                    Do you really want to <span
+                                                        class="text-2xl mt-2 text-danger">Reject</span> this request?
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <div class="px-5 pb-8 text-center">
+                                                <form
+                                                    action="{{ route('seller-sell-request.reject', $pendingRequest->id) }}"
+                                                    method="GET">
+                                                    @csrf
+                                                    <button type="button" data-tw-dismiss="modal"
+                                                        class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                                                    <button type="submit" class="btn btn-danger w-24">Reject</button>
                                                 </form>
                                             </div>
                                         </div>
