@@ -36,7 +36,7 @@
                                 <td class="text-warning">{{ $pendingRequest->status }}</td>
                                 <td class="table-report__action w-56">
                                     <div class="flex  items-center">
-                                        <button class="flex items-center mr-3" data-tw-toggle="modal"
+                                        <button class="flex items-center mr-3 text-success" data-tw-toggle="modal"
                                             data-tw-target="#accept-request-modal-{{ $pendingRequest->id }}">
                                             <i data-feather="check-square" class="w-4 h-4 mr-1 text-success"></i> Accept
                                         </button>
