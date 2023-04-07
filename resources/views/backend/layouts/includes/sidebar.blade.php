@@ -65,21 +65,25 @@
                 </a>
                 <ul class="">
                     <li>
-                        <a href="{{ route('sell-request.pending') }}"
-                            class="side-menu {{ $route == 'admin.index' ? 'side-menu--active' : '' }}">
+                        <a href="{{ route('seller-sell-request.pending') }}"
+                            class="side-menu {{ $route == 'seller-sell-request.pending' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                             <div class="side-menu__title"> Pending Requests </div>
                         </a>
                     </li>
                     <li>
-                        <a href="side-menu-light-dashboard-overview-2.html" class="side-menu">
+                        <a href="{{ route('seller-sell-request.accepted') }}"
+                            class="side-menu {{ $route == 'seller-sell-request.pending' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                             <div class="side-menu__title"> Accepted Requests</div>
                         </a>
                     </li>
                     <li>
-                        <a href="side-menu-light-dashboard-overview-3.html" class="side-menu">
-                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                        <a href="{{ route('seller-sell-request.rejected') }}"
+                            class="side-menu {{ $route == 'seller-sell-request.rejected' ? 'side-menu--active' : '' }}">
+                            <div class="side-menu__icon">
+                                <i data-feather="activity"></i>
+                            </div>
                             <div class="side-menu__title"> Rejected Requests </div>
                         </a>
                     </li>

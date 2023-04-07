@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\AdminSellerRequestController;
 use App\Http\Controllers\Backend\BuyerController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\SellerController;
@@ -51,4 +52,15 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('sell-request/completed', [SellRequestController::class, 'completed'])->name('sell-request.completed');
     //rejected
     Route::get('sell-request/rejected', [SellRequestController::class, 'rejected'])->name('sell-request.rejected');
+
+
+    //madmin Sell Request
+    Route::controller(AdminSellerRequestController::class)->group(function () {
+        Route::get('seller-sell-request/pending', 'pending')->name('seller-sell-request.pending');
+        Route::get('seller-sell-request/accepted', 'accepted')->name('seller-sell-request.accepted');
+        Route::get('seller-sell-request/rejected', 'rejected')->name('seller-sell-request.rejected');
+        //route accept status
+        Route::get('seller-sell-request/accept/{id}', 'accept')->name('seller-sell-request.accept');
+    });
+
 });

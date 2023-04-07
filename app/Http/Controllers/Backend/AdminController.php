@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Termwind\Components\Dd;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
