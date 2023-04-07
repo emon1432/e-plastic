@@ -22,6 +22,7 @@ return new class extends Migration {
             $table->string('total_price');
             $table->string('image')->nullable();
             $table->string('status')->default('pending');
+            $table->string('reject_reason')->nullable();
             $table->timestamps();
         });
     }
