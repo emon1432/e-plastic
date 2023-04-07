@@ -38,7 +38,7 @@
                                     <div class="flex  items-center">
                                         <button class="flex items-center mr-3" data-tw-toggle="modal"
                                             data-tw-target="#accept-request-modal-{{ $pendingRequest->id }}">
-                                            <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Accept
+                                            <i data-feather="check-square" class="w-4 h-4 mr-1 text-success"></i> Accept
                                         </button>
                                         <button class="flex items-center text-danger" data-tw-toggle="modal"
                                             data-tw-target="#reject-request-modal-{{ $pendingRequest->id }}">
@@ -57,7 +57,7 @@
                                                 <i data-feather="x-circle" class="w-16 h-16 text-success mx-auto mt-3"></i>
                                                 <div class="text-3xl mt-5">Are you sure?</div>
                                                 <div class="text-2xl mt-2">
-                                                    Do you really want to accept this request?
+                                                    Do you really want to <span class="text-success">Accept</span> this request?
                                                     <br>
                                                 </div>
                                             </div>
