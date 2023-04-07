@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ProductCategory;
 use App\Models\SellRequest;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SellRequestController extends Controller
 {
@@ -31,7 +32,8 @@ class SellRequestController extends Controller
 
         $sellRequest->save();
 
-        return route('backend.pages.seller.pending-request');
+        Alert::success('Success', 'Sell Request Sent Successfully');
+        return redirect()->back();
     }
 
     //sell request update
@@ -62,7 +64,8 @@ class SellRequestController extends Controller
 
         $pendingRequest->save();
 
-        return redirect()->back()->with('success', 'Sell Request Updated Successfully');
+        Alert::success('Success', 'Sell Request Updated Successfully');
+        return redirect()->back();
     }
 
     //price 

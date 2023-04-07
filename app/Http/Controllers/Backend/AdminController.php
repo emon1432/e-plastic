@@ -56,7 +56,8 @@ class AdminController extends Controller
         $admin->password = bcrypt($request->password);
         $admin->save();
 
-        return redirect()->route('admin.index')->with('success', 'Admin created successfully');
+        Alert::success('Success', 'Admin added successfully');
+        return redirect()->back();
     }
 
     public function update(Request $request, string $id)
@@ -98,7 +99,8 @@ class AdminController extends Controller
         $user->gender = $request->gender;
         $admin->save();
 
-        return redirect()->route('admin.index')->with('success', 'Admin updated successfully');
+        Alert::success('Success', 'Admin Updated Successfully');
+        return redirect()->back();
     }
     public function destroy(string $id)
     {
@@ -114,6 +116,7 @@ class AdminController extends Controller
         $admin = Admin::where('user_id', $id)->first();
         $admin->delete();
 
-        return redirect()->route('admin.index')->with('success', 'Admin deleted successfully');
+        Alert::success('Success', 'Admin Deleted successfully');
+        return redirect()->back();
     }
 }

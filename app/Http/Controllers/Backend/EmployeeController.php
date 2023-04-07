@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Employee;
 use App\Models\User;
 use Illuminate\Http\Request;
+//use alert
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EmployeeController extends Controller
 {
@@ -54,7 +56,8 @@ class EmployeeController extends Controller
         $employee->password = bcrypt($request->password);
         $employee->save();
 
-        return redirect()->back()->with('success', 'Employee created successfully');
+        Alert::success('Success', 'Employee added successfully');
+        return redirect()->back();
     }
 
     public function update(Request $request, string $id)
@@ -96,7 +99,8 @@ class EmployeeController extends Controller
         $employee->gender = $request->gender;
         $employee->save();
 
-        return redirect()->back()->with('success', 'Employee updated successfully');
+        Alert::success('Success', 'Employee updated successfully');
+        return redirect()->back();
     }
     public function destroy(string $id)
     {
@@ -112,6 +116,7 @@ class EmployeeController extends Controller
         $employee = Employee::where('user_id', $id)->first();
         $employee->delete();
 
-        return redirect()->back()->with('success', 'Employee deleted successfully');
+        Alert::success('Success', 'Employee deleted successfully');
+        return redirect()->back();
     }
 }

@@ -33,7 +33,7 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $rejectedRequest->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                <td class="bg-dark">{{$pendingRequest->status}}</td>
+                                <td class="bg-dark">{{$rejectedRequest->status}}</td>
                                 <td>{{ $rejectedRequest->reject_reason }}</td>
                             </tr>
                         @endforeach

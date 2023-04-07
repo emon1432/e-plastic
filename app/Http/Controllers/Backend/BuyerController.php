@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Buyer;
 use App\Models\User;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BuyerController extends Controller
 {
@@ -54,7 +55,8 @@ class BuyerController extends Controller
         $buyer->password = bcrypt($request->password);
         $buyer->save();
 
-        return redirect()->back()->with('success', 'Buyer created successfully');
+        Alert::success('Success', 'Buyer added successfully');
+        return redirect()->back();
     }
 
     public function update(Request $request, string $id)
@@ -95,7 +97,9 @@ class BuyerController extends Controller
         $buyer->address = $request->address;
         $buyer->gender = $request->gender;
         $buyer->save();
-        return redirect()->back()->with('success', 'Buyer updated successfully');
+        Alert::success('Success', 'Buyer updated successfully');
+        return redirect()->back();
+
     }
     public function destroy(string $id)
     {
@@ -111,6 +115,8 @@ class BuyerController extends Controller
         $buyer = Buyer::where('user_id', $id)->first();
         $buyer->delete();
 
-        return redirect()->back()->with('success', 'Buyer deleted successfully');
+        Alert::success('Success', 'Buyer deleted successfully');
+        return redirect()->back();
+        
     }
 }
