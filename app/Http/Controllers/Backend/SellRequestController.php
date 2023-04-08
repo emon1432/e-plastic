@@ -33,7 +33,7 @@ class SellRequestController extends Controller
         $sellRequest->save();
 
         Alert::success('Success', 'Sell Request Sent Successfully');
-        return route('backend.pages.seller.pending-request');
+        return redirect()->back();
     }
 
     //sell request update
@@ -68,7 +68,7 @@ class SellRequestController extends Controller
         return redirect()->back();
     }
 
-    //price 
+    //price
     public function price($id)
     {
         $price = ProductCategory::where('id', $id)
