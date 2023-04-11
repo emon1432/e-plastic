@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\SellerController;
 use App\Http\Controllers\Backend\SellRequestController;
 use App\Http\Controllers\Backend\SellRequestManageController;
+use App\Http\Controllers\Frontend\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,6 +18,16 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('frontend.pages.about');
 })->name('about');
+
+Route::get('/contact', function () {
+    return view('frontend.pages.contact');
+})->name('contact');
+
+Route::controller(ProductController::class)->group(function () {
+    Route::get('products', 'index')->name('products');
+    Route::get('product-details', 'productDetails')->name('product.details');
+    Route::get('checkout', 'checkout')->name('checkout');
+});
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
@@ -68,5 +79,4 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         //route reject status
         Route::post('seller-sell-request/reject/{id}', 'reject')->name('seller-sell-request.reject');
     });
-
 });
