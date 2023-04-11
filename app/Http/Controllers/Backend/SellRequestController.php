@@ -69,7 +69,7 @@ class SellRequestController extends Controller
         return redirect()->back();
     }
 
-    //price 
+    //price
     public function price($id)
     {
         $price = ProductCategory::where('id', $id)
