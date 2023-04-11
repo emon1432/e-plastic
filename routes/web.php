@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('frontend.pages.index');
 })->name('home');
 
+Route::get('/about', function () {
+    return view('frontend.pages.about');
+})->name('about');
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('backend.pages.dashboard');
