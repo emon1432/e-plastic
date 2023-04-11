@@ -19,6 +19,8 @@ return array(
     'App\\Http\\Controllers\\Backend\\AdminSellerRequestController' => $baseDir . '/app/Http/Controllers/Backend/AdminSellerRequestController.php',
     'App\\Http\\Controllers\\Backend\\BuyerController' => $baseDir . '/app/Http/Controllers/Backend/BuyerController.php',
     'App\\Http\\Controllers\\Backend\\EmployeeController' => $baseDir . '/app/Http/Controllers/Backend/EmployeeController.php',
+    'App\\Http\\Controllers\\Backend\\Hostel\\EmployeeAssignOrderController' => $baseDir . '/app/Http/Controllers/Backend/Hostel/EmployeeAssignOrderController.php',
+    'App\\Http\\Controllers\\Backend\\Hostel\\EmployeeAssignRequestController' => $baseDir . '/app/Http/Controllers/Backend/Hostel/EmployeeAssignRequestController.php',
     'App\\Http\\Controllers\\Backend\\SellRequestController' => $baseDir . '/app/Http/Controllers/Backend/SellRequestController.php',
     'App\\Http\\Controllers\\Backend\\SellerController' => $baseDir . '/app/Http/Controllers/Backend/SellerController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',

@@ -587,6 +587,8 @@ class ComposerStaticInit1d83e762e892e4e89c2025c9c2de41c1
         'App\\Http\\Controllers\\Backend\\AdminSellerRequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/AdminSellerRequestController.php',
         'App\\Http\\Controllers\\Backend\\BuyerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/BuyerController.php',
         'App\\Http\\Controllers\\Backend\\EmployeeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/EmployeeController.php',
+        'App\\Http\\Controllers\\Backend\\Hostel\\EmployeeAssignOrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/Hostel/EmployeeAssignOrderController.php',
+        'App\\Http\\Controllers\\Backend\\Hostel\\EmployeeAssignRequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/Hostel/EmployeeAssignRequestController.php',
         'App\\Http\\Controllers\\Backend\\SellRequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/SellRequestController.php',
         'App\\Http\\Controllers\\Backend\\SellerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/SellerController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
