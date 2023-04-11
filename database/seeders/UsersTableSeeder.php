@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class UsersTableSeeder extends Seeder
 {
@@ -15,10 +14,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->delete();
-        DB::table('users')->insert(array(
-            0 =>
-            array(
+        
+
+        \DB::table('users')->delete();
+        
+        \DB::table('users')->insert(array (
+            0 => 
+            array (
                 'id' => 1,
                 'role_id' => 1,
                 'name' => 'Tanny',
@@ -37,86 +39,68 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-28 07:49:21',
                 'updated_at' => '2023-03-31 18:18:39',
             ),
-            1 =>
-            array(
-                'id' => 2,
+            1 => 
+            array (
+                'id' => 9,
                 'role_id' => 2,
                 'name' => 'Tarin Ahmed Shara',
-                'email' => 'employee@gmail.com',
-                'phone' => '01717608607',
-                'email_verified_at' => NULL,
-                'password' => '$2y$10$Pbuc2qFWryx0SlDPFh43FulvmWCPq1Z0BUmMyWTy3tdWNTlhA.y5q',
-                'two_factor_secret' => NULL,
-                'two_factor_recovery_codes' => NULL,
-                'two_factor_confirmed_at' => NULL,
-                'address' => 'Shongkor, Dhanmondi',
-                'image' => '1680286783-instructor.jpg',
-                'gender' => 'Female',
-                'remember_token' => NULL,
-                'current_team_id' => NULL,
-                'created_at' => '2023-03-28 08:00:53',
-                'updated_at' => '2023-03-31 18:19:43',
-            ),
-            2 =>
-            array(
-                'id' => 6,
-                'role_id' => 3,
-                'name' => 'Aishorjo Biswas',
-                'email' => 'seler@gmail.com',
+                'email' => 'shara@gmail.com',
                 'phone' => '01516760531',
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$P6fvT0m2IPPXRBnshlzM0ep8aWLuZ.p3FjNdGPDShtcAEOriT8cKW',
+                'password' => '$2y$10$mGgLUljrmAt7X5xTEAw1cuMaD9KwhA4wyYjryyAHxKpBFAdVl2IVG',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
                 'address' => 'Shongkor,Dhanmondi',
-                'image' => '1680286869-course-author.jpg',
+                'image' => '1681225689-desktop-wallpaper-itachi-uchiha-naruto-art-resolution-anime-and-background-itachi-1366x768.jpg',
                 'gender' => 'Female',
                 'remember_token' => NULL,
                 'current_team_id' => NULL,
-                'created_at' => '2023-03-31 18:21:09',
-                'updated_at' => '2023-03-31 18:21:09',
+                'created_at' => '2023-04-11 15:08:09',
+                'updated_at' => '2023-04-11 15:08:09',
             ),
-            3 =>
-            array(
-                'id' => 7,
-                'role_id' => 4,
-                'name' => 'Bishal Choudhuri',
-                'email' => 'buyer@gmail.com',
-                'phone' => '01756554564',
-                'email_verified_at' => NULL,
-                'password' => '$2y$10$i0F4h2phQTS3wJPR6izxWOPzd0bAv0.ve.145ey8hyNUTEDUSplL6',
-                'two_factor_secret' => NULL,
-                'two_factor_recovery_codes' => NULL,
-                'two_factor_confirmed_at' => NULL,
-                'address' => 'Maymonshing,Dhaka',
-                'image' => '1680287589-144946442-frontal-portrait-of-a-serious-looking-businessman.jpg',
-                'gender' => 'Male',
-                'remember_token' => NULL,
-                'current_team_id' => NULL,
-                'created_at' => '2023-03-31 18:33:09',
-                'updated_at' => '2023-03-31 18:33:09',
-            ),
-            4 => 
+            2 => 
             array (
-                'id' => 8,
-                'role_id' => 1,
-                'name' => 'Jihadul Rahman',
-                'email' => 'jihadkaka28@gmail.com',
-                'phone' => '01743864532',
+                'id' => 10,
+                'role_id' => 3,
+                'name' => 'Aishorjo Biswas',
+                'email' => 'aishorjo@gmail.com',
+                'phone' => '017259876585',
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$X0wfqJ/5eQENpZPUBZKhf.WCaH.2Lo9TcJN0p/LvHH3o4oMCLymPe',
+                'password' => '$2y$10$mV5hAf2ZAHmdGBI1agQ7yegjfYRfNEneevt1ro4Ot3ElWoof7vq0i',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
-                'address' => 'panthopoth',
-                'image' => '1680324129-Gionis.jpg',
+                'address' => 'Shongkor,Dhanmondi',
+                'image' => '1681225867-desktop-wallpaper-itachi-uchiha-naruto-art-resolution-anime-and-background-itachi-1366x768.jpg',
+                'gender' => 'Female',
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'created_at' => '2023-04-11 15:11:07',
+                'updated_at' => '2023-04-11 15:11:07',
+            ),
+            3 => 
+            array (
+                'id' => 11,
+                'role_id' => 4,
+                'name' => 'Saju Ahmed',
+                'email' => 'saju@gmail.com',
+                'phone' => '01725354028',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$Q6iOpTNrXNGT69j4Jg1bZexZoidp3qSX1h5x/sCoAx5hkjXAq48XS',
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'two_factor_confirmed_at' => NULL,
+                'address' => 'Mirpur,dhaka',
+                'image' => '1681226038-1675161140_new-project-2023-01-31t160104-090.jpg',
                 'gender' => 'Male',
                 'remember_token' => NULL,
                 'current_team_id' => NULL,
-                'created_at' => '2023-04-01 04:42:09',
-                'updated_at' => '2023-04-01 04:42:09',
+                'created_at' => '2023-04-11 15:13:58',
+                'updated_at' => '2023-04-11 15:13:58',
             ),
         ));
+        
+        
     }
 }

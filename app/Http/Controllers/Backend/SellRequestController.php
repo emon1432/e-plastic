@@ -36,6 +36,7 @@ class SellRequestController extends Controller
         return redirect()->back();
     }
 
+
     //sell request update
     public function update(Request $request, $id)
     {
