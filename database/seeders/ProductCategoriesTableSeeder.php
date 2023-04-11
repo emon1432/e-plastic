@@ -23,7 +23,7 @@ class ProductCategoriesTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'Bottle',
-                'price_per_unit' => 50,
+                'price_per_unit' => 60,
                 'status' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
@@ -32,7 +32,7 @@ class ProductCategoriesTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'name' => 'Plate',
-                'price_per_unit' => 70,
+                'price_per_unit' => 80,
                 'status' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
@@ -40,8 +40,8 @@ class ProductCategoriesTableSeeder extends Seeder
             2 => 
             array (
                 'id' => 3,
-                'name' => 'Plastic Box',
-                'price_per_unit' => 40,
+                'name' => 'plastic ',
+                'price_per_unit' => 60,
                 'status' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
@@ -50,7 +50,7 @@ class ProductCategoriesTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'name' => 'Others',
-                'price_per_unit' => 60,
+                'price_per_unit' => 50,
                 'status' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
