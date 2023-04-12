@@ -54,7 +54,7 @@
                                     <div class="modal-content">
                                         <div class="modal-body p-0">
                                             <div class="p-5 text-center">
-                                                <i data-feather="x-circle" class="w-16 h-16 text-success mx-auto mt-3"></i>
+                                                <i data-feather="check-square" class="w-16 h-16 text-success mx-auto mt-3"></i>
                                                 <div class="text-3xl mt-5">Are you sure?</div>
                                                 <div class="text-2xl mt-2">
                                                     Do you really want to <span class="text-success">Accept</span> this request?

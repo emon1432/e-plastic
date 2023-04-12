@@ -12,8 +12,8 @@ class EmployeeAssignRequestController extends Controller
 {
     public function index()
     {
-        $assignedRequests = EmployeeAssignRequest::where('status', '=', 'assigned')->get();
-        return view('backend.pages.employee-sell-request.assigned', compact('assignedRequests'));
+        $assignedRequests = EmployeeAssignRequest::with('sellRequestInfo')->where('status', '=', 'assigned')->orWhere('status', '=', 'accepted')->orderBy('id', 'DESC')->get();
+        return view('backend.pages.admin-sell-request.assigned-request', compact('assignedRequests'));
     }
     public function assigned(Request $request)
     {
@@ -25,11 +25,18 @@ class EmployeeAssignRequestController extends Controller
         $employeeAssignRequest->save();
 
         //update status to SellRequest table
-        $sellerSellRequests=SellRequest::find($request->id);
+        $sellerSellRequests = SellRequest::find($request->id);
         $sellerSellRequests->status = 'assigned';
         $sellerSellRequests->save();
 
         Alert::success('Success', 'Request Assigned');
         return redirect()->back();
+    }
+
+    //picked
+    public function picked()
+    {
+        $pickedRequests = EmployeeAssignRequest::with('sellRequestInfo')->where('status', '=', 'picked')->orderBy('id', 'DESC')->get();
+        return view('backend.pages.admin-sell-request.picked-request', compact('pickedRequests'));
     }
 }

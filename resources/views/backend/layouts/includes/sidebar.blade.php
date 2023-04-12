@@ -73,15 +73,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('employee-assign-request.accepted') }}" class="side-menu">
-                            <div
-                                class="side-menu__icon {{ $route == 'employee-assign-request.accepted' ? 'side-menu--active' : '' }}">
-                                <i data-feather="activity"></i>
-                            </div>
-                            <div class="side-menu__title"> Accepted Requests</div>
-                        </a>
-                    </li>
-                    <li>
                         <a href="{{ route('employee-assign-request.picked') }}" class="side-menu">
                             <div
                                 class="side-menu__icon {{ $route == 'employee-assign-request.picked' ? 'side-menu--active' : '' }}">
@@ -222,30 +213,21 @@
                 </a>
                 <ul class="">
                     <li>
-                        <a href="{{ route('employee-assign-request.assigned') }}" class="side-menu">
+                        <a href="{{ route('assigned-request.index') }}" class="side-menu">
                             <div
-                                class="side-menu__icon {{ $route == 'employee-assign-request.index' ? 'side-menu--active' : '' }}">
+                                class="side-menu__icon {{ $route == 'assigned-request.index' ? 'side-menu--active' : '' }}">
                                 <i data-feather="activity"></i>
                             </div>
                             <div class="side-menu__title"> Assigned Requests </div>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('employee-assign-request.accepted') }}" class="side-menu">
+                        <a href="{{ route('assigned-request.picked') }}" class="side-menu">
                             <div
-                                class="side-menu__icon {{ $route == 'employee-assign-request.accepted' ? 'side-menu--active' : '' }}">
+                                class="side-menu__icon {{ $route == 'assigned-request.picked' ? 'side-menu--active' : '' }}">
                                 <i data-feather="activity"></i>
                             </div>
-                            <div class="side-menu__title"> Assigned Requests</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('employee-assign-request.accepted') }}" class="side-menu">
-                            <div
-                                class="side-menu__icon {{ $route == 'employee-assign-request.accepted' ? 'side-menu--active' : '' }}">
-                                <i data-feather="activity"></i>
-                            </div>
-                            <div class="side-menu__title"> Assigned Requests</div>
+                            <div class="side-menu__title"> Picked Requests</div>
                         </a>
                     </li>
                 </ul>

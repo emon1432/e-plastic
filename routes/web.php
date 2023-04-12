@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\AdminSellerRequestController;
+use App\Http\Controllers\Backend\AssignedRequestController;
 use App\Http\Controllers\Backend\BuyerController;
 use App\Http\Controllers\Backend\EmployeeAssignRequestController;
 use App\Http\Controllers\Backend\EmployeeController;
@@ -69,16 +70,23 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     //rejected
     Route::get('sell-request/rejected', [SellRequestController::class, 'rejected'])->name('sell-request.rejected');
 
-
     //assign employee all routes
     Route::controller(EmployeeAssignRequestController::class)->group(function () {
         //assign employee
-        Route::get('employee-assign-request/', 'index')->name('employee-assign-request.index');
+        Route::get('employee-assign-request', 'index')->name('employee-assign-request.index');
         Route::post('employee-assign-request/assigned', 'assigned')->name('employee-assign-request.assigned');
-        //accepted assign employee
-        Route::get('employee-assign-request/accepted', 'accepted')->name('employee-assign-request.accepted');
         //completed assign employee
         Route::get('employee-assign-request/picked', 'picked')->name('employee-assign-request.picked');
+    });
+
+    //assigned request all routes
+    Route::controller(AssignedRequestController::class)->group(function () {
+        //assign employee
+        Route::get('assigned-request', 'index')->name('assigned-request.index');
+        Route::get('assigned-request/accept/{id}', 'accept')->name('assigned-request.accept');
+        //picked    
+        Route::get('assigned-request/picked', 'picked')->name('assigned-request.picked');
+        Route::get('assigned-request/pick/{id}', 'pick')->name('assigned-request.pick');
     });
 
 
