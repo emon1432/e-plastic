@@ -37,11 +37,12 @@
             <div class="col-md-4 pt-5">
                 <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                 <ul class="list-unstyled text-light footer-link-list">
-                    <li><a class="text-decoration-none" href="#">Home</a></li>
-                    <li><a class="text-decoration-none" href="#">About Us</a></li>
-                    <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                    <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                    <li><a class="text-decoration-none" href="#">Contact</a></li>
+                    <li><a class="text-decoration-none" href="{{ route('home') }}">Home</a></li>
+                    <li><a class="text-decoration-none" href="{{ route('about') }}">About Us</a></li>
+                    <li><a class="text-decoration-none" href="{{ route('products') }}">Products</a></li>
+                    <li><a class="text-decoration-none" href="{{ route('contact') }}">Contact Us</a></li>
+                    <li><a class="text-decoration-none" href="{{ route('login') }}">Login</a></li>
+                    <li><a class="text-decoration-none" href="{{ route('register') }}">Register</a></li>
                 </ul>
             </div>
 
@@ -87,8 +88,7 @@
             <div class="row pt-2">
                 <div class="col-12">
                     <p class="text-left text-light">
-                        Copyright &copy; 2021 Company Name
-                        | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                        Copyright &copy; 2023 E-plastic. All Rights Reserved.
                     </p>
                 </div>
             </div>

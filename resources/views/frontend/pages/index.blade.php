@@ -108,23 +108,16 @@
                             <img src="{{ asset('frontend') }}/img/feature_prod_01.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$240.00</li>
-                            </ul>
-                            <a href="{{ route('product.details') }}" class="h2 text-decoration-none text-dark">Gym
-                                Weight</a>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia
-                                deserunt.
-                            </p>
-                            <p class="text-muted">Reviews (24)</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ route('product.details') }}" class="h2 text-decoration-none text-dark">Product
+                                    Title</a>
+                                <p class="text-right">$240.00</p>
+                            </div>
+                            <div class="h4 text-decoration-none text-dark">
+                                Category : Name
+                            </div>
+                            {{-- details button --}}
+                            <a href="{{ route('product.details') }}" class="btn btn-success mt-3">Details</a>
                         </div>
                     </div>
                 </div>

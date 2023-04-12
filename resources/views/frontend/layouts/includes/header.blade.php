@@ -57,10 +57,15 @@
                 </ul>
             </div>
             <div class="navbar align-self-center d-flex">
-
-                <a class="nav-icon d-none d-lg-inline" href="{{ route('login') }}">
-                    Login/Sign Up
-                </a>
+                @if (auth()->user())
+                    <a class="nav-icon d-none d-lg-inline" href="{{ route('dashboard') }}">
+                        Dashboard
+                    </a>
+                @else
+                    <a class="nav-icon d-none d-lg-inline" href="{{ route('login') }}">
+                        Login/Sign Up
+                    </a>
+                @endif
             </div>
         </div>
 
