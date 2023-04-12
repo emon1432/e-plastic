@@ -15,6 +15,7 @@
                             <th>PRICE</th>
                             <th>IMAGES</th>
                             <th>STATUS</th>
+                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,14 +33,23 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $acceptedRequest->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                @if ($acceptedRequest->status == 'accepeted')
-                                    <td class="text-center">
-                                        <span class="badge badge-primary">Accepted</span>
+                                
+                                @if ($acceptedRequest->status == 'accepted')
+                                    <td>
+                                        <span class="text-success">Accepted</span>
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <a href="#" class="btn btn-primary">Assign Employee</a>
+                                        </button>
                                     </td>
                                 @endif
                                 @if ($acceptedRequest->status == 'assigned')
-                                    <td class="text-center">
-                                        <span class="badge badge-warning">Assigned</span>
+                                    <td>
+                                        <span class="text-warning">Assigned</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-warning">Assigned</span>
                                     </td>
                                 @endif
                             </tr>

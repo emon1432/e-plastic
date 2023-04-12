@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\AdminSellerRequestController;
 use App\Http\Controllers\Backend\BuyerController;
+use App\Http\Controllers\Backend\EmployeeAssignRequestController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\SellerController;
 use App\Http\Controllers\Backend\SellRequestController;
@@ -56,6 +57,18 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('sell-request/completed', [SellRequestController::class, 'completed'])->name('sell-request.completed');
     //rejected
     Route::get('sell-request/rejected', [SellRequestController::class, 'rejected'])->name('sell-request.rejected');
+
+
+    //assign employee all routes
+    Route::controller(EmployeeAssignRequestController::class)->group(function () {
+        //assign employee
+        Route::get('employee-assign-request/', 'index')->name('employee-assign-request.index');
+        Route::post('employee-assign-request/assigned', 'assigned')->name('employee-assign-request.assigned');
+        //accepted assign employee
+        Route::get('employee-assign-request/accepted', 'accepted')->name('employee-assign-request.accepted');
+        //completed assign employee
+        Route::get('employee-assign-request/picked', 'picked')->name('employee-assign-request.picked');
+    });
 
 
     //madmin Sell Request

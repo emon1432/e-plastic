@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
 use App\Models\SellRequest;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -18,8 +19,9 @@ class AdminSellerRequestController extends Controller
 
     public function accepted()
     {
-        $acceptedRequests = SellRequest::where('status', '=', 'accepted')->get();
-        return view('backend.pages.admin-sell-request.accepted', compact('acceptedRequests'));
+        $employees = Employee::get();
+        $acceptedRequests = SellRequest::where('status', '=', 'accepted')->orWhere('status', '=', 'assigned')->get();
+        return view('backend.pages.admin-sell-request.accepted', compact('acceptedRequests','employees'));
     }
     public function rejected()
     {
