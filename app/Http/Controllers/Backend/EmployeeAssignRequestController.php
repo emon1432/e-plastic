@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\EmployeeAssignRequest;
+use App\Models\ProductCategory;
 use App\Models\SellRequest;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -36,7 +37,8 @@ class EmployeeAssignRequestController extends Controller
     //picked
     public function picked()
     {
+        $productCategories = ProductCategory::get();
         $pickedRequests = EmployeeAssignRequest::with('sellRequestInfo')->where('status', '=', 'picked')->orderBy('id', 'DESC')->get();
-        return view('backend.pages.admin-sell-request.picked-request', compact('pickedRequests'));
+        return view('backend.pages.admin-sell-request.picked-request', compact('pickedRequests', 'productCategories'));
     }
 }
