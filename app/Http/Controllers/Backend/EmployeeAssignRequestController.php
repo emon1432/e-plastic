@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\EmployeeAssignRequest;
 use App\Models\ProductCategory;
 use App\Models\SellRequest;
+//use employee 
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -13,7 +15,7 @@ class EmployeeAssignRequestController extends Controller
 {
     public function index()
     {
-        $assignedRequests = EmployeeAssignRequest::with('sellRequestInfo')->where('status', '=', 'assigned')->orWhere('status', '=', 'accepted')->orderBy('id', 'DESC')->get();
+        $assignedRequests = EmployeeAssignRequest::with('sellRequestInfo', 'employeeInfo')->where('status', '=', 'assigned')->orWhere('status', '=', 'accepted')->orderBy('id', 'DESC')->get();
         return view('backend.pages.admin-sell-request.assigned-request', compact('assignedRequests'));
     }
     public function assigned(Request $request)
@@ -38,7 +40,7 @@ class EmployeeAssignRequestController extends Controller
     public function picked()
     {
         $productCategories = ProductCategory::get();
-        $pickedRequests = EmployeeAssignRequest::with('sellRequestInfo')->where('status', '=', 'picked')->orWhere('status', '=', 'posted')->orderBy('id', 'DESC')->get();
+        $pickedRequests = EmployeeAssignRequest::with('sellRequestInfo', 'employeeInfo')->where('status', '=', 'picked')->orWhere('status', '=', 'posted')->orderBy('id', 'DESC')->get();
         return view('backend.pages.admin-sell-request.picked-request', compact('pickedRequests', 'productCategories'));
     }
 }

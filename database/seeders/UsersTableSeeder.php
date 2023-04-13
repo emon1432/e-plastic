@@ -41,46 +41,6 @@ class UsersTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 2,
-                'role_id' => 2,
-                'name' => 'Tarin Ahmed Shara',
-                'email' => 'employee@gmail.com',
-                'phone' => '01717608607',
-                'email_verified_at' => NULL,
-                'password' => '$2y$10$Pbuc2qFWryx0SlDPFh43FulvmWCPq1Z0BUmMyWTy3tdWNTlhA.y5q',
-                'two_factor_secret' => NULL,
-                'two_factor_recovery_codes' => NULL,
-                'two_factor_confirmed_at' => NULL,
-                'address' => 'Shongkor, Dhanmondi',
-                'image' => '1680931086-girl-portrait-16939279.jpg',
-                'gender' => 'Female',
-                'remember_token' => NULL,
-                'current_team_id' => NULL,
-                'created_at' => '2023-03-28 08:00:53',
-                'updated_at' => '2023-04-08 05:18:06',
-            ),
-            2 => 
-            array (
-                'id' => 6,
-                'role_id' => 3,
-                'name' => 'Aishorjo Biswas',
-                'email' => 'seler@gmail.com',
-                'phone' => '01516760531',
-                'email_verified_at' => NULL,
-                'password' => '$2y$10$P6fvT0m2IPPXRBnshlzM0ep8aWLuZ.p3FjNdGPDShtcAEOriT8cKW',
-                'two_factor_secret' => NULL,
-                'two_factor_recovery_codes' => NULL,
-                'two_factor_confirmed_at' => NULL,
-                'address' => 'Shongkor,Dhanmondi',
-                'image' => '1680286869-course-author.jpg',
-                'gender' => 'Female',
-                'remember_token' => NULL,
-                'current_team_id' => NULL,
-                'created_at' => '2023-03-31 18:21:09',
-                'updated_at' => '2023-03-31 18:21:09',
-            ),
-            3 => 
-            array (
                 'id' => 7,
                 'role_id' => 4,
                 'name' => 'Bishal Choudhuri',
@@ -99,7 +59,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-31 18:33:09',
                 'updated_at' => '2023-03-31 18:33:09',
             ),
-            4 => 
+            2 => 
             array (
                 'id' => 9,
                 'role_id' => 2,
@@ -119,7 +79,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 05:20:07',
                 'updated_at' => '2023-04-08 05:20:07',
             ),
-            5 => 
+            3 => 
             array (
                 'id' => 10,
                 'role_id' => 2,
@@ -139,7 +99,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 05:30:22',
                 'updated_at' => '2023-04-08 05:30:22',
             ),
-            6 => 
+            4 => 
             array (
                 'id' => 11,
                 'role_id' => 2,
@@ -159,7 +119,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 05:32:32',
                 'updated_at' => '2023-04-08 05:32:32',
             ),
-            7 => 
+            5 => 
             array (
                 'id' => 12,
                 'role_id' => 2,
@@ -179,7 +139,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 05:34:31',
                 'updated_at' => '2023-04-08 05:34:31',
             ),
-            8 => 
+            6 => 
             array (
                 'id' => 13,
                 'role_id' => 2,
@@ -199,7 +159,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 05:38:53',
                 'updated_at' => '2023-04-08 05:38:53',
             ),
-            9 => 
+            7 => 
             array (
                 'id' => 14,
                 'role_id' => 2,
@@ -219,7 +179,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 05:40:23',
                 'updated_at' => '2023-04-08 05:40:23',
             ),
-            10 => 
+            8 => 
             array (
                 'id' => 15,
                 'role_id' => 2,
@@ -239,7 +199,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 05:42:14',
                 'updated_at' => '2023-04-08 05:42:14',
             ),
-            11 => 
+            9 => 
             array (
                 'id' => 16,
                 'role_id' => 2,
@@ -259,7 +219,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 05:45:33',
                 'updated_at' => '2023-04-08 05:45:33',
             ),
-            12 => 
+            10 => 
             array (
                 'id' => 17,
                 'role_id' => 2,
@@ -279,7 +239,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 05:55:52',
                 'updated_at' => '2023-04-08 05:55:52',
             ),
-            13 => 
+            11 => 
             array (
                 'id' => 18,
                 'role_id' => 3,
@@ -299,7 +259,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:00:26',
                 'updated_at' => '2023-04-08 06:01:20',
             ),
-            14 => 
+            12 => 
             array (
                 'id' => 19,
                 'role_id' => 3,
@@ -319,7 +279,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:06:57',
                 'updated_at' => '2023-04-08 06:07:42',
             ),
-            15 => 
+            13 => 
             array (
                 'id' => 20,
                 'role_id' => 3,
@@ -339,7 +299,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:10:45',
                 'updated_at' => '2023-04-08 06:10:45',
             ),
-            16 => 
+            14 => 
             array (
                 'id' => 21,
                 'role_id' => 3,
@@ -359,7 +319,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:15:45',
                 'updated_at' => '2023-04-08 06:15:45',
             ),
-            17 => 
+            15 => 
             array (
                 'id' => 22,
                 'role_id' => 3,
@@ -379,7 +339,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:22:01',
                 'updated_at' => '2023-04-08 06:22:01',
             ),
-            18 => 
+            16 => 
             array (
                 'id' => 23,
                 'role_id' => 3,
@@ -399,7 +359,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:23:52',
                 'updated_at' => '2023-04-08 06:23:52',
             ),
-            19 => 
+            17 => 
             array (
                 'id' => 24,
                 'role_id' => 3,
@@ -419,7 +379,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:26:34',
                 'updated_at' => '2023-04-08 06:26:34',
             ),
-            20 => 
+            18 => 
             array (
                 'id' => 25,
                 'role_id' => 3,
@@ -439,7 +399,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:29:28',
                 'updated_at' => '2023-04-08 06:29:28',
             ),
-            21 => 
+            19 => 
             array (
                 'id' => 26,
                 'role_id' => 3,
@@ -459,7 +419,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:30:50',
                 'updated_at' => '2023-04-08 06:30:50',
             ),
-            22 => 
+            20 => 
             array (
                 'id' => 27,
                 'role_id' => 4,
@@ -479,7 +439,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:33:42',
                 'updated_at' => '2023-04-08 06:33:42',
             ),
-            23 => 
+            21 => 
             array (
                 'id' => 28,
                 'role_id' => 4,
@@ -499,7 +459,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:35:17',
                 'updated_at' => '2023-04-08 06:35:17',
             ),
-            24 => 
+            22 => 
             array (
                 'id' => 29,
                 'role_id' => 4,
@@ -519,7 +479,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:37:12',
                 'updated_at' => '2023-04-08 06:37:12',
             ),
-            25 => 
+            23 => 
             array (
                 'id' => 30,
                 'role_id' => 4,
@@ -539,7 +499,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:39:10',
                 'updated_at' => '2023-04-08 06:39:10',
             ),
-            26 => 
+            24 => 
             array (
                 'id' => 31,
                 'role_id' => 4,
@@ -559,7 +519,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:41:25',
                 'updated_at' => '2023-04-08 06:41:25',
             ),
-            27 => 
+            25 => 
             array (
                 'id' => 32,
                 'role_id' => 4,
@@ -579,7 +539,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:43:47',
                 'updated_at' => '2023-04-08 06:43:47',
             ),
-            28 => 
+            26 => 
             array (
                 'id' => 33,
                 'role_id' => 4,
@@ -599,7 +559,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:46:40',
                 'updated_at' => '2023-04-08 06:46:40',
             ),
-            29 => 
+            27 => 
             array (
                 'id' => 34,
                 'role_id' => 4,
@@ -619,7 +579,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:48:41',
                 'updated_at' => '2023-04-08 06:48:41',
             ),
-            30 => 
+            28 => 
             array (
                 'id' => 35,
                 'role_id' => 4,
@@ -638,6 +598,46 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'created_at' => '2023-04-08 06:50:49',
                 'updated_at' => '2023-04-08 06:50:49',
+            ),
+            29 => 
+            array (
+                'id' => 36,
+                'role_id' => 2,
+                'name' => 'Tarin Ahmed Shara',
+                'email' => 'employee@gmail.com',
+                'phone' => '01725354021',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$4u.AKLXiRRZ/v4Dii0lzhOfTH0jBqIJxjyne6M/TBm8H8dwS5rv9O',
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'two_factor_confirmed_at' => NULL,
+                'address' => 'Shongkor,Dhanmondi',
+                'image' => '1681419926-c-3.png',
+                'gender' => 'Female',
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'created_at' => '2023-04-13 21:05:26',
+                'updated_at' => '2023-04-13 21:05:26',
+            ),
+            30 => 
+            array (
+                'id' => 37,
+                'role_id' => 3,
+                'name' => 'Aishorjo Biswas',
+                'email' => 'seller@gmail.com',
+                'phone' => '01825645523',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$JnTZVQwc2thjsJc9D4ntMe86sHdlVo5dBEGRWsvNdfjHNzxAYM9i6',
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'two_factor_confirmed_at' => NULL,
+                'address' => 'Mohammadpur,Dhaka',
+                'image' => '1681420011-course-author.jpg',
+                'gender' => 'Female',
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'created_at' => '2023-04-13 21:06:51',
+                'updated_at' => '2023-04-13 21:06:51',
             ),
         ));
         

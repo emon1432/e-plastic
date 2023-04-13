@@ -136,6 +136,19 @@ class EmployeesTableSeeder extends Seeder
                 'created_at' => '2023-04-08 05:55:52',
                 'updated_at' => '2023-04-08 05:55:52',
             ),
+            9 => 
+            array (
+                'id' => 10,
+                'user_id' => 36,
+                'name' => 'Tarin Ahmed Shara',
+                'email' => 'employee@gmail.com',
+                'phone' => '01725354021',
+                'password' => '$2y$10$3DIY.i06ObHzk/6sPB3JhuifeIcsOUU0eLYm1pAlqIYE7tc3khCwS',
+                'address' => 'Shongkor,Dhanmondi',
+                'gender' => 'Female',
+                'created_at' => '2023-04-13 21:05:26',
+                'updated_at' => '2023-04-13 21:05:26',
+            ),
         ));
         
         

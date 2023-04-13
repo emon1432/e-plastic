@@ -9,22 +9,22 @@
                         <tr class="text-center">
                             <th>NAME</th>
                             <th>PHONE</th>
-                            <th>ADDRESS</th>
+                            <th>PICKUP ADDRESS</th>
                             <th>TYPE</th>
                             <th>WEIGHT</th>
                             <th>PRICE</th>
                             <th>IMAGES</th>
                             <th>STATUS</th>
-                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($completedRequests as $completedRequest)
+                        @if (auth()->user()->id == $completedRequest->sellerInfo->user_id)
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
-                                <td>{{ $completedRequest->name }}</td>
-                                <td>{{ $completedRequest->phone }}</td>
+                                <td>{{ $completedRequest->sellerInfo->name }}</td>
+                                <td>{{ $completedRequest->sellerInfo->phone }}</td>
                                 <td>{{ $completedRequest->address }}</td>
-                                <td>{{ $completedRequest->product_category_id }}</td>
+                                <td>{{ $completedRequest->categoryInfo->name  }}</td>
                                 <td>{{ $completedRequest->product_weight }}</td>
                                 <td>{{ $completedRequest->total_price }}</td>
                                 <td class="flex items-center justify-center">
@@ -33,16 +33,9 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $completedRequest->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                <td class="bg-dark">completed</td>
-                                <td class="table-report__action w-56">
-                                    <div class="flex  items-center">
-                                        <button class="flex items-center mr-3" data-tw-toggle="modal"
-                                            data-tw-target="#edit-seller-modal-{{ $completedRequest->id }}">
-                                            <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit
-                                        </button>
-                                    </div>
-                                </td>
+                                <td class="text-success">completed</td>
                             </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

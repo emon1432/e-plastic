@@ -13,19 +13,19 @@ class AdminSellerRequestController extends Controller
     //pending   
     public function pending()
     {
-        $pendingRequests = SellRequest::where('status', '=', 'pending')->get();
+        $pendingRequests = SellRequest::with('categoryInfo', 'sellerInfo')->where('status', '=', 'pending')->get();
         return view('backend.pages.admin-sell-request.pending', compact('pendingRequests'));
     }
 
     public function accepted()
     {
         $employees = Employee::get();
-        $acceptedRequests = SellRequest::where('status', '=', 'accepted')->orWhere('status', '=', 'assigned')->get();
-        return view('backend.pages.admin-sell-request.accepted', compact('acceptedRequests','employees'));
+        $acceptedRequests = SellRequest::with('categoryInfo', 'sellerInfo')->where('status', '=', 'accepted')->orWhere('status', '=', 'assigned')->get();
+        return view('backend.pages.admin-sell-request.accepted', compact('acceptedRequests', 'employees'));
     }
     public function rejected()
     {
-        $rejectedRequests = SellRequest::where('status', '=', 'rejected')->get();
+        $rejectedRequests = SellRequest::with('categoryInfo', 'sellerInfo')->where('status', '=', 'rejected')->get();
         return view('backend.pages.admin-sell-request.rejected', compact('rejectedRequests'));
     }
 

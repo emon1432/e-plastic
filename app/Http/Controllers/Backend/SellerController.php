@@ -14,7 +14,7 @@ class SellerController extends Controller
     public function index()
     {
         //get all seller from users table       
-        $sellers = User::where('role_id', 3)->get();
+        $sellers = User::where('role_id', 3)->orderBy('id', 'DESC')->get();
         return view('backend.pages.seller.index', compact('sellers'));
     }
 
@@ -98,7 +98,7 @@ class SellerController extends Controller
         $seller->address = $request->address;
         $seller->gender = $request->gender;
         $seller->save();
-        
+
         Alert::success('Success', 'Seller updated successfully');
         return redirect()->back();
     }

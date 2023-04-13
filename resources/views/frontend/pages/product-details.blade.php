@@ -132,25 +132,27 @@
                     <div class="card">
                         <div class="card-body">
                             <h1 class="h2">{{ $productDetails->product_name }}</h1>
-                            <p class="h3 py-2">$25.00</p>
+                            <p class="h3 py-2">
+                                <b>Price:</b>{{ $productDetails->selling_price }}(taka)
+                            </p>
 
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <h5>Category:</h5>
+                                    <b>Category:</b>
                                 </li>
                                 <li class="list-inline-item">
                                     <p class="text-muted"><strong>{{ $productDetails->categoryInfo->name }}</strong></p>
                                 </li>
                             </ul>
 
-                            <h5>Description:</h5>
+                            <b>Description:</b>
                             <p>{{ Str::limit($productDetails->product_description, 200) }}</p>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <ul class="list-inline pb-3">
                                         <li class="list-inline-item text-right">
-                                            Quantity:{{ $productDetails->product_weight }}(KG)
+                                            <b>Total Weight:</b>{{ $productDetails->product_weight }}(KG)
                                         </li>
                                     </ul>
                                 </div>
@@ -159,7 +161,7 @@
                                 <div class="col-auto">
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            <h6>Total Price :</h6>
+                                            <b>Total Price:</b>
                                         </li>
                                         <li class="list-inline-item">
                                             <p><strong>{{ $productDetails->selling_price }}(taka)</strong></p>

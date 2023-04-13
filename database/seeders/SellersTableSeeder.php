@@ -136,6 +136,19 @@ class SellersTableSeeder extends Seeder
                 'created_at' => '2023-04-08 06:30:50',
                 'updated_at' => '2023-04-08 06:30:50',
             ),
+            9 => 
+            array (
+                'id' => 10,
+                'user_id' => 37,
+                'name' => 'Aishorjo Biswas',
+                'email' => 'seller@gmail.com',
+                'phone' => '01825645523',
+                'password' => '$2y$10$a.511eJYa5NIJiNoLhi4lO2C8554YN3SllJjH358OP5Sf1kMFlXqe',
+                'address' => 'Mohammadpur,Dhaka',
+                'gender' => 'Female',
+                'created_at' => '2023-04-13 21:06:51',
+                'updated_at' => '2023-04-13 21:06:51',
+            ),
         ));
         
         

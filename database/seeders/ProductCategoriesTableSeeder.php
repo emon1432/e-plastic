@@ -40,7 +40,7 @@ class ProductCategoriesTableSeeder extends Seeder
             2 => 
             array (
                 'id' => 3,
-                'name' => 'plastic ',
+                'name' => 'Plastic ',
                 'price_per_unit' => 60,
                 'status' => 1,
                 'created_at' => NULL,
