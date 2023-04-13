@@ -124,10 +124,6 @@
                                         <a href="{{ route('product.details', $product->id) }}"
                                             class="btn btn-success text-decoration-none">Details</a>
                                     </div>
-                                    <div>
-                                        <a href="{{ route('checkout') }}"
-                                            class="btn btn-success text-decoration-none text-right">Buy Now</a>
-                                    </div>
                                 </div>
 
                             </div>

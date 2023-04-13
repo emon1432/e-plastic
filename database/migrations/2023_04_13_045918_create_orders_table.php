@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('order_id')->nullable();
             $table->string('transaction_id')->nullable();
             $table->string('currency')->nullable();
+            $table->string('user_id')->nullable();
             $table->string('name')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
@@ -28,6 +29,7 @@ return new class extends Migration
             $table->double('amount')->nullable();
             $table->string('image')->nullable();
             $table->string('status')->default('pending');
+            $table->string('assign_employee_id')->nullable();
             $table->timestamps();
         });
     }

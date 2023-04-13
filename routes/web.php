@@ -6,7 +6,9 @@ use App\Http\Controllers\Backend\AssignedRequestController;
 use App\Http\Controllers\Backend\BuyerController;
 use App\Http\Controllers\Backend\EmployeeAssignRequestController;
 use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PostProductController;
+use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\SellerController;
 use App\Http\Controllers\Backend\SellRequestController;
 use App\Http\Controllers\Backend\SellRequestManageController;
@@ -116,4 +118,27 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     });
 
     Route::post('checkout', [SslCommerzPaymentController::class, 'checkout'])->name('checkout');
+
+    //buyer order
+    Route::controller(OrderController::class)->group(function () {
+        Route::get('order/pending', 'pending')->name('order.pending');
+        Route::get('order/accepted', 'accepted')->name('order.accepted');
+        Route::get('order/completed', 'completed')->name('order.completed');
+
+        //employee assign
+        Route::post('order/employee-assign', 'employeeAssign')->name('order.employee-assign');
+    });
+
+
+    Route::controller(ReportController::class)->group(function () {
+        //sell-report
+        Route::get('sell-report', 'sell_report')->name('sell.report');
+        Route::get('sell-reports/{day}', 'sell_reports')->name('sell.reports');
+        Route::post('sell-report/date-wise', 'date_wise')->name('sell.date-wise');
+
+        //purchase-report
+        Route::get('purchase-report', 'purchase_report')->name('purchase.report');
+        Route::get('purchase-reports/{day}', 'purchase_reports')->name('purchase.reports');
+        Route::post('purchase-report/date-wise', 'purchase_date_wise')->name('purchase.date-wise');
+    });
 });

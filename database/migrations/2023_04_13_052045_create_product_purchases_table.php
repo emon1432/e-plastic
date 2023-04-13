@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('product_purchases', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id')->nullable();
             $table->string('product_name');
             $table->string('product_description')->nullable();
             $table->string('product_category_id');

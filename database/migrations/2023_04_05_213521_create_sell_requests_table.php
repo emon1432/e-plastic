@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('phone')->nullable();
             $table->string('email');
             $table->string('address');
-            $table->string('product_name');
+            $table->string('product_name')->nullable();
             $table->string('product_category_id');
             $table->string('product_weight');
             $table->string('product_price');

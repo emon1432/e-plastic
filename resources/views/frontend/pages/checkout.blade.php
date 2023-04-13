@@ -69,6 +69,7 @@
                         <label for="firstName">Full name</label>
                         <input type="text" name="buyer_name" class="form-control" id="buyer_name"
                             placeholder="Enter your full name" value="{{ Auth::user()->name }}" required>
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" id="user_id" />
                     </div>
                 </div>
 
@@ -161,6 +162,7 @@
         obj.product_id = $('#product_id').val();
         obj.category_id = $('#category_id').val();
         obj.product_weight = $('#product_weight').val();
+        obj.user_id = $('#user_id').val();
 
         $('#sslczPayBtn').prop('postdata', obj);
 

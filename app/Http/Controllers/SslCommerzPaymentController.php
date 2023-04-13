@@ -146,6 +146,7 @@ class SslCommerzPaymentController extends Controller
                 'product_id' => $cart->product_id,
                 'product_category_id' => $cart->category_id,
                 'product_weight' => $cart->product_weight,
+                'user_id' => $cart->user_id,
             ]);
 
         $sslc = new SslCommerzNotification();
@@ -183,7 +184,11 @@ class SslCommerzPaymentController extends Controller
                 */
                 $update_product = DB::table('orders')
                     ->where('transaction_id', $tran_id)
-                    ->update(['status' => 'Processing']);
+                    ->update([
+                        'status' => 'Processing',
+                        'created_at' => date('Y-m-d H:i:s'),
+                        'updated_at' => date('Y-m-d H:i:s'),
+                    ]);
 
                 //delete all pending orders
                 $delete_pending_orders = DB::table('orders')
