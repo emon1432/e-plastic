@@ -5,19 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use App\Models\Products;
 
 class SslCommerzPaymentController extends Controller
 {
 
-    public function exampleEasyCheckout()
+    public function checkout(Request $request)
     {
-        return view('checkout');
+        $product = Products::with('categoryInfo')->where('id', $request->product_id)->first();
+        // return response()->json($product);
+        return view('frontend.pages.checkout', compact('product'));
     }
 
-    // public function exampleHostedCheckout()
-    // {
-    //     return view('exampleHosted');
-    // }
 
     public function index(Request $request)
     {
@@ -90,25 +89,24 @@ class SslCommerzPaymentController extends Controller
     public function payViaAjax(Request $request)
     {
 
-        # Here you have to receive all the order data to initate the payment.
-        # Lets your oder trnsaction informations are saving in a table called "orders"
-        # In orders table order uniq identity is "transaction_id","status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
+        $cart_json = $request->cart_json;
+        $cart = json_decode($cart_json);
 
         $post_data = array();
-        $post_data['total_amount'] = '10'; # You cant not pay less than 10
+        $post_data['total_amount'] = $cart->amount; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # CUSTOMER INFORMATION
-        $post_data['cus_name'] = 'Customer Name';
-        $post_data['cus_email'] = 'customer@mail.com';
-        $post_data['cus_add1'] = 'Customer Address';
+        $post_data['cus_name'] = $cart->cus_name;
+        $post_data['cus_email'] = $cart->cus_email;
+        $post_data['cus_add1'] = $cart->cus_addr1;
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = "";
         $post_data['cus_state'] = "";
         $post_data['cus_postcode'] = "";
         $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801XXXXXXXXX';
+        $post_data['cus_phone'] = $cart->cus_phone;
         $post_data['cus_fax'] = "";
 
         # SHIPMENT INFORMATION
@@ -144,7 +142,10 @@ class SslCommerzPaymentController extends Controller
                 'status' => 'Pending',
                 'address' => $post_data['cus_add1'],
                 'transaction_id' => $post_data['tran_id'],
-                'currency' => $post_data['currency']
+                'currency' => $post_data['currency'],
+                'product_id' => $cart->product_id,
+                'product_category_id' => $cart->category_id,
+                'product_weight' => $cart->product_weight,
             ]);
 
         $sslc = new SslCommerzNotification();
@@ -159,7 +160,6 @@ class SslCommerzPaymentController extends Controller
 
     public function success(Request $request)
     {
-        echo "Transaction is Successful";
 
         $tran_id = $request->input('tran_id');
         $amount = $request->input('amount');
@@ -185,13 +185,18 @@ class SslCommerzPaymentController extends Controller
                     ->where('transaction_id', $tran_id)
                     ->update(['status' => 'Processing']);
 
-                echo "<br >Transaction is successfully Completed";
+                //delete all pending orders
+                $delete_pending_orders = DB::table('orders')
+                    ->where('status', 'Pending')
+                    ->delete();
+
+                return redirect('/')->with('success', 'Payment success');
             }
         } else if ($order_details->status == 'Processing' || $order_details->status == 'Complete') {
             /*
              That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
              */
-            echo "Transaction is successfully Completed";
+            return redirect('/')->with('success', 'Payment success');
         } else {
             #That means something wrong happened. You can redirect customer to your product page.
             echo "Invalid Transaction";

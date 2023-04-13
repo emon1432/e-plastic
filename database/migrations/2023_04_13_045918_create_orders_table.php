@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('address')->nullable();
-            $table->string('product_name')->nullable();
+            $table->string('product_id')->nullable();
             $table->string('product_category_id')->nullable();
             $table->string('product_weight')->nullable();
             $table->string('product_price')->nullable();

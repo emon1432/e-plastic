@@ -56,63 +56,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--/.First slide-->
-                                {{--
-                                <!--Second slide-->
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid"
-                                                    src="{{ asset('frontend') }}/img/product_single_04.jpg"
-                                                    alt="Product Image 4">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid"
-                                                    src="{{ asset('frontend') }}/img/product_single_05.jpg"
-                                                    alt="Product Image 5">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid"
-                                                    src="{{ asset('frontend') }}/img/product_single_06.jpg"
-                                                    alt="Product Image 6">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/.Second slide--> --}}
-
-                                {{-- <!--Third slide-->
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid"
-                                                    src="{{ asset('frontend') }}/img/product_single_07.jpg"
-                                                    alt="Product Image 7">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid"
-                                                    src="{{ asset('frontend') }}/img/product_single_08.jpg"
-                                                    alt="Product Image 8">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid"
-                                                    src="{{ asset('frontend') }}/img/product_single_09.jpg"
-                                                    alt="Product Image 9">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/.Third slide--> --}}
                             </div>
                             <!--End Slides-->
                         </div>
@@ -172,8 +115,17 @@
                             </div>
                             <div class="row pb-3">
                                 <div class="col d-grid">
-                                    <a class="btn btn-success btn-lg" href="{{ route('checkout') }}">Buy
-                                        Now</a>
+                                    <form action="{{ route('checkout') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $productDetails->id }}">
+                                        <input type="hidden" name="product_name"
+                                            value="{{ $productDetails->product_name }}">
+                                        <input type="hidden" name="product_price"
+                                            value="{{ $productDetails->selling_price }}">
+                                        <input type="hidden" name="product_quantity" value="1">
+                                        <button type="submit" class="btn btn-success btn-lg">Buy Now</button>
+
+                                    </form>
                                 </div>
                             </div>
 
