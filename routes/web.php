@@ -25,8 +25,8 @@ Route::controller(HomeController::class)->group(function () {
 Route::controller(ProductController::class)->group(function () {
     Route::get('products', 'index')->name('products');
     Route::get('product-details/{id}', 'productDetails')->name('product.details');
-    Route::get('checkout', 'checkout')->name('checkout');
 });
+
 
 // SSLCOMMERZ Start
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
@@ -115,4 +115,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::post('seller-sell-request/reject/{id}', 'reject')->name('seller-sell-request.reject');
     });
 
+    Route::post('checkout', [SslCommerzPaymentController::class, 'checkout'])->name('checkout');
 });
