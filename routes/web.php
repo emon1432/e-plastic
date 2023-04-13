@@ -58,7 +58,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::resource('buyer', BuyerController::class);
 
     //products all routes
-    Route::resource('products', PostProductController::class);
+    Route::resource('product', PostProductController::class);
 
     //Sell Request Routes 
     Route::post('sell-request/store', [SellRequestController::class, 'store'])->name('sell-request.store');

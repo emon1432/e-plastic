@@ -61,11 +61,11 @@
                                                 class="intro-y text-primary text-2xl font-bold text-left pt-4 pb-2 mb-2 border-b-2 ">
                                                 Sell Request
                                             </div>
-                                            <form class="text-lg" action="{{ route('products.store') }}" method="POST"
+                                            <form class="text-lg" action="{{ route('product.store') }}" method="POST"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="grid grid-cols-12 gap-2 mt-3">
-                                                    <input type="hidden" name="id" value="{{$pickedRequest->id}}">
+                                                    <input type="hidden" name="id" value="{{ $pickedRequest->id }}">
                                                     <div class="col-span-6">
                                                         <label class="flex flex-col sm:flex-row">Product Name</label>
                                                         <input class="w-full" type="text" name="product_name"

@@ -53,8 +53,8 @@
             </li>
 
             <li>
-                <a href="{{ route('products.index') }}"
-                    class="side-menu {{ $route == 'products.index' ? 'side-menu--active' : '' }}">
+                <a href="{{ route('product.index') }}"
+                    class="side-menu {{ $route == 'product.index' ? 'side-menu--active' : '' }}">
                     <div class="side-menu__icon"> <i data-feather="chevron-down"></i> </div>
                     <div class="side-menu__title">
                         Products
