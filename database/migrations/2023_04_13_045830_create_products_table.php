@@ -10,20 +10,18 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('sell_requests', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('email');
-            $table->string('address');
             $table->string('product_name');
             $table->string('product_category_id');
             $table->string('product_weight');
             $table->string('product_price');
-            $table->string('total_price');
-            $table->string('image')->nullable();
-            $table->string('status')->default('pending');
-            $table->string('reject_reason')->nullable();
+            $table->string('buying_price');
+            $table->string('selling_price');
+            $table->string('image1');
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('sell_requests');
+        Schema::dropIfExists('products');
     }
 };

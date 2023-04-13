@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
 use App\Models\ProductCategory;
 use App\Models\SellRequest;
 use Illuminate\Http\Request;
@@ -46,6 +47,7 @@ class SellRequestController extends Controller
         $pendingRequest->phone = auth()->user()->phone;
         $pendingRequest->email = auth()->user()->email;
         $pendingRequest->address = $request->address;
+        $pendingRequest->product_name = $request->product_name;
         $pendingRequest->product_category_id = $request->category;
         $pendingRequest->product_weight = $request->weight;
         $pendingRequest->product_price = $request->price;
@@ -86,7 +88,7 @@ class SellRequestController extends Controller
 
     public function accepted()
     {
-        $acceptedRequests = SellRequest::where('status', '=', 'accepted')->get();
+        $acceptedRequests = SellRequest::where('status', '=', 'accepted')->orWhere('status', '=', 'assigned')->get();
         return view('backend.pages.seller.accepeted-request', compact('acceptedRequests'));
     }
 

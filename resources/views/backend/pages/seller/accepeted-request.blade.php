@@ -32,7 +32,16 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $acceptedRequest->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                <td class="text-success">accepted</td>
+                                @if ($acceptedRequest->status == 'accepeted')
+                                    <td class="text-center">
+                                        <span class="badge badge-primary">Accepted</span>
+                                    </td>
+                                @endif
+                                @if ($acceptedRequest->status == 'assigned')
+                                    <td class="text-center">
+                                        <span class="badge badge-warning">Assigned</span>
+                                    </td>
+                                @endif
                             </tr>
                         @endforeach
                     </tbody>

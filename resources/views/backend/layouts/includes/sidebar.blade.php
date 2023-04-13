@@ -52,6 +52,16 @@
                 </a>
             </li>
 
+            <li>
+                <a href="{{ route('product.index') }}"
+                    class="side-menu {{ $route == 'product.index' ? 'side-menu--active' : '' }}">
+                    <div class="side-menu__icon"> <i data-feather="chevron-down"></i> </div>
+                    <div class="side-menu__title">
+                        Products
+                    </div>
+                </a>
+            </li>
+
             <!--Employee Request Dropdown-->
             <li>
                 <a href="javascript:;" class="side-menu">
@@ -64,23 +74,21 @@
                 </a>
                 <ul class="">
                     <li>
-                        <a href="#" class="side-menu">
-                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                        <a href="{{ route('employee-assign-request.index') }}" class="side-menu">
+                            <div
+                                class="side-menu__icon {{ $route == 'employee-assign-request.index' ? 'side-menu--active' : '' }}">
+                                <i data-feather="activity"></i>
+                            </div>
                             <div class="side-menu__title"> Assigned Requests </div>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="side-menu">
-                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Accepted Requests</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="side-menu">
-                            <div class="side-menu__icon">
+                        <a href="{{ route('employee-assign-request.picked') }}" class="side-menu">
+                            <div
+                                class="side-menu__icon {{ $route == 'employee-assign-request.picked' ? 'side-menu--active' : '' }}">
                                 <i data-feather="activity"></i>
                             </div>
-                            <div class="side-menu__title">Completed Requests</div>
+                            <div class="side-menu__title"> Picked Requests</div>
                         </a>
                     </li>
                 </ul>
@@ -189,7 +197,6 @@
                     </li>
                 </ul>
             </li>
-            <!--end of dropdown menu-->
 
             <li>
                 <a href="{{ route('admin.index') }}"
@@ -215,28 +222,25 @@
                 </a>
                 <ul class="">
                     <li>
-                        <a href="#" class="side-menu">
-                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                        <a href="{{ route('assigned-request.index') }}" class="side-menu">
+                            <div
+                                class="side-menu__icon {{ $route == 'assigned-request.index' ? 'side-menu--active' : '' }}">
+                                <i data-feather="activity"></i>
+                            </div>
                             <div class="side-menu__title"> Assigned Requests </div>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="side-menu">
-                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Accepted Requests</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="side-menu">
-                            <div class="side-menu__icon">
+                        <a href="{{ route('assigned-request.picked') }}" class="side-menu">
+                            <div
+                                class="side-menu__icon {{ $route == 'assigned-request.picked' ? 'side-menu--active' : '' }}">
                                 <i data-feather="activity"></i>
                             </div>
-                            <div class="side-menu__title">Completed Requests</div>
+                            <div class="side-menu__title"> Picked Requests</div>
                         </a>
                     </li>
                 </ul>
             </li>
-
             <li>
                 <a href="javascript:;" class="side-menu">
                     <div class="side-menu__icon"> <i data-feather="shopping-cart"></i> </div>

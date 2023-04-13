@@ -96,38 +96,48 @@
                 <div class="col-lg-6 m-auto">
                     <h1 class="h1">Featured Product</h1>
                     <p>
-                        Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident.
+                        This is our newest products. You can see all of our products in our <a href="#">Product
+                            Page</a>.
                     </p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card h-100">
-                        <a href="{{ route('product.details') }}">
-                            <img src="{{ asset('frontend') }}/img/feature_prod_01.jpg" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$240.00</li>
-                            </ul>
-                            <a href="{{ route('product.details') }}" class="h2 text-decoration-none text-dark">Gym
-                                Weight</a>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia
-                                deserunt.
-                            </p>
-                            <p class="text-muted">Reviews (24)</p>
+                @foreach ($products as $product)
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card h-100">
+                            <a href="{{ route('product.details', $product->id) }}">
+                                <img src="{{ asset('backend/images/products/' . $product->image1) }}" class="card-img-top"
+                                    alt="..." height="250" width="20">
+                            </a>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between my-4">
+                                    <a href="{{ route('product.details', $product->id) }}"
+                                        class=" text-decoration-none text-dark">
+                                        <h2 class="text-secondary">{{ strtoupper($product->product_name) }}</h2>
+                                    </a>
+                                    <h4 class="text-right text-success">{{ $product->selling_price }}(Taka)</h4>
+                                </div>
+                                <div class="text-decoration-none">
+                                    <h5 class="text-success">
+                                        Category : {{ $product->categoryInfo->name }}
+                                    </h5>
+                                </div>
+                                {{-- details button center --}}
+                                <div class="d-flex justify-content-center mt-5">
+                                    <div class="mx-3">
+                                        <a href="{{ route('product.details', $product->id) }}"
+                                            class="btn btn-success text-decoration-none">Details</a>
+                                    </div>
+                                    <div>
+                                        <a href="{{ route('checkout') }}"
+                                            class="btn btn-success text-decoration-none text-right">Buy Now</a>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
