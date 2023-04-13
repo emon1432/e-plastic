@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="{{ asset('frontend') }}/img/product_single_10.jpg"
+                        <img class="card-img img-fluid" src="{{asset('backend/images/products/'.$productDetails->image1)}}"
                             alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
@@ -29,27 +29,27 @@
                             <!--Start Slides-->
                             <div class="carousel-inner product-links-wap" role="listbox">
 
-                                <!--First slide-->
+                                {{-- <!--First slide-->
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid"
-                                                    src="{{ asset('frontend') }}/img/product_single_01.jpg"
+                                                    src="{{asset('backend/images/products/'.$productDetails->image1)}}"
                                                     alt="Product Image 1">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid"
-                                                    src="{{ asset('frontend') }}/img/product_single_02.jpg"
+                                                    src="{{asset('backend/images/products/'.$productDetails->image2)}}"
                                                     alt="Product Image 2">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid"
-                                                    src="{{ asset('frontend') }}/img/product_single_03.jpg"
+                                                    src="{{asset('backend/images/products/'.$productDetails->image3)}}"
                                                     alt="Product Image 3">
                                             </a>
                                         </div>
@@ -83,7 +83,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--/.Second slide-->
+                                <!--/.Second slide--> --}}
 
                                 <!--Third slide-->
                                 <div class="carousel-item">
@@ -195,121 +195,6 @@
         </div>
     </section>
     <!-- Close Content -->
-
-    <!-- Start Article -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row text-left p-2 pb-3">
-                <h4>Related Products</h4>
-            </div>
-
-            <!--Start Carousel Wrapper-->
-            <div id="carousel-related-product">
-
-                <div class="p-2 pb-3">
-                    <div class="product-wap card rounded-0">
-                        <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="{{ asset('frontend') }}/img/shop_08.jpg">
-                            <div
-                                class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white mt-2"
-                                            href="{{ route('product.details') }}"><i class="far fa-eye"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <a href="{{ route('product.details') }}" class="h3 text-decoration-none">Product Title</a>
-                            <br>
-                            <small>Categoty Name</small>
-                            <p class="text-center mb-0">$250.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-2 pb-3">
-                    <div class="product-wap card rounded-0">
-                        <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="{{ asset('frontend') }}/img/shop_08.jpg">
-                            <div
-                                class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white mt-2"
-                                            href="{{ route('product.details') }}"><i class="far fa-eye"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <a href="{{ route('product.details') }}" class="h3 text-decoration-none">Product Title</a>
-                            <br>
-                            <small>Categoty Name</small>
-                            <p class="text-center mb-0">$250.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-2 pb-3">
-                    <div class="product-wap card rounded-0">
-                        <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="{{ asset('frontend') }}/img/shop_08.jpg">
-                            <div
-                                class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white mt-2"
-                                            href="{{ route('product.details') }}"><i class="far fa-eye"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <a href="{{ route('product.details') }}" class="h3 text-decoration-none">Product Title</a>
-                            <br>
-                            <small>Categoty Name</small>
-                            <p class="text-center mb-0">$250.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-2 pb-3">
-                    <div class="product-wap card rounded-0">
-                        <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="{{ asset('frontend') }}/img/shop_08.jpg">
-                            <div
-                                class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white mt-2"
-                                            href="{{ route('product.details') }}"><i class="far fa-eye"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <a href="{{ route('product.details') }}" class="h3 text-decoration-none">Product Title</a>
-                            <br>
-                            <small>Categoty Name</small>
-                            <p class="text-center mb-0">$250.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-2 pb-3">
-                    <div class="product-wap card rounded-0">
-                        <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="{{ asset('frontend') }}/img/shop_08.jpg">
-                            <div
-                                class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white mt-2"
-                                            href="{{ route('product.details') }}"><i class="far fa-eye"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <a href="{{ route('product.details') }}" class="h3 text-decoration-none">Product Title</a>
-                            <br>
-                            <small>Categoty Name</small>
-                            <p class="text-center mb-0">$250.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Article -->
 @endsection
 @push('js')
     <!-- Start Slider Script -->
