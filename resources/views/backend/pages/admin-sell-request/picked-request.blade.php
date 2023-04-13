@@ -44,6 +44,14 @@
                                         </button>
                                     </td>
                                 @endif
+                                @if ($pickedRequest->status == 'posted')
+                                    <td>
+                                        <span class="text-primary">Posted</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-primary">Posted</span>
+                                    </td>
+                                @endif
 
                                 <div id="post-product-modal-{{ $pickedRequest->id }}" class="modal" tabindex="-1"
                                     aria-hidden="true">
@@ -53,49 +61,80 @@
                                                 class="intro-y text-primary text-2xl font-bold text-left pt-4 pb-2 mb-2 border-b-2 ">
                                                 Sell Request
                                             </div>
-                                            <form class="text-lg" action="" method="POST"
+                                            <form class="text-lg" action="{{ route('products.store') }}" method="POST"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="grid grid-cols-12 gap-2 mt-3">
+                                                    <input type="hidden" name="id" value="{{$pickedRequest->id}}">
+                                                    <div class="col-span-6">
+                                                        <label class="flex flex-col sm:flex-row">Product Name</label>
+                                                        <input class="w-full" type="text" name="product_name"
+                                                            placeholder="Product Name"
+                                                            value="{{ $pickedRequest->sellRequestInfo->product_name }}"
+                                                            required>
+                                                    </div>
                                                     <div class="col-span-6">
                                                         <label class="flex flex-col sm:flex-row">Select Category</label>
-                                                        <select name="category"
+                                                        <select name="product_category_id"
                                                             class="flex flex-col sm:flex-row category w-full">
                                                             <option value="">Select Category</option>
                                                             @foreach ($productCategories as $category)
-                                                                <option value="{{ $category->id }}">{{ $category->name }}
+                                                                <option value="{{ $category->id }}"
+                                                                    @if ($category->id == $pickedRequest->sellRequestInfo->product_category_id) selected @endif>
+                                                                    {{ $category->name }}
                                                                 </option>
                                                             @endforeach
                                                         </select>
                                                     </div>
                                                     <div class="col-span-6">
                                                         <label class="flex flex-col sm:flex-row">Enter Weight(KG)</label>
-                                                        <input class="weight w-full" type="text" name="weight"
-                                                            placeholder="Weight In KG" required>
+                                                        <input class="w-full" type="text" name="product_weight"
+                                                            placeholder="Weight In KG"
+                                                            value="{{ $pickedRequest->sellRequestInfo->product_weight }}"
+                                                            required>
                                                     </div>
                                                     <div class="col-span-6">
                                                         <label class="flex flex-col sm:flex-row">Product Price(Taka)</label>
-                                                        <input class="price w-full" type="text" name="price" readonly>
+                                                        <input class="price w-full" type="text" name="product_price"
+                                                            value="{{ $pickedRequest->sellRequestInfo->product_price }}"
+                                                            readonly>
                                                     </div>
                                                     <div class="col-span-6">
-                                                        <label class="flex flex-col sm:flex-row">Total Price</label>
-                                                        <input class="finalPrice w-full" type="text" name="totalPrice"
-                                                            placeholder="Price In Taka" readonly>
+                                                        <label class="flex flex-col sm:flex-row">Buying Price</label>
+                                                        <input class="w-full" type="text" name="buying_price"
+                                                            placeholder="Price In Taka"
+                                                            value="{{ $pickedRequest->sellRequestInfo->total_price }}"
+                                                            readonly>
                                                     </div>
+
                                                     <div class="col-span-6">
-                                                        <label class="flex flex-col sm:flex-row">Enter Percentage(%)</label>
-                                                        <input class="percentage w-full" type="text" name="price"
-                                                            value="">
+                                                        <label class="flex flex-col sm:flex-row">Selling Price</label>
+                                                        <input class="w-full" type="text" name="selling_price"
+                                                            placeholder="Enter Selling Price">
                                                     </div>
                                                     <div class="col-span-12">
                                                         <label class="flex flex-col sm:flex-row">Enter Pickup
                                                             Address</label>
-                                                        <textarea name="address" class="w-full" cols="15" rows="4"></textarea>
+                                                        <textarea name="address" class="w-full" cols="15" rows="4">{{ $pickedRequest->sellRequestInfo->address }}</textarea>
                                                     </div>
-                                                    <div class="col-span-6">
+                                                    <div class="col-span-4">
                                                         <label class="flex flex-col sm:flex-row">Image</label>
-                                                        <input type="file" name="image"
+                                                        <input type="file" name="image1"
                                                             class="input w-full border mt-2" placeholder="Image" required>
+                                                        <img src="{{ url('backend/images/sell-request/' . $pickedRequest->sellRequestInfo->image) }}"
+                                                            height="30" weight="30px">
+                                                    </div>
+
+                                                    <div class="col-span-4">
+                                                        <label class="flex flex-col sm:flex-row">Image2</label>
+                                                        <input type="file" name="image2"
+                                                            class="input w-full border mt-2" placeholder="Image" required>
+                                                    </div>
+                                                    <div class="col-span-4">
+                                                        <label class="flex flex-col sm:flex-row">Image3</label>
+                                                        <input type="file" name="image3"
+                                                            class="input w-full border mt-2" placeholder="Image" required>
+
                                                     </div>
                                                 </div>
                                                 <div class="flex flex-row-reverse mt-2">
@@ -115,20 +154,3 @@
         </div>
     </div>
 @endsection
-
-@push('js')
-    <script>
-        // take percentage and calculate total price
-        $(document).ready(function() {
-            $('.percentage').keyup(function() {
-                var percentage = $(this).val();
-                var price = $('.finalPrice').val();
-                var total = (percentage / 100) * price;
-                var finalPrice = 0;
-                //add percentage price with total price
-                finalPrice = parseInt(price) + parseInt(total);
-                $('.finalPrice').val(finalPrice);
-            });
-        });
-    </script>
-@endpush

@@ -41,7 +41,7 @@ class AssignedRequestController extends Controller
     //picked    
     public function picked()
     {
-        $pickedRequests = EmployeeAssignRequest::with('sellRequestInfo')->where('status', '=', 'picked')->orderBy('id', 'DESC')->get();
+        $pickedRequests = EmployeeAssignRequest::with('sellRequestInfo')->where('status', '=', 'picked')->orWhere('status', '=', 'posted')->orderBy('id', 'DESC')->get();
         return view('backend.pages.employee.picked-request', compact('pickedRequests'));
     }
 }

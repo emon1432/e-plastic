@@ -13,6 +13,11 @@
                 @csrf
                 <div class="grid grid-cols-12 gap-2 mt-3">
                     <div class="col-span-6">
+                        <label class="flex flex-col sm:flex-row">Product Name</label>
+                        <input class="weight w-full" type="text" name="product_name" placeholder="Product Name"
+                            required>
+                    </div>
+                    <div class="col-span-6">
                         <label class="flex flex-col sm:flex-row">Select Category</label>
                         <select name="category" class="flex flex-col sm:flex-row category w-full">
                             <option value="">Select Category</option>
@@ -31,7 +36,8 @@
                     </div>
                     <div class="col-span-6">
                         <label class="flex flex-col sm:flex-row">Total Price</label>
-                        <input class="finalPrice w-full" type="text" name="totalPrice" placeholder="Price In Taka" readonly>
+                        <input class="finalPrice w-full" type="text" name="totalPrice" placeholder="Price In Taka"
+                            readonly>
                     </div>
                     <div class="col-span-12">
                         <label class="flex flex-col sm:flex-row">Enter Pickup Address</label>

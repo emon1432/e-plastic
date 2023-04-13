@@ -47,6 +47,7 @@ class SellRequestController extends Controller
         $pendingRequest->phone = auth()->user()->phone;
         $pendingRequest->email = auth()->user()->email;
         $pendingRequest->address = $request->address;
+        $pendingRequest->product_name = $request->product_name;
         $pendingRequest->product_category_id = $request->category;
         $pendingRequest->product_weight = $request->weight;
         $pendingRequest->product_price = $request->price;

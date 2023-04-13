@@ -52,6 +52,16 @@
                 </a>
             </li>
 
+            <li>
+                <a href="{{ route('products.index') }}"
+                    class="side-menu {{ $route == 'products.index' ? 'side-menu--active' : '' }}">
+                    <div class="side-menu__icon"> <i data-feather="chevron-down"></i> </div>
+                    <div class="side-menu__title">
+                        Products
+                    </div>
+                </a>
+            </li>
+
             <!--Employee Request Dropdown-->
             <li>
                 <a href="javascript:;" class="side-menu">
@@ -187,7 +197,6 @@
                     </li>
                 </ul>
             </li>
-            <!--end of dropdown menu-->
 
             <li>
                 <a href="{{ route('admin.index') }}"

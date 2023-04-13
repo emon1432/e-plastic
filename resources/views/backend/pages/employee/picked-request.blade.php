@@ -33,11 +33,9 @@
                                                 src="{{ asset('backend/images/sell-request') }}/{{ $pickedRequest->sellRequestInfo->image ?? 'avatar.png' }}">
                                         </div>
                                     </td>
-                                    @if ($pickedRequest->status == 'picked')
-                                        <td>
-                                            <span class="text-primary">Picked</span>
-                                        </td>
-                                    @endif
+                                    <td>
+                                        <span class="text-primary">Picked</span>
+                                    </td>
                                 </tr>
                             @endif
                         @endforeach

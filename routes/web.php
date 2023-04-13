@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\AssignedRequestController;
 use App\Http\Controllers\Backend\BuyerController;
 use App\Http\Controllers\Backend\EmployeeAssignRequestController;
 use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\PostProductController;
 use App\Http\Controllers\Backend\SellerController;
 use App\Http\Controllers\Backend\SellRequestController;
 use App\Http\Controllers\Backend\SellRequestManageController;
@@ -56,6 +57,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     //Buyer Routes
     Route::resource('buyer', BuyerController::class);
 
+    //products all routes
+    Route::resource('products', PostProductController::class);
+
     //Sell Request Routes 
     Route::post('sell-request/store', [SellRequestController::class, 'store'])->name('sell-request.store');
     Route::post('sell-request/update/{id}', [SellRequestController::class, 'update'])->name('sell-request.update');
@@ -90,7 +94,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     });
 
 
-    //madmin Sell Request
+    //admin Sell Request
     Route::controller(AdminSellerRequestController::class)->group(function () {
         Route::get('seller-sell-request/pending', 'pending')->name('seller-sell-request.pending');
         Route::get('seller-sell-request/accepted', 'accepted')->name('seller-sell-request.accepted');
@@ -100,4 +104,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         //route reject status
         Route::post('seller-sell-request/reject/{id}', 'reject')->name('seller-sell-request.reject');
     });
+
 });
