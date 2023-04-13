@@ -40,6 +40,7 @@ class PostProductController extends Controller
         //store product
         $product = new Products();
         $product->product_name = $request->product_name;
+        $product->product_description = $request->product_description;
         $product->product_category_id = $request->product_category_id;
         $product->product_weight = $request->product_weight;
         $product->product_price = $request->product_price;
@@ -47,17 +48,17 @@ class PostProductController extends Controller
         $product->selling_price = $request->selling_price;
         $product->status = 'posted';
 
-
-
+        //create purchase product
         $purchase_product = new ProductPurchase();
         $purchase_product->product_name = $request->product_name;
+        $purchase_product->product_description = $request->product_description;
         $purchase_product->product_category_id = $request->product_category_id;
         $purchase_product->product_weight = $request->product_weight;
         $purchase_product->product_price = $request->product_price;
         $purchase_product->buying_price = $request->buying_price;
         $purchase_product->status = 'bought';
 
-        //update status to EmployeeAssignRequest table where id = $request->id
+        //update employee assign 
         $employeeAssignRequest = EmployeeAssignRequest::find($request->id);
         $employeeAssignRequest->status = 'posted';
         $employeeAssignRequest->save();
@@ -91,7 +92,7 @@ class PostProductController extends Controller
         $purchase_product->save();
 
         Alert::success('Product Posted Successfully', 'Success');
-        return redirect()->route('products.index');
+        return redirect()->route('product.index');
 
 
     }

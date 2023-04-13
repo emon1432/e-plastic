@@ -113,16 +113,14 @@
                                                             placeholder="Enter Selling Price">
                                                     </div>
                                                     <div class="col-span-12">
-                                                        <label class="flex flex-col sm:flex-row">Enter Pickup
-                                                            Address</label>
-                                                        <textarea name="address" class="w-full" cols="15" rows="4">{{ $pickedRequest->sellRequestInfo->address }}</textarea>
+                                                        <label class="flex flex-col sm:flex-row">Enter Product Description</label>
+                                                        <textarea name="product_description" class="w-full" cols="15" rows="3" placeholder="Enter Product Description"></textarea>
                                                     </div>
+
                                                     <div class="col-span-4">
-                                                        <label class="flex flex-col sm:flex-row">Image</label>
+                                                        <label class="flex flex-col sm:flex-row">Image1</label>
                                                         <input type="file" name="image1"
                                                             class="input w-full border mt-2" placeholder="Image" required>
-                                                        <img src="{{ url('backend/images/sell-request/' . $pickedRequest->sellRequestInfo->image) }}"
-                                                            height="30" weight="30px">
                                                     </div>
 
                                                     <div class="col-span-4">

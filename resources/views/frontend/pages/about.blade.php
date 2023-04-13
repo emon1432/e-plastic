@@ -6,9 +6,9 @@
                 <div class="col-md-8 text-white">
                     <h1>About Us</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Eplastic is a recycled type website
+                        Where user can buy or sell used or wasted plustic products. In this website user can also find the
+                        nearest recycling center.
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -25,8 +25,7 @@
             <div class="col-lg-6 m-auto">
                 <h1 class="h1">Our Services</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    Lorem ipsum dolor sit amet.
+                    Different Types of plastic recycling services
                 </p>
             </div>
         </div>
@@ -43,13 +42,6 @@
                 <div class="h-100 py-5 services-icon-wap shadow">
                     <div class="h1 text-success text-center"><i class="fas fa-exchange-alt"></i></div>
                     <h2 class="h5 mt-4 text-center">Shipping & Return</h2>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 pb-5">
-                <div class="h-100 py-5 services-icon-wap shadow">
-                    <div class="h1 text-success text-center"><i class="fa fa-percent"></i></div>
-                    <h2 class="h5 mt-4 text-center">Promotion</h2>
                 </div>
             </div>
 

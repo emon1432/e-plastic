@@ -5,8 +5,8 @@
         <div class="col-md-6 m-auto text-center">
             <h1 class="h1">Contact Us</h1>
             <p>
-                Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet.
+                If you have any questions, please feel free to contact us, our customer service center is working for you
+                24/7.
             </p>
         </div>
     </div>

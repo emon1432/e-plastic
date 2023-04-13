@@ -11,8 +11,9 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="{{asset('backend/images/products/'.$productDetails->image1)}}"
-                            alt="Card image cap" id="product-detail">
+                        <img class="card-img img-fluid"
+                            src="{{ asset('backend/images/products/' . $productDetails->image1) }}" alt="Card image cap"
+                            id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
@@ -29,34 +30,34 @@
                             <!--Start Slides-->
                             <div class="carousel-inner product-links-wap" role="listbox">
 
-                                {{-- <!--First slide-->
+                                <!--First slide-->
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid"
-                                                    src="{{asset('backend/images/products/'.$productDetails->image1)}}"
+                                                    src="{{ asset('backend/images/products/' . $productDetails->image1) }}"
                                                     alt="Product Image 1">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid"
-                                                    src="{{asset('backend/images/products/'.$productDetails->image2)}}"
+                                                    src="{{ asset('backend/images/products/' . $productDetails->image1) }}"
                                                     alt="Product Image 2">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
                                                 <img class="card-img img-fluid"
-                                                    src="{{asset('backend/images/products/'.$productDetails->image3)}}"
+                                                    src="{{ asset('backend/images/products/' . $productDetails->image1) }}"
                                                     alt="Product Image 3">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <!--/.First slide-->
-
+                                {{--
                                 <!--Second slide-->
                                 <div class="carousel-item">
                                     <div class="row">
@@ -85,7 +86,7 @@
                                 </div>
                                 <!--/.Second slide--> --}}
 
-                                <!--Third slide-->
+                                {{-- <!--Third slide-->
                                 <div class="carousel-item">
                                     <div class="row">
                                         <div class="col-4">
@@ -111,7 +112,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--/.Third slide-->
+                                <!--/.Third slide--> --}}
                             </div>
                             <!--End Slides-->
                         </div>
@@ -130,41 +131,27 @@
                 <div class="col-lg-7 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h1 class="h2">Active Wear</h1>
+                            <h1 class="h2">{{ $productDetails->product_name }}</h1>
                             <p class="h3 py-2">$25.00</p>
 
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <h6>Catagory : </h6>
+                                    <h5>Category:</h5>
                                 </li>
                                 <li class="list-inline-item">
-                                    <p class="text-muted"><strong>Category 1</strong></p>
+                                    <p class="text-muted"><strong>{{ $productDetails->categoryInfo->name }}</strong></p>
                                 </li>
                             </ul>
 
-                            <h6>Description:</h6>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fuga hic reprehenderit
-                                distinctio at quae? Porro pariatur hic quia in. Modi fugit placeat excepturi distinctio
-                                voluptatibus vel tempora sunt alias magnam laboriosam esse inventore rerum debitis ipsum,
-                                tenetur doloremque praesentium soluta quidem quasi a perferendis expedita exercitationem
-                                laudantium quos. Nam culpa suscipit et in ea porro dolores molestias facilis, nulla non
-                                totam voluptas. Nemo iusto veritatis minima expedita sit odit maiores? Obcaecati incidunt
-                                voluptatem commodi soluta voluptas architecto veritatis corporis possimus ipsum eligendi
-                                quae earum fugit eos, totam cupiditate, sit molestias fuga. Aspernatur id voluptatem placeat
-                                modi nam, soluta asperiores.</p>
+                            <h5>Description:</h5>
+                            <p>{{ Str::limit($productDetails->product_description, 200) }}</p>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <ul class="list-inline pb-3">
                                         <li class="list-inline-item text-right">
-                                            Quantity(kg)
+                                            Quantity:{{ $productDetails->product_weight }}(KG)
                                         </li>
-                                        <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span>
-                                        </li>
-                                        <li class="list-inline-item"><span class="badge bg-secondary"
-                                                id="var-value">1</span></li>
-                                        <li class="list-inline-item"><span class="btn btn-success"
-                                                id="btn-plus">+</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -172,10 +159,10 @@
                                 <div class="col-auto">
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            <h6>Total Price : </h6>
+                                            <h6>Total Price :</h6>
                                         </li>
                                         <li class="list-inline-item">
-                                            <p><strong>$25.00</strong></p>
+                                            <p><strong>{{ $productDetails->selling_price }}(taka)</strong></p>
                                         </li>
                                     </ul>
                                 </div>
