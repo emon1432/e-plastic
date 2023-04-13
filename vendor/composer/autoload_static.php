@@ -822,6 +822,8 @@ class ComposerStaticInit1d83e762e892e4e89c2025c9c2de41c1
         'Database\\Seeders\\EmployeeAssignRequestsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/EmployeeAssignRequestsTableSeeder.php',
         'Database\\Seeders\\EmployeesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/EmployeesTableSeeder.php',
         'Database\\Seeders\\ProductCategoriesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/ProductCategoriesTableSeeder.php',
+        'Database\\Seeders\\ProductPurchasesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/ProductPurchasesTableSeeder.php',
+        'Database\\Seeders\\ProductsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/ProductsTableSeeder.php',
         'Database\\Seeders\\RolesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/RolesTableSeeder.php',
         'Database\\Seeders\\SellRequestsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/SellRequestsTableSeeder.php',
         'Database\\Seeders\\SellersTableSeeder' => __DIR__ . '/../..' . '/database/seeders/SellersTableSeeder.php',

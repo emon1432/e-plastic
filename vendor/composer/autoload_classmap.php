@@ -254,6 +254,8 @@ return array(
     'Database\\Seeders\\EmployeeAssignRequestsTableSeeder' => $baseDir . '/database/seeders/EmployeeAssignRequestsTableSeeder.php',
     'Database\\Seeders\\EmployeesTableSeeder' => $baseDir . '/database/seeders/EmployeesTableSeeder.php',
     'Database\\Seeders\\ProductCategoriesTableSeeder' => $baseDir . '/database/seeders/ProductCategoriesTableSeeder.php',
+    'Database\\Seeders\\ProductPurchasesTableSeeder' => $baseDir . '/database/seeders/ProductPurchasesTableSeeder.php',
+    'Database\\Seeders\\ProductsTableSeeder' => $baseDir . '/database/seeders/ProductsTableSeeder.php',
     'Database\\Seeders\\RolesTableSeeder' => $baseDir . '/database/seeders/RolesTableSeeder.php',
     'Database\\Seeders\\SellRequestsTableSeeder' => $baseDir . '/database/seeders/SellRequestsTableSeeder.php',
     'Database\\Seeders\\SellersTableSeeder' => $baseDir . '/database/seeders/SellersTableSeeder.php',
