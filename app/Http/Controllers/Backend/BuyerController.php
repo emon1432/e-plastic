@@ -13,7 +13,7 @@ class BuyerController extends Controller
     public function index()
     {
         //get all Buyer from users table       
-        $buyers = User::where('role_id', 4)->get();
+        $buyers = User::where('role_id', 4)->orderBy('id', 'DESC')->get();
         return view('backend.pages.buyer.index', compact('buyers'));
     }
 
@@ -117,6 +117,6 @@ class BuyerController extends Controller
 
         Alert::success('Success', 'Buyer deleted successfully');
         return redirect()->back();
-        
+
     }
 }

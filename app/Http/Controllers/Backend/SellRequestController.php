@@ -15,9 +15,7 @@ class SellRequestController extends Controller
     {
         //store to SellRequest table
         $sellRequest = new SellRequest();
-        $sellRequest->name = auth()->user()->name;
-        $sellRequest->phone = auth()->user()->phone;
-        $sellRequest->email = auth()->user()->email;
+        $sellRequest->seller_id = auth()->user()->id;
         $sellRequest->address = $request->address;
         $sellRequest->product_category_id = $request->category;
         $sellRequest->product_weight = $request->weight;
@@ -43,10 +41,7 @@ class SellRequestController extends Controller
     {
         //update to SellRequest table
         $pendingRequest = SellRequest::find($id);
-        $pendingRequest->name = auth()->user()->name;
-        $pendingRequest->phone = auth()->user()->phone;
-        $pendingRequest->email = auth()->user()->email;
-        $pendingRequest->address = $request->address;
+        $pendingRequest->seller_id = auth()->user()->id;
         $pendingRequest->product_name = $request->product_name;
         $pendingRequest->product_category_id = $request->category;
         $pendingRequest->product_weight = $request->weight;
@@ -82,25 +77,25 @@ class SellRequestController extends Controller
     public function pending()
     {
         $productCategories = ProductCategory::get();
-        $pendingRequests = SellRequest::where('status', '=', 'pending')->get();
+        $pendingRequests = SellRequest::with('categoryInfo')->where('status', '=', 'pending')->get();
         return view('backend.pages.seller.pending-request', compact('pendingRequests', 'productCategories'));
     }
 
     public function accepted()
     {
-        $acceptedRequests = SellRequest::where('status', '=', 'accepted')->orWhere('status', '=', 'assigned')->get();
+        $acceptedRequests = SellRequest::with('categoryInfo')->where('status', '=', 'accepted')->orWhere('status', '=', 'assigned')->get();
         return view('backend.pages.seller.accepeted-request', compact('acceptedRequests'));
     }
 
     public function completed()
     {
-        $completedRequests = SellRequest::where('status', '=', 'completed')->get();
+        $completedRequests = SellRequest::with('categoryInfo')->where('status', '=', 'completed')->get();
         return view('backend.pages.seller.completed-request', compact('completedRequests'));
     }
 
     public function rejected()
     {
-        $rejectedRequests = SellRequest::where('status', '=', 'rejected')->get();
+        $rejectedRequests = SellRequest::with('categoryInfo')->where('status', '=', 'rejected')->get();
         return view('backend.pages.seller.rejected-request', compact('rejectedRequests'));
     }
 }

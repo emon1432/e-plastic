@@ -12,15 +12,13 @@ return new class extends Migration {
     {
         Schema::create('sell_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('email');
-            $table->string('address');
+            $table->string('seller_id')->nullable();
+            $table->string('address')->nullable();
             $table->string('product_name')->nullable();
-            $table->string('product_category_id');
-            $table->string('product_weight');
-            $table->string('product_price');
-            $table->string('total_price');
+            $table->string('product_category_id')->nullable();
+            $table->string('product_weight')->nullable();
+            $table->string('product_price')->nullable();
+            $table->string('total_price')->nullable();
             $table->string('image')->nullable();
             $table->string('status')->default('pending');
             $table->string('reject_reason')->nullable();

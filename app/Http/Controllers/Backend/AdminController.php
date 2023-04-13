@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function index()
     {
         //get all admins from users table       
-        $admins = User::where('role_id', 1)->get();
+        $admins = User::where('role_id', 1)->orderBy('id', 'DESC')->get();
         return view('backend.pages.admin.index', compact('admins'));
     }
 

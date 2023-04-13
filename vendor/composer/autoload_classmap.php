@@ -48,7 +48,6 @@ return array(
     'App\\Library\\SslCommerz\\SslCommerzNotification' => $baseDir . '/app/Library/SslCommerz/SslCommerzNotification.php',
     'App\\Models\\Admin' => $baseDir . '/app/Models/Admin.php',
     'App\\Models\\Buyer' => $baseDir . '/app/Models/Buyer.php',
-    'App\\Models\\Customer' => $baseDir . '/app/Models/Customer.php',
     'App\\Models\\Employee' => $baseDir . '/app/Models/Employee.php',
     'App\\Models\\EmployeeAssignOrder' => $baseDir . '/app/Models/EmployeeAssignOrder.php',
     'App\\Models\\EmployeeAssignRequest' => $baseDir . '/app/Models/EmployeeAssignRequest.php',

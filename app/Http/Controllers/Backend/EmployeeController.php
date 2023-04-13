@@ -14,7 +14,7 @@ class EmployeeController extends Controller
     public function index()
     {
         //get all employees from users table
-        $employees = User::where('role_id', 2)->get();
+        $employees = User::where('role_id', 2)->orderBy('id', 'DESC')->get();
         return view('backend.pages.employee.index', compact('employees'));
     }
 

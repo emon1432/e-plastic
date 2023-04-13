@@ -11,7 +11,7 @@
                 <div class="relative flex items-center p-5">
                     <div class="w-12 h-12 image-fit">
                         <img alt="eplastic" class="rounded-full"
-                            src="{{ asset('backend') }}/images/profile/{{ auth()->user()->image ?? 'avatar.png' }}">
+                            src="{{ asset('backend/images/profile/') . auth()->user()->image }}">
                     </div>
                     <div class="ml-4 mr-auto">
                         <div class="font-medium text-base">{{ auth()->user()->name }}</div>
@@ -21,7 +21,8 @@
                 <div class="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
                     <a class="flex items-center text-primary font-medium" href="{{ route('profile.show') }}"> <i
                             data-feather="activity" class="w-4 h-4 mr-2"></i> Personal Information </a>
-                    <a class="flex items-center mt-5" href="{{ route('password.edit') }}"> <i data-feather="lock" class="w-4 h-4 mr-2"></i>
+                    <a class="flex items-center mt-5" href="{{ route('password.edit') }}"> <i data-feather="lock"
+                            class="w-4 h-4 mr-2"></i>
                         Change Password </a>
                 </div>
             </div>
@@ -60,9 +61,11 @@
                                         <label for="update-profile-form-3" class="form-label">Gender</label>
                                         <select id="update-profile-form-3" data-search="true" class="tom-select w-full"
                                             name="gender">
-                                            <option value="Male" {{ auth()->user()->gender == 'Male' ? 'selected' : '' }}>Male
+                                            <option value="Male" {{ auth()->user()->gender == 'Male' ? 'selected' : '' }}>
+                                                Male
                                             </option>
-                                            <option value="Female" {{ auth()->user()->gender == 'Female' ? 'selected' : '' }}>Female
+                                            <option value="Female"
+                                                {{ auth()->user()->gender == 'Female' ? 'selected' : '' }}>Female
                                             </option>
                                         </select>
                                     </div>

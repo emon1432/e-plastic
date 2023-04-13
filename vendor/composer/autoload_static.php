@@ -616,7 +616,6 @@ class ComposerStaticInit1d83e762e892e4e89c2025c9c2de41c1
         'App\\Library\\SslCommerz\\SslCommerzNotification' => __DIR__ . '/../..' . '/app/Library/SslCommerz/SslCommerzNotification.php',
         'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Models\\Buyer' => __DIR__ . '/../..' . '/app/Models/Buyer.php',
-        'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
         'App\\Models\\Employee' => __DIR__ . '/../..' . '/app/Models/Employee.php',
         'App\\Models\\EmployeeAssignOrder' => __DIR__ . '/../..' . '/app/Models/EmployeeAssignOrder.php',
         'App\\Models\\EmployeeAssignRequest' => __DIR__ . '/../..' . '/app/Models/EmployeeAssignRequest.php',

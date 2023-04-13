@@ -22,28 +22,16 @@ class ProductPurchasesTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'product_name' => 'plastic',
-                'product_category_id' => '3',
-                'product_price' => '60',
-                'product_weight' => '5',
-                'buying_price' => '300',
-                'image' => NULL,
-                'status' => 'bought',
-                'created_at' => '2023-04-13 07:00:50',
-                'updated_at' => '2023-04-13 07:00:50',
-            ),
-            1 => 
-            array (
-                'id' => 2,
-                'product_name' => 'bottle',
+                'product_name' => 'Fresh Bottles',
+                'product_description' => 'This product is very good. Collected from houses.This product is very good. Collected from houses.This product is very good. Collected from houses.This product is very good. Collected from houses.',
                 'product_category_id' => '1',
                 'product_price' => '60',
-                'product_weight' => '3',
-                'buying_price' => '180',
+                'product_weight' => '10',
+                'buying_price' => '600',
                 'image' => NULL,
                 'status' => 'bought',
-                'created_at' => '2023-04-13 07:04:27',
-                'updated_at' => '2023-04-13 07:04:27',
+                'created_at' => '2023-04-13 21:57:35',
+                'updated_at' => '2023-04-13 21:57:35',
             ),
         ));
         

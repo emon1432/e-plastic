@@ -9,7 +9,7 @@
                         <tr class="text-center">
                             <th>NAME</th>
                             <th>PHONE</th>
-                            <th>ADDRESS</th>
+                            <th>PICKUP ADDRESS</th>
                             <th>TYPE</th>
                             <th>WEIGHT</th>
                             <th>PRICE</th>
@@ -22,10 +22,10 @@
                         @foreach ($assignedRequests as $assignedRequest)
                             @if (auth()->user()->id == $assignedRequest->employeeInfo->user_id)
                                 <tr class="intro-x text-center font-medium whitespace-nowrap">
-                                    <td>{{ $assignedRequest->sellRequestInfo->name }}</td>
-                                    <td>{{ $assignedRequest->sellRequestInfo->phone }}</td>
+                                    <td>{{ $assignedRequest->sellRequestInfo->sellerInfo->name }}</td>
+                                    <td>{{ $assignedRequest->sellRequestInfo->sellerInfo->phone }}</td>
                                     <td>{{ $assignedRequest->sellRequestInfo->address }}</td>
-                                    <td>{{ $assignedRequest->sellRequestInfo->product_category_id }}</td>
+                                    <td>{{ $assignedRequest->sellRequestInfo->categoryInfo->name }}</td>
                                     <td>{{ $assignedRequest->sellRequestInfo->product_weight }}</td>
                                     <td>{{ $assignedRequest->sellRequestInfo->total_price }}</td>
                                     <td class="flex items-center justify-center">

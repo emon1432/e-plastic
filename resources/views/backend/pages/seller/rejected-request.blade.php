@@ -9,33 +9,35 @@
                         <tr class="text-center">
                             <th>NAME</th>
                             <th>PHONE</th>
-                            <th>ADDRESS</th>
+                            <th>PICKUP ADDRESS</th>
                             <th>TYPE</th>
                             <th>WEIGHT</th>
                             <th>PRICE</th>
                             <th>IMAGES</th>
                             <th>STATUS</th>
-                            <th>Reject Reason</th> 
+                            <th>Reject Reason</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($rejectedRequests as $rejectedRequest)
-                            <tr class="intro-x text-center font-medium whitespace-nowrap">
-                                <td>{{ $rejectedRequest->name }}</td>
-                                <td>{{ $rejectedRequest->phone }}</td>
-                                <td>{{ $rejectedRequest->address }}</td>
-                                <td>{{ $rejectedRequest->product_category_id }}</td>
-                                <td>{{ $rejectedRequest->product_weight }}</td>
-                                <td>{{ $rejectedRequest->total_price }}</td>
-                                <td class="flex items-center justify-center">
-                                    <div class="w-10 h-10 image-fit zoom-in">
-                                        <img alt="{{ $rejectedRequest->name }}" class="rounded-full"
-                                            src="{{ asset('backend/images/sell-request') }}/{{ $rejectedRequest->image ?? 'avatar.png' }}">
-                                    </div>
-                                </td>
-                                <td class="text-danger">rejected</td>
-                                <td>{{ Str::limit($rejectedRequest->reject_reason,20) }}</td>
-                            </tr>
+                            @if (auth()->user()->id == $rejectedRequest->sellerInfo->user_id)
+                                <tr class="intro-x text-center font-medium whitespace-nowrap">
+                                    <td>{{ $rejectedRequest->sellerInfo->name }}</td>
+                                    <td>{{ $rejectedRequest->sellerInfo->phone }}</td>
+                                    <td>{{ $rejectedRequest->address }}</td>
+                                    <td>{{ $rejectedRequest->categoryInfo->name }}</td>
+                                    <td>{{ $rejectedRequest->product_weight }}</td>
+                                    <td>{{ $rejectedRequest->total_price }}</td>
+                                    <td class="flex items-center justify-center">
+                                        <div class="w-10 h-10 image-fit zoom-in">
+                                            <img alt="{{ $rejectedRequest->name }}" class="rounded-full"
+                                                src="{{ asset('backend/images/sell-request') }}/{{ $rejectedRequest->image ?? 'avatar.png' }}">
+                                        </div>
+                                    </td>
+                                    <td class="text-danger">rejected</td>
+                                    <td>{{ Str::limit($rejectedRequest->reject_reason, 20) }}</td>
+                                </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

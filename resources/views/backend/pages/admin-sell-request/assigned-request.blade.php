@@ -9,21 +9,22 @@
                         <tr class="text-center">
                             <th>NAME</th>
                             <th>PHONE</th>
-                            <th>ADDRESS</th>
+                            <th>PICKUP ADDRESS</th>
                             <th>TYPE</th>
                             <th>WEIGHT</th>
                             <th>PRICE</th>
                             <th>IMAGE</th>
+                            <th>ASSIGNED TO</th>
                             <th>STATUS</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($assignedRequests as $assignedRequest)
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
-                                <td>{{ $assignedRequest->sellRequestInfo->name }}</td>
-                                <td>{{ $assignedRequest->sellRequestInfo->phone }}</td>
+                                <td>{{ $assignedRequest->sellRequestInfo->sellerInfo->name }}</td>
+                                <td>{{ $assignedRequest->sellRequestInfo->sellerInfo->phone }}</td>
                                 <td>{{ $assignedRequest->sellRequestInfo->address }}</td>
-                                <td>{{ $assignedRequest->sellRequestInfo->product_category_id }}</td>
+                                <td>{{ $assignedRequest->sellRequestInfo->categoryInfo->name }}</td>
                                 <td>{{ $assignedRequest->sellRequestInfo->product_weight }}</td>
                                 <td>{{ $assignedRequest->sellRequestInfo->total_price }}</td>
                                 <td class="flex items-center justify-center">
@@ -32,6 +33,7 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $assignedRequest->sellRequestInfo->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
+                                <td>{{ $assignedRequest->employeeInfo->name }}</td>
                                 @if ($assignedRequest->status == 'assigned')
                                     <td>
                                         <span class="text-warning">Assigned</span>

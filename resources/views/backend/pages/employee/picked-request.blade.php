@@ -21,10 +21,10 @@
                         @foreach ($pickedRequests as $pickedRequest)
                             @if (auth()->user()->id == $pickedRequest->employeeInfo->user_id)
                                 <tr class="intro-x text-center font-medium whitespace-nowrap">
-                                    <td>{{ $pickedRequest->sellRequestInfo->name }}</td>
-                                    <td>{{ $pickedRequest->sellRequestInfo->phone }}</td>
+                                    <td>{{ $pickedRequest->sellRequestInfo->sellerInfo->name }}</td>
+                                    <td>{{ $pickedRequest->sellRequestInfo->sellerInfo->phone }}</td>
                                     <td>{{ $pickedRequest->sellRequestInfo->address }}</td>
-                                    <td>{{ $pickedRequest->sellRequestInfo->product_category_id }}</td>
+                                    <td>{{ $pickedRequest->sellRequestInfo->categoryInfo->name }}</td>
                                     <td>{{ $pickedRequest->sellRequestInfo->product_weight }}</td>
                                     <td>{{ $pickedRequest->sellRequestInfo->total_price }}</td>
                                     <td class="flex items-center justify-center">

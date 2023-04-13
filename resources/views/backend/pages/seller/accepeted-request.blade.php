@@ -9,7 +9,7 @@
                         <tr class="text-center">
                             <th>NAME</th>
                             <th>PHONE</th>
-                            <th>ADDRESS</th>
+                            <th>PICKUP ADDRESS</th>
                             <th>TYPE</th>
                             <th>WEIGHT</th>
                             <th>PRICE</th>
@@ -19,11 +19,12 @@
                     </thead>
                     <tbody>
                         @foreach ($acceptedRequests as $acceptedRequest)
+                        @if (auth()->user()->id == $acceptedRequest->sellerInfo->user_id)
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
-                                <td>{{ $acceptedRequest->name }}</td>
-                                <td>{{ $acceptedRequest->phone }}</td>
+                                <td>{{ $acceptedRequest->sellerInfo->name }}</td>
+                                <td>{{ $acceptedRequest->sellerInfo->phone }}</td>
                                 <td>{{ $acceptedRequest->address }}</td>
-                                <td>{{ $acceptedRequest->product_category_id }}</td>
+                                <td>{{ $acceptedRequest->categoryInfo->name }}</td>
                                 <td>{{ $acceptedRequest->product_weight }}</td>
                                 <td>{{ $acceptedRequest->total_price }}</td>
                                 <td class="flex items-center justify-center">
@@ -32,17 +33,18 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $acceptedRequest->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
-                                @if ($acceptedRequest->status == 'accepeted')
+                                @if ($acceptedRequest->status == 'accepted')
                                     <td class="text-center">
-                                        <span class="badge badge-primary">Accepted</span>
+                                        <span class="text-success">Accepted</span>
                                     </td>
                                 @endif
                                 @if ($acceptedRequest->status == 'assigned')
                                     <td class="text-center">
-                                        <span class="badge badge-warning">Assigned</span>
+                                        <span class="text-primary">Assigned</span>
                                     </td>
                                 @endif
                             </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

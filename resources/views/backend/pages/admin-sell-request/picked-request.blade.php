@@ -9,11 +9,12 @@
                         <tr class="text-center">
                             <th>NAME</th>
                             <th>PHONE</th>
-                            <th>ADDRESS</th>
+                            <th>PICKUP ADDRESS</th>
                             <th>TYPE</th>
                             <th>WEIGHT</th>
                             <th>PRICE</th>
                             <th>IMAGE</th>
+                            <th>PICKED BY</th>
                             <th>STATUS</th>
                             <th>ACTION</th>
                         </tr>
@@ -21,10 +22,10 @@
                     <tbody>
                         @foreach ($pickedRequests as $pickedRequest)
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
-                                <td>{{ $pickedRequest->sellRequestInfo->name }}</td>
-                                <td>{{ $pickedRequest->sellRequestInfo->phone }}</td>
+                                <td>{{ $pickedRequest->sellRequestInfo->sellerInfo->name }}</td>
+                                <td>{{ $pickedRequest->sellRequestInfo->sellerInfo->phone }}</td>
                                 <td>{{ $pickedRequest->sellRequestInfo->address }}</td>
-                                <td>{{ $pickedRequest->sellRequestInfo->product_category_id }}</td>
+                                <td>{{ $pickedRequest->sellRequestInfo->categoryInfo->name }}</td>
                                 <td>{{ $pickedRequest->sellRequestInfo->product_weight }}</td>
                                 <td>{{ $pickedRequest->sellRequestInfo->total_price }}</td>
                                 <td class="flex items-center justify-center">
@@ -33,6 +34,7 @@
                                             src="{{ asset('backend/images/sell-request') }}/{{ $pickedRequest->sellRequestInfo->image ?? 'avatar.png' }}">
                                     </div>
                                 </td>
+                                <td>{{ $pickedRequest->employeeInfo->name }}</td>
                                 @if ($pickedRequest->status == 'picked')
                                     <td>
                                         <span class="text-success">Picked</span>
@@ -113,8 +115,10 @@
                                                             placeholder="Enter Selling Price">
                                                     </div>
                                                     <div class="col-span-12">
-                                                        <label class="flex flex-col sm:flex-row">Enter Product Description</label>
-                                                        <textarea name="product_description" class="w-full" cols="15" rows="3" placeholder="Enter Product Description"></textarea>
+                                                        <label class="flex flex-col sm:flex-row">Enter Product
+                                                            Description</label>
+                                                        <textarea name="product_description" class="w-full" cols="15" rows="3"
+                                                            placeholder="Enter Product Description"></textarea>
                                                     </div>
 
                                                     <div class="col-span-4">

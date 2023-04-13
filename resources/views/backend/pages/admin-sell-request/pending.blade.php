@@ -9,7 +9,7 @@
                         <tr class="text-center">
                             <th>NAME</th>
                             <th>PHONE</th>
-                            <th>ADDRESS</th>
+                            <th>PICKUP ADDRESS</th>
                             <th>TYPE</th>
                             <th>WEIGHT</th>
                             <th>PRICE</th>
@@ -21,10 +21,10 @@
                     <tbody>
                         @foreach ($pendingRequests as $pendingRequest)
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
-                                <td>{{ $pendingRequest->name }}</td>
-                                <td>{{ $pendingRequest->phone }}</td>
+                                <td>{{ $pendingRequest->sellerInfo->name }}</td>
+                                <td>{{ $pendingRequest->sellerInfo->phone }}</td>
                                 <td>{{ $pendingRequest->address }}</td>
-                                <td>{{ $pendingRequest->product_category_id }}</td>
+                                <td>{{ $pendingRequest->categoryInfo->name }}</td>
                                 <td>{{ $pendingRequest->product_weight }}</td>
                                 <td>{{ $pendingRequest->total_price }}</td>
                                 <td class="flex items-center justify-center">
