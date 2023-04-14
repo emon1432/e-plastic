@@ -125,7 +125,11 @@
                                             <a href="{{ route('product.details', $product->id) }}"
                                                 class="btn btn-success text-decoration-none">Details</a>
                                         </div>
-                                        
+
+                                        <div class="mx-3">
+                                            <a href="{{ route('checkout') }}"
+                                                class="btn btn-success text-decoration-none">Buy Now</a>
+                                        </div>
                                     @endif
                                     @if ($product->sale_status == 'sold')
                                         <div class="mx-3">
