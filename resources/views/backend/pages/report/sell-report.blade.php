@@ -44,12 +44,15 @@
                             <th>Buyer Phone</th>
                             <th>Buyer Address</th>
                             <th>Product Weight</th>
-                            <th>Product Price</th>
                             <th>Date</th>
+                            <th>Product Price</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($orders as $order)
+                        @php
+                            $total =0;
+                        @endphp
+                        @foreach ($orders as $key => $order)
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
                                 <td>{{ $order->product->product_name }}</td>
                                 <td>{{ $order->category->name }}</td>
@@ -57,10 +60,16 @@
                                 <td>{{ $order->user->phone }}</td>
                                 <td>{{ $order->user->address }}</td>
                                 <td>{{ $order->product_weight }}</td>
-                                <td>{{ $order->amount }}</td>
                                 <td>{{ $order->created_at->format('d-m-Y') }}</td>
+                                <td>{{ $order->amount }}</td>
+                                @php 
+                                    $total += $order->amount;
+                                @endphp
                             </tr>
                         @endforeach
+                        <tr class="text-success">
+                            <td colspan="8" class="text-right font-bold">Total:{{ $total }}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

@@ -49,6 +49,9 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $total = 0;
+                        @endphp
                         @foreach ($orders as $order)
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
                                 <td>{{ $order->product_name }}</td>
@@ -60,7 +63,13 @@
                                 <td>{{ $order->product_price }}</td>
                                 <td>{{ $order->created_at->format('d-m-Y') }}</td>
                             </tr>
+                            @php
+                                $total += $order->product_price;
+                            @endphp
                         @endforeach
+                        <tr class="text-success">
+                            <td colspan="8" class="text-right font-bold">Total:{{ $total }}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
