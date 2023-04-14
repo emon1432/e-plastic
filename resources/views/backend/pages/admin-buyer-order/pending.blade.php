@@ -8,13 +8,13 @@
                     <thead>
                         <tr class="text-center">
                             <th>Buyer Name</th>
-                            <th>Buyer Phone</th>
-                            <th>Buyer Address</th>
+                            <th>Phone</th>
+                            <th>Address</th>
                             <th>Product Name</th>
                             {{-- <th>Product Category</th> --}}
-                            <th>Product Weight(KG)</th>
-                            <th>Product Price(TAKA)</th>
-                            <th>Order Status</th>
+                            <th>Weight(KG)</th>
+                            <th>Price(TAKA)</th>
+                            <th>Status</th>
                             <th>Payment Status</th>
                             <th>Transaction ID</th>
                             <th>Action</th>
