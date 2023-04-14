@@ -55,7 +55,7 @@
             <li>
                 <a href="{{ route('product.index') }}"
                     class="side-menu {{ $route == 'product.index' ? 'side-menu--active' : '' }}">
-                    <div class="side-menu__icon"> <i data-feather="chevron-down"></i> </div>
+                    <div class="side-menu__icon"> <i data-feather="shopping-cart"></i> </div>
                     <div class="side-menu__title">
                         Products
                     </div>
@@ -139,7 +139,7 @@
                     </li>
                     <li>
                         <a href="{{ route('order.assigned') }}"
-                            class="side-menu {{ $route == 'order.assign' ? 'side-menu--active' : '' }}">
+                            class="side-menu {{ $route == 'order.assigned' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon">
                                 <i data-feather="activity"></i>
                             </div>
@@ -159,7 +159,7 @@
                 </ul>
             </li>
 
-            <li>
+            {{-- <li>
                 <a href="{{ route('admin.index') }}"
                     class="side-menu {{ $route == 'admin.index' ? 'side-menu--active' : '' }}">
                     <div class="side-menu__icon"> <i data-feather="users"></i> </div>
@@ -167,7 +167,7 @@
                         Product Category
                     </div>
                 </a>
-            </li>
+            </li> --}}
 
             <li>
                 <a href="javascript:;" class="side-menu">
@@ -242,7 +242,7 @@
                 </a>
                 <ul class="">
                     <li>
-                        <a href="{{ route('assigned-order.index')}}"
+                        <a href="{{ route('assigned-order.index') }}"
                             class="side-menu {{ $route == 'assigned-order.index' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                             <div class="side-menu__title"> Assigned Orders </div>

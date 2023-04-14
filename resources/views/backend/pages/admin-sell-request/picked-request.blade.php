@@ -68,6 +68,8 @@
                                                 @csrf
                                                 <div class="grid grid-cols-12 gap-2 mt-3">
                                                     <input type="hidden" name="id" value="{{ $pickedRequest->id }}">
+                                                    <input type="hidden" name="seller_id"
+                                                        value="{{ $pickedRequest->sellRequestInfo->sellerInfo->user_id}}">
                                                     <div class="col-span-6">
                                                         <label class="flex flex-col sm:flex-row">Product Name</label>
                                                         <input class="w-full" type="text" name="product_name"

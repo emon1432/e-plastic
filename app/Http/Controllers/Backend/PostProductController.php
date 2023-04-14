@@ -51,6 +51,8 @@ class PostProductController extends Controller
         //create purchase product
         $purchase_product = new ProductPurchase();
         $purchase_product->product_name = $request->product_name;
+        //seller_id
+        $purchase_product->user_id = $request->seller_id;
         $purchase_product->product_description = $request->product_description;
         $purchase_product->product_category_id = $request->product_category_id;
         $purchase_product->product_weight = $request->product_weight;

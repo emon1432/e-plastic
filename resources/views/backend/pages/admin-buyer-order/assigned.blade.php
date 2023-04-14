@@ -41,6 +41,11 @@
                                             <span class="text-warning">{{ $order->status }}</span>
                                         </td>
                                     @endif
+                                    @if ($order->status == 'accepted')
+                                        <td>
+                                            <span class="text-success">{{ $order->status }}</span>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endif
                         @endforeach

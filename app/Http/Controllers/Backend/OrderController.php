@@ -34,7 +34,7 @@ class OrderController extends Controller
 
     public function assigned()
     {
-        $assignedOrders = Order::with('user', 'product', 'category', 'employee')->where('status', 'assigned')->get();
+        $assignedOrders = Order::with('user', 'product', 'category', 'employee')->where('status', 'assigned')->orWhere('status', 'accepted')->get();
         return view('backend.pages.admin-buyer-order.assigned', compact('assignedOrders'));
     }
 

@@ -53,7 +53,6 @@
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
                                 <td>{{ $order->product_name }}</td>
                                 <td>{{ $order->category->name }}</td>
-                                
                                 <td>{{ $order->created_at->format('d-m-Y') }}</td>
                             </tr>
                         @endforeach
