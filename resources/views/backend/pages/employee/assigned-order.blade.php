@@ -103,7 +103,7 @@
                                                         class="w-16 h-16 text-primary mx-auto mt-3"></i>
                                                     <div class="text-3xl mt-5">Are you sure?</div>
                                                     <div class="text-2xl mt-2">
-                                                        Do you really want to <span class="text-primary">Delever</span> this
+                                                        Do you really want to <span class="text-primary">Deliver</span> this
                                                         order?
                                                         <br>
                                                     </div>

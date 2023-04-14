@@ -120,10 +120,18 @@
                                 </div>
                                 {{-- details button center --}}
                                 <div class="d-flex justify-content-center mt-5">
-                                    <div class="mx-3">
-                                        <a href="{{ route('product.details', $product->id) }}"
-                                            class="btn btn-success text-decoration-none">Details</a>
-                                    </div>
+                                    @if ($product->sale_status == 'available')
+                                        <div class="mx-3">
+                                            <a href="{{ route('product.details', $product->id) }}"
+                                                class="btn btn-success text-decoration-none">Details</a>
+                                        </div>
+                                        
+                                    @endif
+                                    @if ($product->sale_status == 'sold')
+                                        <div class="mx-3">
+                                            <h3 class="text-danger">Sold Out</h3>
+                                        </div>
+                                    @endif
                                 </div>
 
                             </div>

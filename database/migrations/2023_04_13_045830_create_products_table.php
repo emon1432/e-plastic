@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->string('image2')->nullable();
             $table->string('image3')->nullable();
             $table->string('status');
+            $table->string('sale_status')->default('available');
             $table->timestamps();
         });
     }
