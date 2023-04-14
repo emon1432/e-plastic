@@ -22,10 +22,6 @@ class AssignedOrderController extends Controller
         $acceptedOrders->status = 'accepted';
         $acceptedOrders->save();
 
-        //new product
-        $newProduct = Products::find($id);
-        $newProduct->sale_status->status = 'sold';
-        $newProduct->save();
         Alert::success('Success', 'Order Accepted Successfully');
         return redirect()->back();
     }
@@ -34,8 +30,11 @@ class AssignedOrderController extends Controller
     {
         $deliverOrders = Order::find($id);
         $deliverOrders->status = 'delivered';
-        $deliverOrders->sale_status = 'sold';
         $deliverOrders->save();
+        //new product
+        $newProduct = Products::find($id);
+        $newProduct->sale_status->status = 'sold';
+        $newProduct->save();
         Alert::success('Success', 'Order Delivered Successfully');
         return redirect()->back();
     }
