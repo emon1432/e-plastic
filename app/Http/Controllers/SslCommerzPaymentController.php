@@ -147,6 +147,8 @@ class SslCommerzPaymentController extends Controller
                 'product_category_id' => $cart->category_id,
                 'product_weight' => $cart->product_weight,
                 'user_id' => $cart->user_id,
+                'created_at' => date('Y-m-d H:i:s'),
+
             ]);
 
         $sslc = new SslCommerzNotification();
@@ -173,7 +175,7 @@ class SslCommerzPaymentController extends Controller
             ->where('transaction_id', $tran_id)
             ->select('transaction_id', 'status', 'currency', 'amount')->first();
 
-        if ($order_details->status == 'Pending') {
+        if ($order_details->status == 'pending') {
             $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
 
             if ($validation) {
@@ -199,8 +201,8 @@ class SslCommerzPaymentController extends Controller
             }
         } else if ($order_details->status == 'pending' || $order_details->status == 'delivered') {
             /*
-             That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
-             */
+            That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
+            */
             return redirect('/')->with('success', 'Payment success');
         } else {
             #That means something wrong happened. You can redirect customer to your product page.
@@ -216,12 +218,12 @@ class SslCommerzPaymentController extends Controller
             ->where('transaction_id', $tran_id)
             ->select('transaction_id', 'status', 'currency', 'amount')->first();
 
-        if ($order_details->status == 'Pending') {
+        if ($order_details->status == 'pending') {
             $update_product = DB::table('orders')
                 ->where('transaction_id', $tran_id)
                 ->update(['status' => 'Failed']);
             echo "Transaction is Falied";
-        } else if ($order_details->status == 'Processing' || $order_details->status == 'Complete') {
+        } else if ($order_details->status == 'pending' || $order_details->status == 'delivered') {
             echo "Transaction is already Successful";
         } else {
             echo "Transaction is Invalid";
