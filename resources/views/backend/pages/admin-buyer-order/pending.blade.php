@@ -11,7 +11,7 @@
                             <th>Buyer Phone</th>
                             <th>Buyer Address</th>
                             <th>Product Name</th>
-                            <th>Product Category</th>
+                            {{-- <th>Product Category</th> --}}
                             <th>Product Weight</th>
                             <th>Product Price</th>
                             <th>Order Status</th>
@@ -28,7 +28,7 @@
                                     <td>{{ $order->user->phone }}</td>
                                     <td>{{ $order->user->address }}</td>
                                     <td>{{ $order->product->product_name }}</td>
-                                    <td>{{ $order->category->name }}</td>
+                                    {{-- <td>{{ $order->category->name }}</td> --}}
                                     <td>{{ $order->product_weight }}</td>
                                     <td>{{ $order->amount }}</td>
                                     @if ($order->status == 'pending')
