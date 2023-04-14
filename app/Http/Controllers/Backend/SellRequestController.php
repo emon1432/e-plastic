@@ -77,19 +77,19 @@ class SellRequestController extends Controller
     public function pending()
     {
         $productCategories = ProductCategory::get();
-        $pendingRequests = SellRequest::with('categoryInfo')->where('status', '=', 'pending')->get();
+        $pendingRequests = SellRequest::with('categoryInfo')->where('status', '=', 'pending')->orderBy('id', 'desc')->get();
         return view('backend.pages.seller.pending-request', compact('pendingRequests', 'productCategories'));
     }
 
     public function accepted()
     {
-        $acceptedRequests = SellRequest::with('categoryInfo')->where('status', '=', 'accepted')->orWhere('status', '=', 'assigned')->get();
+        $acceptedRequests = SellRequest::with('categoryInfo')->where('status', '=', 'accepted')->orWhere('status', '=', 'assigned')->orderBy('id', 'desc')->get();
         return view('backend.pages.seller.accepeted-request', compact('acceptedRequests'));
     }
 
     public function completed()
     {
-        $completedRequests = SellRequest::with('categoryInfo')->where('status', '=', 'completed')->get();
+        $completedRequests = SellRequest::with('categoryInfo')->where('status', '=', 'completed')->orderBy('id', 'desc')->get();
         return view('backend.pages.seller.completed-request', compact('completedRequests'));
     }
 

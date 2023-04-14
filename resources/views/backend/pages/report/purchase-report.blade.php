@@ -26,8 +26,8 @@
                         <div class="mr-2">
                             <input type="date" name="end_date" class="input w-full border mt-2" placeholder="End Date">
                         </div>
-                        <div class="mr-2">
-                            <button type="submit" class="btn btn-primary w-24 mr-1 mb-2">Search</button>
+                        <div class="mr-2 mt-3">
+                            <button type="submit" class="btn btn-primary w-24 mr-1">Search</button>
                         </div>
                     </div>
                 </form>

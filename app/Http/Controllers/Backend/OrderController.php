@@ -15,7 +15,7 @@ class OrderController extends Controller
 
     public function pending()
     {
-        $pendingOrders = Order::with('user', 'product', 'category')->where('status', 'pending')->orWhere('status', 'assigned')->get();
+        $pendingOrders = Order::with('user', 'product', 'category')->where('status', 'pending')->orWhere('status', 'assigned')->orderBy('id', 'desc')->get();
         $employees = User::where('role_id', 2)->get();
         // return response()->json($pendingOrders);
         return view('backend.pages.admin-buyer-order.pending', compact('pendingOrders', 'employees'));
@@ -34,13 +34,13 @@ class OrderController extends Controller
 
     public function assigned()
     {
-        $assignedOrders = Order::with('user', 'product', 'category', 'employee')->where('status', 'assigned')->orWhere('status', 'accepted')->get();
+        $assignedOrders = Order::with('user', 'product', 'category', 'employee')->where('status', 'assigned')->orWhere('status', 'accepted')->orderBy('id', 'desc')->get();
         return view('backend.pages.admin-buyer-order.assigned', compact('assignedOrders'));
     }
 
     public function delivered()
     {
-        $deliveredOrders = Order::with('user', 'product', 'category', 'employee')->where('status', 'delivered')->get();
+        $deliveredOrders = Order::with('user', 'product', 'category', 'employee')->where('status', 'delivered')->orderBy('id', 'desc')->get();
         return view('backend.pages.admin-buyer-order.delivered', compact('deliveredOrders'));
     }
 }
