@@ -62,72 +62,6 @@
                 </a>
             </li>
 
-            <!--Employee Request Dropdown-->
-            <li>
-                <a href="javascript:;" class="side-menu">
-                    <div class="side-menu__icon"> <i data-feather="shopping-cart"></i> </div>
-                    <div class="side-menu__title">
-                        Assigned Request
-                        <div class="side-menu__sub-icon transform rotate-180"> <i data-feather="chevron-down"></i>
-                        </div>
-                    </div>
-                </a>
-                <ul class="">
-                    <li>
-                        <a href="{{ route('employee-assign-request.index') }}" class="side-menu">
-                            <div
-                                class="side-menu__icon {{ $route == 'employee-assign-request.index' ? 'side-menu--active' : '' }}">
-                                <i data-feather="activity"></i>
-                            </div>
-                            <div class="side-menu__title"> Assigned Requests </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('employee-assign-request.picked') }}" class="side-menu">
-                            <div
-                                class="side-menu__icon {{ $route == 'employee-assign-request.picked' ? 'side-menu--active' : '' }}">
-                                <i data-feather="activity"></i>
-                            </div>
-                            <div class="side-menu__title"> Picked Requests</div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="javascript:;" class="side-menu">
-                    <div class="side-menu__icon"> <i data-feather="shopping-cart"></i> </div>
-                    <div class="side-menu__title">
-                        Assigned Orders
-                        <div class="side-menu__sub-icon transform rotate-180"> <i data-feather="chevron-down"></i>
-                        </div>
-                    </div>
-                </a>
-                <ul class="">
-                    <li>
-                        <a href="#" class="side-menu">
-                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Assigned Orders </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="side-menu">
-                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Accepted Orders</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="side-menu">
-                            <div class="side-menu__icon">
-                                <i data-feather="activity"></i>
-                            </div>
-                            <div class="side-menu__title">Completed Orders</div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!--End of seller dropdown -->
-
             <!--Seller Request Dropdown-->
             <li>
                 <a href="javascript:;" class="side-menu">
@@ -149,8 +83,27 @@
                     <li>
                         <a href="{{ route('seller-sell-request.accepted') }}"
                             class="side-menu {{ $route == 'seller-sell-request.accepted' ? 'side-menu--active' : '' }}">
-                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__icon"> <i data-feather="activity"></i></div>
                             <div class="side-menu__title"> Accepted Requests</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('employee-assign-request.index') }}"
+                            class="side-menu {{ $route == 'employee-assign-request.index' ? 'side-menu--active' : '' }}">
+                            <div class="side-menu__icon">
+                                <i data-feather="activity"></i>
+                            </div>
+                            <div class="side-menu__title"> Assigned Requests </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('employee-assign-request.picked') }}"
+                            class="side-menu {{ $route == 'employee-assign-request.picked' ? 'side-menu--active' : '' }}">
+                            <div class="side-menu__icon">
+                                <i data-feather="activity"></i>
+                            </div>
+                            <div class="side-menu__title"> Picked Requests</div>
                         </a>
                     </li>
                     <li>
@@ -185,19 +138,21 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('order.accepted') }}"
-                            class="side-menu {{ $route == 'order.accepted' ? 'side-menu--active' : '' }}">
-                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Accepted Orders</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('order.completed') }}"
-                            class="side-menu {{ $route == 'order.completed' ? 'side-menu--active' : '' }}">
+                        <a href="{{ route('order.assigned') }}"
+                            class="side-menu {{ $route == 'order.assign' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon">
                                 <i data-feather="activity"></i>
                             </div>
-                            <div class="side-menu__title"> Completed Orders </div>
+                            <div class="side-menu__title"> Assigned Requests </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('order.delivered') }}"
+                            class="side-menu {{ $route == 'order.delivered' ? 'side-menu--active' : '' }}">
+                            <div class="side-menu__icon">
+                                <i data-feather="activity"></i>
+                            </div>
+                            <div class="side-menu__title"> Delivered Orders </div>
                         </a>
                     </li>
 
@@ -257,18 +212,18 @@
                 </a>
                 <ul class="">
                     <li>
-                        <a href="{{ route('assigned-request.index') }}" class="side-menu">
-                            <div
-                                class="side-menu__icon {{ $route == 'assigned-request.index' ? 'side-menu--active' : '' }}">
+                        <a href="{{ route('assigned-request.index') }}"
+                            class="side-menu {{ $route == 'assigned-request.index' ? 'side-menu--active' : '' }}">
+                            <div class="side-menu__icon ">
                                 <i data-feather="activity"></i>
                             </div>
                             <div class="side-menu__title"> Assigned Requests </div>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('assigned-request.picked') }}" class="side-menu">
-                            <div
-                                class="side-menu__icon {{ $route == 'assigned-request.picked' ? 'side-menu--active' : '' }}">
+                        <a href="{{ route('assigned-request.picked') }}"
+                            class="side-menu {{ $route == 'assigned-request.picked' ? 'side-menu--active' : '' }}">
+                            <div class="side-menu__icon ">
                                 <i data-feather="activity"></i>
                             </div>
                             <div class="side-menu__title"> Picked Requests</div>
@@ -287,23 +242,19 @@
                 </a>
                 <ul class="">
                     <li>
-                        <a href="#" class="side-menu">
+                        <a href="{{ route('assigned-order.index')}}"
+                            class="side-menu {{ $route == 'assigned-order.index' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                             <div class="side-menu__title"> Assigned Orders </div>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="side-menu">
-                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Accepted Orders</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="side-menu">
+                        <a href="{{ route('assigned-order.delivered') }}"
+                            class="side-menu {{ $route == 'assigned-order.delivered' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon">
                                 <i data-feather="activity"></i>
                             </div>
-                            <div class="side-menu__title">Completed Orders</div>
+                            <div class="side-menu__title">Delivered Orders</div>
                         </a>
                     </li>
                 </ul>
@@ -368,29 +319,26 @@
         <!--Buyers menu-->
         @if (auth()->user()->role_id == 4)
             <li>
-                <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}">
-                    <div class="side-menu__icon"> <i data-feather="users"></i> </div>
-                    <div class="side-menu__title">
-                        Pending Order List
-                    </div>
+                <a href="{{ route('order.pending') }}"
+                    class="side-menu {{ $route == 'order.pending' ? 'side-menu--active' : '' }}">
+                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                    <div class="side-menu__title"> Pending Orders </div>
                 </a>
             </li>
 
             <li>
-                <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}">
-                    <div class="side-menu__icon"> <i data-feather="users"></i> </div>
-                    <div class="side-menu__title">
-                        Accepted Order List
-                    </div>
+                <a href="{{ route('order.assigned') }}"
+                    class="side-menu {{ $route == 'order.assigned' ? 'side-menu--active' : '' }}">
+                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                    <div class="side-menu__title"> Assigned Orders </div>
                 </a>
             </li>
 
             <li>
-                <a href="#" class="side-menu {{ $route == 'index' ? 'side-menu--active' : '' }}">
-                    <div class="side-menu__icon"> <i data-feather="users"></i> </div>
-                    <div class="side-menu__title">
-                        Track Order
-                    </div>
+                <a href="{{ route('order.delivered') }}"
+                    class="side-menu {{ $route == 'order.delivered' ? 'side-menu--active' : '' }}">
+                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                    <div class="side-menu__title"> Delevered Orders </div>
                 </a>
             </li>
         @endif

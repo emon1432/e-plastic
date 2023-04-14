@@ -7,8 +7,8 @@
                 <table class="table table-report -mt-2">
                     <thead>
                         <tr class="text-center">
-                            <th>NAME</th>
-                            <th>PHONE</th>
+                            <th>SELLER NAME</th>
+                            <th>SELLER PHONE</th>
                             <th>PICKUP ADDRESS</th>
                             <th>TYPE</th>
                             <th>WEIGHT</th>

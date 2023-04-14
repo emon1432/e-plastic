@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\AdminSellerRequestController;
+use App\Http\Controllers\Backend\AssignedOrderController;
 use App\Http\Controllers\Backend\AssignedRequestController;
 use App\Http\Controllers\Backend\BuyerController;
+use App\Http\Controllers\Backend\EmployeeAssignOrderController;
 use App\Http\Controllers\Backend\EmployeeAssignRequestController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\OrderController;
@@ -105,6 +107,16 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('assigned-request/pick/{id}', 'pick')->name('assigned-request.pick');
     });
 
+    Route::controller(AssignedOrderController::class)->group(function () {
+        //assign employee
+        Route::get('assigned-order', 'index')->name('assigned-order.index');
+        Route::get('assigned-order/accept/{id}', 'accept')->name('assigned-order.accept');
+        //picked    
+        Route::get('assigned-order/delivered', 'delivered')->name('assigned-order.delivered');
+        Route::get('assigned-order/deliver/{id}', 'deliver')->name('assigned-order.deliver');
+    });
+
+
 
     //admin Sell Request
     Route::controller(AdminSellerRequestController::class)->group(function () {
@@ -122,8 +134,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     //buyer order
     Route::controller(OrderController::class)->group(function () {
         Route::get('order/pending', 'pending')->name('order.pending');
-        Route::get('order/accepted', 'accepted')->name('order.accepted');
-        Route::get('order/completed', 'completed')->name('order.completed');
+        Route::get('order/assigned', 'assigned')->name('order.assigned');
+        Route::get('order/delivered', 'delivered')->name('order.delivered');
 
         //employee assign
         Route::post('order/employee-assign', 'employeeAssign')->name('order.employee-assign');
