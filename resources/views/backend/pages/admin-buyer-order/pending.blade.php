@@ -12,8 +12,8 @@
                             <th>Buyer Address</th>
                             <th>Product Name</th>
                             {{-- <th>Product Category</th> --}}
-                            <th>Product Weight</th>
-                            <th>Product Price</th>
+                            <th>Product Weight(KG)</th>
+                            <th>Product Price(TAKA)</th>
                             <th>Order Status</th>
                             <th>Payment Status</th>
                             <th>Transaction ID</th>
