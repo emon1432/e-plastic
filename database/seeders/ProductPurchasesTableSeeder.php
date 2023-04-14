@@ -22,6 +22,7 @@ class ProductPurchasesTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
+                'user_id' => '37',
                 'product_name' => 'Fresh Bottles',
                 'product_description' => 'This product is very good. Collected from houses.This product is very good. Collected from houses.This product is very good. Collected from houses.This product is very good. Collected from houses.',
                 'product_category_id' => '1',

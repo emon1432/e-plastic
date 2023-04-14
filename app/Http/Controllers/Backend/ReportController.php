@@ -75,7 +75,7 @@ class ReportController extends Controller
         $start_date = $request->start_date;
         $end_date = $request->end_date;
 
-        $orders = ProductPurchase::with('category')
+        $orders = ProductPurchase::with('category', 'user')
             ->whereBetween('created_at', [$start_date, $end_date])
             ->where('status', 'bought')
             ->get();

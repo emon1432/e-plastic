@@ -43,7 +43,7 @@
                             <th>Seller Name</th>
                             <th>Seller Phone</th>
                             <th>Seller Address</th>
-                            <th>Product Weight</th>
+                            <th>Product Weight(KG)</th>
                             <th>Product Price</th>
                             <th>Date</th>
                         </tr>
@@ -53,6 +53,11 @@
                             <tr class="intro-x text-center font-medium whitespace-nowrap">
                                 <td>{{ $order->product_name }}</td>
                                 <td>{{ $order->category->name }}</td>
+                                <td>{{ $order->user->name }}</td>
+                                <td>{{ $order->user->phone }}</td>
+                                <td>{{ $order->user->address }}</td>
+                                <td>{{ $order->product_weight }}</td>
+                                <td>{{ $order->product_price }}</td>
                                 <td>{{ $order->created_at->format('d-m-Y') }}</td>
                             </tr>
                         @endforeach
