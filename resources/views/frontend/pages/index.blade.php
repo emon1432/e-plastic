@@ -119,7 +119,7 @@
                                     </h5>
                                 </div>
                                 {{-- details button center --}}
-                                <div class="d-flex justify-content-center mt-5">
+                                <div class="d-flex justify-content-center mt-5 mb-3">
                                     @if ($product->sale_status == 'available')
                                         <div class="mx-3">
                                             <a href="{{ route('product.details', $product->id) }}"
