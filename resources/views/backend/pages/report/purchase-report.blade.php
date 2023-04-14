@@ -44,8 +44,8 @@
                             <th>Seller Phone</th>
                             <th>Seller Address</th>
                             <th>Product Weight(KG)</th>
-                            <th>Product Price</th>
                             <th>Date</th>
+                            <th>Product Price</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,8 +60,8 @@
                                 <td>{{ $order->user->phone }}</td>
                                 <td>{{ $order->user->address }}</td>
                                 <td>{{ $order->product_weight }}</td>
-                                <td>{{ $order->product_price }}</td>
                                 <td>{{ $order->created_at->format('d-m-Y') }}</td>
+                                <td>{{ $order->product_price }}</td>
                             </tr>
                             @php
                                 $total += $order->product_price;
