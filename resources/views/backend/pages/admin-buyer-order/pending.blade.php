@@ -52,7 +52,6 @@
                                             <button class="flex items-center mr-3 btn btn-primary" data-tw-toggle="modal"
                                                 data-tw-target="#employee-assign-modal-{{ $order->id }}">
                                                 Assign
-                                                Employee
                                             </button>
                                         </td>
                                     @endif
