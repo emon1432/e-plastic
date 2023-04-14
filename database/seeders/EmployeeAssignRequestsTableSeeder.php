@@ -37,6 +37,15 @@ class EmployeeAssignRequestsTableSeeder extends Seeder
                 'created_at' => '2023-04-13 21:45:28',
                 'updated_at' => '2023-04-13 21:54:43',
             ),
+            2 => 
+            array (
+                'id' => 3,
+                'employee_id' => 10,
+                'sell_request_id' => 2,
+                'status' => 'posted',
+                'created_at' => '2023-04-14 17:19:05',
+                'updated_at' => '2023-04-14 17:20:54',
+            ),
         ));
         
         

@@ -36,6 +36,23 @@ class ProductsTableSeeder extends Seeder
                 'created_at' => '2023-04-13 21:57:35',
                 'updated_at' => '2023-04-13 21:57:35',
             ),
+            1 => 
+            array (
+                'id' => 3,
+                'product_name' => 'Plastics',
+                'product_description' => 'This is a product Description',
+                'product_category_id' => '3',
+                'product_weight' => '5',
+                'product_price' => '60',
+                'buying_price' => '300',
+                'selling_price' => '400',
+                'image1' => '1681492854.webp',
+                'image2' => '1681492854.webp',
+                'image3' => '1681492854.webp',
+                'status' => 'posted',
+                'created_at' => '2023-04-14 17:20:54',
+                'updated_at' => '2023-04-14 17:20:54',
+            ),
         ));
         
         
