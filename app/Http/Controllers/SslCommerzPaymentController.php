@@ -139,7 +139,7 @@ class SslCommerzPaymentController extends Controller
                 'email' => $post_data['cus_email'],
                 'phone' => $post_data['cus_phone'],
                 'amount' => $post_data['total_amount'],
-                'status' => 'pending',
+                'status' => 'processing',
                 'address' => $post_data['cus_add1'],
                 'transaction_id' => $post_data['tran_id'],
                 'currency' => $post_data['currency'],
@@ -175,7 +175,7 @@ class SslCommerzPaymentController extends Controller
             ->where('transaction_id', $tran_id)
             ->select('transaction_id', 'status', 'currency', 'amount')->first();
 
-        if ($order_details->status == 'Pending') {
+        if ($order_details->status == 'processing') {
             $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
 
             if ($validation) {
@@ -194,12 +194,12 @@ class SslCommerzPaymentController extends Controller
 
                 //delete all pending orders
                 $delete_pending_orders = DB::table('orders')
-                    ->where('status', 'pending')
+                    ->where('status', 'processing')
                     ->delete();
 
                 return redirect('/')->with('success', 'Payment success');
             }
-        } else if ($order_details->status == 'Pending' || $order_details->status == 'Complete') {
+        } else if ($order_details->status == 'processing' || $order_details->status == 'Complete') {
             /*
             That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
             */
