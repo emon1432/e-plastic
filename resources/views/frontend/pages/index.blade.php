@@ -98,8 +98,8 @@
             </div>
             <div class="row">
                 @foreach ($products as $product)
-                    <div class="col-12 col-md-4 mb-4 animate__animated animate__fadeInUp">
-                        <div class="card h-100">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card h-100 animate__animated animate__fadeInUp">
                             <a href="{{ route('product.details', $product->id) }}">
                                 <img src="{{ asset('backend/images/products/' . $product->image1) }}" class="card-img-top"
                                     alt="..." height="250" width="20">
