@@ -57,7 +57,7 @@ class ReportController extends Controller
     {
 
         //get all product purchases by day
-        $orders = ProductPurchase::with('category')
+        $orders = ProductPurchase::with('category', 'user')
             ->where('created_at', '>=', Carbon::now()->subDays($day))
             ->where('status', 'bought')
             ->get();

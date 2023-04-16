@@ -126,8 +126,24 @@
                                         </div>
 
                                         <div class="mx-3">
-                                            <a href="{{ route('checkout') }}"
-                                                class="btn btn-success text-decoration-none">Buy Now</a>
+                                            <form action="{{ route('checkout') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                                <input type="hidden" name="product_name"
+                                                    value="{{ $product->product_name }}">
+                                                <input type="hidden" name="product_price"
+                                                    value="{{ $product->selling_price }}">
+                                                <input type="hidden" name="product_quantity" value="1">
+                                                @if ($product->sale_status != 'sold')
+                                                    <button type="submit" class="btn btn-success text-uppercase">
+                                                        <i class="fas fa-shopping-cart pr-2"></i> Buy Now
+                                                    </button>
+                                                @else
+                                                    <div class="mx-3">
+                                                        <h3 class="text-danger">Sold Out</h3>
+                                                    </div>
+                                                @endif
+                                            </form>
                                         </div>
                                     @endif
                                     @if ($product->sale_status == 'sold')
