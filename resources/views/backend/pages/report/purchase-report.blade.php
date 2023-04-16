@@ -61,10 +61,10 @@
                                 <td>{{ $order->user->address }}</td>
                                 <td>{{ $order->product_weight }}</td>
                                 <td>{{ $order->created_at->format('d-m-Y') }}</td>
-                                <td>{{ $order->product_price }}</td>
+                                <td>{{ $order->buying_price }}</td>
                             </tr>
                             @php
-                                $total += $order->product_price;
+                                $total += $order->buying_price;
                             @endphp
                         @endforeach
                         <tr class="text-success">
