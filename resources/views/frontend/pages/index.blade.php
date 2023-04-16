@@ -22,7 +22,6 @@
                                 <p>
                                     Where user can buy or sell used or wasted plustic products. In this website user can
                                     also find the nearest recycling center.
-
                                 </p>
                             </div>
                         </div>
@@ -99,7 +98,7 @@
             </div>
             <div class="row">
                 @foreach ($products as $product)
-                    <div class="col-12 col-md-4 mb-4">
+                    <div class="col-12 col-md-4 mb-4 animate__animated animate__fadeInUp">
                         <div class="card h-100">
                             <a href="{{ route('product.details', $product->id) }}">
                                 <img src="{{ asset('backend/images/products/' . $product->image1) }}" class="card-img-top"
