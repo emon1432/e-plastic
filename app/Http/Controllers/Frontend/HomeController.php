@@ -11,7 +11,7 @@ class HomeController extends Controller
     //index page
     public function index()
     {
-        $products = Products::with('categoryInfo')->where('status', '=', 'posted')->orderBy('id', 'desc')->get();
+        $products = Products::with('categoryInfo')->where('status', '=', 'posted')->orderBy('id', 'desc')->paginate(8);
         return view('frontend.pages.index', compact('products'));
     }
 

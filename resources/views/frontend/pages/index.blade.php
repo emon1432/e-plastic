@@ -22,6 +22,7 @@
                                 <p>
                                     Where user can buy or sell used or wasted plustic products. In this website user can
                                     also find the nearest recycling center.
+
                                 </p>
                             </div>
                         </div>
@@ -91,34 +92,35 @@
                 <div class="col-lg-6 m-auto">
                     <h1 class="h1">Featured Product</h1>
                     <p>
-                        This is our newest products. You can see all of our products in our <a href="#">Product
+                        This is our newest products. You can see all of our products in our <a
+                            href="{{ route('products') }}">Product
                             Page</a>.
                     </p>
                 </div>
             </div>
             <div class="row">
                 @foreach ($products as $product)
-                    <div class="col-12 col-md-4 mb-4">
-                        <div class="card h-100 animate__animated animate__fadeInUp">
+                    <div class="col-12 col-md-3 mb-4">
+                        <div class="card h-100">
                             <a href="{{ route('product.details', $product->id) }}">
                                 <img src="{{ asset('backend/images/products/' . $product->image1) }}" class="card-img-top"
                                     alt="..." height="250" width="20">
                             </a>
                             <div class="card-body">
-                                <div class="d-flex justify-content-between my-4">
+                                <div class="d-flex justify-content-between">
                                     <a href="{{ route('product.details', $product->id) }}"
-                                        class=" text-decoration-none text-dark">
-                                        <h2 class="text-secondary">{{ strtoupper($product->product_name) }}</h2>
+                                        class="text-decoration-none text-dark">
+                                        <h5 class="text-secondary">{{ Str::limit($product->product_name, 15) }}</h5>
                                     </a>
-                                    <h4 class="text-right text-success">{{ $product->selling_price }}(Taka)</h4>
+                                    <h5 class="text-right text-danger">{{ $product->selling_price }}(Taka)</h5>
                                 </div>
                                 <div class="text-decoration-none">
                                     <h5 class="text-success">
-                                        Category : {{ $product->categoryInfo->name }}
+                                        Category : <span class="h6 text-secondary">{{ $product->categoryInfo->name }}</span>
                                     </h5>
                                 </div>
                                 {{-- details button center --}}
-                                <div class="d-flex justify-content-center mt-5 mb-3">
+                                <div class="d-flex justify-content-center mt-3 mb-3">
                                     @if ($product->sale_status == 'available')
                                         <div class="mx-3">
                                             <a href="{{ route('product.details', $product->id) }}"
@@ -126,6 +128,7 @@
                                         </div>
 
                                         <div class="mx-3">
+                                            
                                             <form action="{{ route('checkout') }}" method="POST">
                                                 @csrf
                                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -135,9 +138,8 @@
                                                     value="{{ $product->selling_price }}">
                                                 <input type="hidden" name="product_quantity" value="1">
                                                 @if ($product->sale_status != 'sold')
-                                                    <button type="submit" class="btn btn-success text-uppercase">
-                                                        <i class="fas fa-shopping-cart pr-2"></i> Buy Now
-                                                    </button>
+                                                    <input type="submit" class="btn btn-success text-uppercase" value="Buy Now">
+                                                        
                                                 @else
                                                     <div class="mx-3">
                                                         <h3 class="text-danger">Sold Out</h3>
@@ -157,6 +159,9 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="d-flex justify-content-end">
+                    {{ $products->links() }}
+                </div>
             </div>
         </div>
     </section>
