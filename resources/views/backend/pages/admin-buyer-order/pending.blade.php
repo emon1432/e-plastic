@@ -48,12 +48,19 @@
                                         <span class="text-primary">{{ $order->transaction_id }}</span>
                                     </td>
                                     @if ($order->status == 'pending')
-                                        <td>
-                                            <button class="flex items-center mr-3 btn btn-primary" data-tw-toggle="modal"
-                                                data-tw-target="#employee-assign-modal-{{ $order->id }}">
-                                                Assign
-                                            </button>
-                                        </td>
+                                        @if (auth()->user()->role_id == '1')
+                                            <td>
+                                                <button class="flex items-center mr-3 btn btn-primary"
+                                                    data-tw-toggle="modal"
+                                                    data-tw-target="#employee-assign-modal-{{ $order->id }}">
+                                                    Assign
+                                                </button>
+                                            </td>
+                                        @else
+                                            <td>
+                                                <span class="badge bg-warning">Pending</span>
+                                            </td>
+                                        @endif
                                     @endif
 
                                     @if ($order->status == 'assigned')

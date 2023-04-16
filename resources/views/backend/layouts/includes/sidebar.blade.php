@@ -330,7 +330,7 @@
                 <a href="{{ route('order.assigned') }}"
                     class="side-menu {{ $route == 'order.assigned' ? 'side-menu--active' : '' }}">
                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                    <div class="side-menu__title"> Assigned Orders </div>
+                    <div class="side-menu__title"> Accepted Orders </div>
                 </a>
             </li>
 
