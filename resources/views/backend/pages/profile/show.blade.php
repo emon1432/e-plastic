@@ -11,7 +11,7 @@
                 <div class="relative flex items-center p-5">
                     <div class="w-12 h-12 image-fit">
                         <img alt="eplastic" class="rounded-full"
-                            src="{{ asset('backend/images/profile/') . auth()->user()->image }}">
+                            src="{{ asset('backend/images/profile/' . auth()->user()->image )}}">
                     </div>
                     <div class="ml-4 mr-auto">
                         <div class="font-medium text-base">{{ auth()->user()->name }}</div>
