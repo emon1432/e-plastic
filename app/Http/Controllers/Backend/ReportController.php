@@ -23,7 +23,7 @@ class ReportController extends Controller
         //get all orders by day
         $orders = Order::with('user', 'product', 'category', 'employee')
             ->where('created_at', '>=', Carbon::now()->subDays($day))
-            ->where('status', 'delivered')
+            // ->where('status', 'delivered')
             ->get();
         // return response()->json($orders);
         return view('backend.pages.report.sell-report', compact('orders'));
@@ -41,7 +41,7 @@ class ReportController extends Controller
 
         $orders = Order::with('user', 'product', 'category', 'employee')
             ->whereBetween('created_at', [$start_date, $end_date])
-            ->where('status', 'delivered')
+            // ->where('status', 'delivered')
             ->get();
 
         return view('backend.pages.report.sell-report', compact('orders'));
@@ -59,7 +59,7 @@ class ReportController extends Controller
         //get all product purchases by day
         $orders = ProductPurchase::with('category', 'user')
             ->where('created_at', '>=', Carbon::now()->subDays($day))
-            ->where('status', 'bought')
+            // ->where('status', 'bought')
             ->get();
         // return response()->json($orders);
         return view('backend.pages.report.purchase-report', compact('orders'));
@@ -77,7 +77,7 @@ class ReportController extends Controller
 
         $orders = ProductPurchase::with('category', 'user')
             ->whereBetween('created_at', [$start_date, $end_date])
-            ->where('status', 'bought')
+            // ->where('status', 'bought')
             ->get();
 
         return view('backend.pages.report.purchase-report', compact('orders'));

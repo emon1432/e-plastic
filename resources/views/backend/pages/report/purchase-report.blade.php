@@ -45,6 +45,7 @@
                             <th>Seller Address</th>
                             <th>Product Weight(KG)</th>
                             <th>Date</th>
+                            <th>Status</th>
                             <th>Product Price</th>
                         </tr>
                     </thead>
@@ -61,6 +62,18 @@
                                 <td>{{ $order->user->address }}</td>
                                 <td>{{ $order->product_weight }}</td>
                                 <td>{{ $order->created_at->format('d-m-Y') }}</td>
+                                <td>
+                                    @if ($order->status == 'bought')
+                                        <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
+                                            {{ $order->status }}
+                                        </span>
+                                    @else
+                                        <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">
+                                            {{ $order->status }}
+                                        </span>
+                                    @endif
+                                </td>
+
                                 <td>{{ $order->buying_price }}</td>
                             </tr>
                             @php
@@ -68,7 +81,7 @@
                             @endphp
                         @endforeach
                         <tr class="text-success">
-                            <td colspan="8" class="text-right font-bold">Total:{{ $total }}</td>
+                            <td colspan="9" class="text-right font-bold">Total:{{ $total }}</td>
                         </tr>
                     </tbody>
                 </table>
