@@ -33,7 +33,7 @@ class AssignedOrderController extends Controller
         $deliverOrders->save();
         //new product
         $newProduct = Products::find($id);
-        $newProduct->sale_status->status = 'sold';
+        $newProduct->sale_status = 'sold';
         $newProduct->save();
         Alert::success('Success', 'Order Delivered Successfully');
         return redirect()->back();
