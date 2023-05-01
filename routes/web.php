@@ -147,10 +147,14 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('sell-report', 'sell_report')->name('sell.report');
         Route::get('sell-reports/{day}', 'sell_reports')->name('sell.reports');
         Route::post('sell-report/date-wise', 'date_wise')->name('sell.date-wise');
+        Route::get('sell-report/delivered', 'delivered')->name('sell.delivered');
+        Route::get('sell-report/pending', 'sell_pending')->name('sell.pending');
 
         //purchase-report
         Route::get('purchase-report', 'purchase_report')->name('purchase.report');
         Route::get('purchase-reports/{day}', 'purchase_reports')->name('purchase.reports');
         Route::post('purchase-report/date-wise', 'purchase_date_wise')->name('purchase.date-wise');
+        Route::get('purchase-report/bought', 'bought')->name('purchase.bought');
+        Route::get('purchase-report/pending', 'purchase_pending')->name('purchase.pending');
     });
 });

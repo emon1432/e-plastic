@@ -47,6 +47,22 @@ class ReportController extends Controller
         return view('backend.pages.report.sell-report', compact('orders'));
     }
 
+    public function delivered()
+    {
+        $orders = Order::with('user', 'product', 'category', 'employee')
+            ->where('status', 'delivered')
+            ->get();
+        return view('backend.pages.report.sell-report', compact('orders'));
+    }
+
+    public function sell_pending()
+    {
+        $orders = Order::with('user', 'product', 'category', 'employee')
+            ->where('status', 'pending')
+            ->get();
+        return view('backend.pages.report.sell-report', compact('orders'));
+    }
+
     public function purchase_report()
     {
         $orders = [];
@@ -80,6 +96,22 @@ class ReportController extends Controller
             // ->where('status', 'bought')
             ->get();
 
+        return view('backend.pages.report.purchase-report', compact('orders'));
+    }
+
+    public function bought()
+    {
+        $orders = ProductPurchase::with('category', 'user')
+            ->where('status', 'bought')
+            ->get();
+        return view('backend.pages.report.purchase-report', compact('orders'));
+    }
+
+    public function purchase_pending()
+    {
+        $orders = ProductPurchase::with('category', 'user')
+            ->where('status', 'pending')
+            ->get();
         return view('backend.pages.report.purchase-report', compact('orders'));
     }
 }

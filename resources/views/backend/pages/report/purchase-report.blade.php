@@ -33,6 +33,12 @@
                 </form>
             </div>
         </div>
+        <div class="intro-y col-span-12 flex flex-wrap sm:flex-no-wrap items-center mt-2">
+            <div class="hidden md:block mx-auto text-gray-600">
+                <a href="{{ route('purchase.bought') }}" class="btn btn-primary w-24 mr-1 mb-2">Bought</a>
+                <a href="{{ route('purchase.pending') }}" class="btn btn-primary w-24 mr-1 mb-2">Pending</a>
+            </div>
+        </div>
         <div id="listContainer" class="intro-y col-span-12 ">
             <div class="intro-y col-span-12 ">
                 <table class="table table-report -mt-2">

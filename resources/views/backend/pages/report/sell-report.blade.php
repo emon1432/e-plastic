@@ -26,11 +26,17 @@
                         <div class="mr-2">
                             <input type="date" name="end_date" class="input w-full border mt-2" placeholder="End Date">
                         </div>
-                        <div class="mr-2">
+                        <div class="mr-2 mt-2">
                             <button type="submit" class="btn btn-primary w-24 mr-1 mb-2">Search</button>
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+        <div class="intro-y col-span-12 flex flex-wrap sm:flex-no-wrap items-center mt-2">
+            <div class="hidden md:block mx-auto text-gray-600">
+                <a href="{{ route('sell.delivered') }}" class="btn btn-primary w-24 mr-1 mb-2">Delivered</a>
+                <a href="{{ route('sell.pending') }}" class="btn btn-primary w-24 mr-1 mb-2">Pending</a>
             </div>
         </div>
         <div id="listContainer" class="intro-y col-span-12 ">
