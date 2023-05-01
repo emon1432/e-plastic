@@ -148,7 +148,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::get('sell-reports/{day}', 'sell_reports')->name('sell.reports');
         Route::post('sell-report/date-wise', 'date_wise')->name('sell.date-wise');
         Route::get('sell-report/delivered', 'delivered')->name('sell.delivered');
-        Route::get('sell-report/pending', 'sell_pending')->name('sell.pending');
+
+        //sell-pending-report
+        Route::get('sell-pending-report', 'sell_pending_report')->name('sell.pending-report');
+        Route::get('sell-pending-reports/{day}', 'sell_pending_reports')->name('sell.pending-reports');
+        Route::post('sell-pending-report/date-wise', 'sell_pending_date_wise')->name('sell.pending-date-wise');
+        Route::get('sell-pending-report/pending', 'pending')->name('sell.pending');
+
 
         //purchase-report
         Route::get('purchase-report', 'purchase_report')->name('purchase.report');
@@ -156,5 +162,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::post('purchase-report/date-wise', 'purchase_date_wise')->name('purchase.date-wise');
         Route::get('purchase-report/bought', 'bought')->name('purchase.bought');
         Route::get('purchase-report/pending', 'purchase_pending')->name('purchase.pending');
+
+        //purchase-pending-report
+        Route::get('purchase-pending-report', 'purchase_pending_report')->name('purchase.pending-report');
+        Route::get('purchase-pending-reports/{day}', 'purchase_pending_reports')->name('purchase.pending-reports');
+        Route::post('purchase-pending-report/date-wise', 'purchase_pending_date_wise')->name('purchase.pending-date-wise');
+        Route::get('purchase-pending-report/pending', 'purchase_pending')->name('purchase.pending');
+        
     });
 });

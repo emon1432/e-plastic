@@ -77,7 +77,7 @@
                         <a href="{{ route('seller-sell-request.pending') }}"
                             class="side-menu {{ $route == 'seller-sell-request.pending' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Pending Requests </div>
+                            <div class="side-menu__title">Pending Requests </div>
                         </a>
                     </li>
                     <li>
@@ -183,17 +183,30 @@
                         <a href="{{ route('sell.report') }}"
                             class="side-menu {{ $route == 'sell.report' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Sell Report </div>
+                            <div class="side-menu__title"> Sell Delivered Report </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('sell.pending-report') }}"
+                            class="side-menu {{ $route == 'sell.pending-report' ? 'side-menu--active' : '' }}">
+                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__title"> Sell Pending Report </div>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('purchase.report') }}"
                             class="side-menu {{ $route == 'purchase.report' ? 'side-menu--active' : '' }}">
                             <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                            <div class="side-menu__title"> Purchase Report</div>
+                            <div class="side-menu__title"> Purchase Bought Report</div>
                         </a>
                     </li>
-
+                    <li>
+                        <a href="{{ route('purchase.pending-report') }}"
+                            class="side-menu {{ $route == 'sell.pending-report' ? 'side-menu--active' : '' }}">
+                            <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                            <div class="side-menu__title"> Purchase Pending Report </div>
+                        </a>
+                    </li>
 
                 </ul>
             </li>
@@ -261,7 +274,6 @@
             </li>
         @endif
         <!--End of employers menu-->
-
 
         <!--Sellers menu-->
         @if (auth()->user()->role_id == 3)
